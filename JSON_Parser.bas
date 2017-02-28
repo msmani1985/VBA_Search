@@ -1,0 +1,13 @@
+Attribute VB_Name ="JSONParser"
+'
+'
+'
+' JSON Parser for word VBA
+'
+'
+' @Class JSONParser
+' @Author M. Subramani
+' 
+'
+' 
+Option Explicit 
