@@ -1,0 +1,32 @@
+{ 
+   "totalMetadata":5,
+   "metadata":{ 
+      "id":10,
+      "name":"Root Notde",
+      "description":"Root Node",
+      "children":[ 
+         { 
+            "id":11,
+            "name":"Subject 1",
+            "description":"Subject 1 Desc"
+         },
+         { 
+            "id":12,
+            "name":"Subject  2",
+            "description":" Subject 2 Desc",
+            "children":[ 
+               { 
+                  "id":13,
+                  "name":"Topic 1",
+                  "description":"Topic 1 Desc"
+               },
+               { 
+                  "id":14,
+                  "name":"Topic  2",
+                  "description":" Topic 2 Desc"
+               }
+            ]
+         }
+      ]
+   }
+}
