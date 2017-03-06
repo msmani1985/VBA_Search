@@ -1,4 +1,4 @@
-Attribute VB_Name = "Module1"
+Attribute VB_Name = "JSON"
 Private Sub JsontoCSV_cnversion()
 Dim FSO As New FileSystemObject
 Dim JsonTS As TextStream

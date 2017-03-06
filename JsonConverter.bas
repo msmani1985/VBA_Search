@@ -144,11 +144,11 @@ Public JsonOptions As json_Options
 ' ============================================= '
 
 ''
-' Convert JSON string to object (Dictionary/Collection)
+' Convert JSON string to object (Scripting.Dictionary/Collection)
 '
 ' @method ParseJson
 ' @param {String} json_String
-' @return {Object} (Dictionary or Collection)
+' @return {Object} (Scripting.Dictionary or Collection)
 ' @throws 10001 - JSON parse error
 ''
 Public Function ParseJson(ByVal JsonString As String) As Object
@@ -171,10 +171,10 @@ Public Function ParseJson(ByVal JsonString As String) As Object
 End Function
 
 ''
-' Convert object (Dictionary/Collection/Array) to JSON
+' Convert object (Scripting.Dictionary/Collection/Array) to JSON
 '
 ' @method ConvertToJson
-' @param {Variant} JsonValue (Dictionary, Collection, or Array)
+' @param {Variant} JsonValue (Scripting.Dictionary, Collection, or Array)
 ' @param {Integer|String} Whitespace "Pretty" print json with given number of spaces per indentation (Integer) or given string
 ' @return {String}
 ''
@@ -332,7 +332,7 @@ Public Function ConvertToJson(ByVal JsonValue As Variant, Optional ByVal Whitesp
 
         ConvertToJson = json_BufferToString(json_buffer, json_BufferPosition, json_BufferLength)
 
-    ' Dictionary or Collection
+    ' Scripting.Dictionary or Collection
     Case VBA.vbObject
         If json_PrettyPrint Then
             If VBA.VarType(Whitespace) = VBA.vbString Then
@@ -342,8 +342,8 @@ Public Function ConvertToJson(ByVal JsonValue As Variant, Optional ByVal Whitesp
             End If
         End If
 
-        ' Dictionary
-        If VBA.TypeName(JsonValue) = "Dictionary" Then
+        ' Scripting.Dictionary
+        If VBA.TypeName(JsonValue) = "Scripting.Dictionary" Then
             json_BufferAppend json_buffer, "{", json_BufferPosition, json_BufferLength
             For Each json_Key In JsonValue.Keys
                 ' For Objects, undefined (Empty/Nothing) is not added to object
@@ -440,11 +440,11 @@ End Function
 ' Private Functions
 ' ============================================= '
 
-Private Function json_ParseObject(json_String As String, ByRef json_Index As Long) As Dictionary
+Private Function json_ParseObject(json_String As String, ByRef json_Index As Long) As Scripting.Dictionary
     Dim json_Key As String
     Dim json_NextChar As String
 
-    Set json_ParseObject = New Dictionary
+    Set json_ParseObject = New Scripting.Dictionary
     json_SkipSpaces json_String, json_Index
     If VBA.Mid$(json_String, json_Index, 1) <> "{" Then
         Err.Raise 10001, "JSONConverter", json_ParseErrorMessage(json_String, json_Index, "Expecting '{'")
