@@ -1,72 +1,56 @@
 {
-   "totalMetadata":5,
-   "metadata":{
-      "id":10,
-      "name":"Health Library",
-      "description":"Health Library",
-      "children":[
-         {
-            "id":11,
-            "name":"Health Professional",
-            "description":"Health Professional",
-            "children":[
-               {
-                  "id":21,
-                  "name":"medicine",
-                  "description":"medicine",
-                  "children":[
-                     {
-                        "id":28,
-                        "name":"surgery",
-                        "description":"surgery"
-                     },
-                     {
-                        "id":28,
-                        "name":"surgery2",
-                        "description":"surgery2"
-                     }
-                  ]
-               }
-            ]
-         },
-         {
-            "id":12,
-            "name":"Medical education",
-            "description":" Medical education",
-            "children":[
-               {
-                  "id":14,
-                  "name":"ENT",
-                  "description":"ENT",
-                  "children":[
-                     {
-                        "id":18,
-                        "name":"surgery",
-                        "description":"surgery"
-                     }
-                  ]
-               }
-            ]
-         },
-         {
-            "id":15,
-            "name":"Nursing",
-            "description":"Nursing",
-            "children":[
-               {
-                  "id":16,
-                  "name":"Diabetic",
-                  "description":"Diabetic",
-                  "children":[
-                     {
-                        "id":17,
-                        "name":"surgery",
-                        "description":"surgery"
-                     }
-                  ]
-               }
-            ]
-         }
-      ]
-   }
+  "totalMetadata": 5,
+  "metadataType": "HIERARCHY",
+  "metadata": [
+    {
+      "id": 1,
+      "name": "HL Library",
+      "nodePath": "HL Library"
+    },
+    {
+      "id": 2,
+      "name": "Health Professional",
+      "nodePath": "HL Library \ Health Professional"
+    },
+    {
+      "id": 3,
+      "name": "medicine",
+      "nodePath": "HL Library \ Health Professional \ medicine"
+    },
+    {
+      "id": 5,
+      "name": "surgery",
+      "nodePath": "HL Library \ Health Professional \ medicine \ surgery"
+    },
+    {
+      "id": 2,
+      "name": "Medical education",
+      "nodePath": "HL Library \ Medical education"
+    },
+    {
+      "id": 3,
+      "name": "ENT",
+      "nodePath": "HL Library \ Medical education \ ENT"
+    },
+    {
+      "id": 4,
+      "name": "surgery",
+      "nodePath": "HL Library \ Medical education \ ENT \ surgery"
+    },
+    {
+      "id": 6,
+      "name": "Nursing",
+      "nodePath": "HL Library \ Nursing"
+    },
+    {
+      "id": 8,
+      "name": "Diabetic",
+      "nodePath": "HL Library \ Nursing \ Diabetic"
+    },
+    {
+      "id": 9,
+      "name": "surgery",
+      "nodePath": "HL Library \ Nursing \ Diabetic \ surgery"
+    }
+  ]
 }
