@@ -1194,6 +1194,8 @@ For Each para In ActiveDocument.Paragraphs
                                         Print #99, "        </question_remediation_link>"
                                         Print #99, "        <question_meta_tag qmtmode=""C"">"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "METADATA_TAG" Then
+                                       
+                                        
                                         Print #99, "            <meta_tag ucx=""C"" metaTagId="""">"
                                         Print #99, "                <meta_tag_type>" & varcontent1 & "</meta_tag_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "METADATA_VALUE" Then
@@ -1462,7 +1464,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         wdAutoFitWindow)
         
         table1.Select
-        table1.Id = "MC"
+        table1.ID = "MC"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
         table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
@@ -1961,23 +1963,18 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         table1.Rows(table1.Rows.Count - 3).Cells.Split NumColumns:=3, MergeBeforeSplit:=True
         table1.Cell(table1.Rows.Count - 3, 1).Select
         
-        Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.Label.1")
+        Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.ComboBox.1")
+        shp.OLEFormat.Object.Name = Replace(shp.OLEFormat.Object.Name, "ComboBox", "Qno_" & QuestionNo & "_cbo_Metadata_Search_keyword")
        ' shp.OLEFormat.Object.Name = Replace(shp.OLEFormat.Object.Name, "Label", "lbl_Metadata_Search_keyword")
-        With shp.OLEFormat.Object
-            .Object.Caption = "Search"
-            '.Object.Width = 100
-            .Object.BackColor = RGB(212, 215, 219)
-            
-            '.Object.Style = "Chosse_file"
-        End With
         Set shp = Nothing
         
         
         table1.Cell(table1.Rows.Count - 3, 2).Select
         
         Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.TextBox.1")
+        shp.OLEFormat.Object.Name = Replace(shp.OLEFormat.Object.Name, "TextBox", "Qno_" & QuestionNo & "_txt_Metadata_Search_keyword")
         shp.OLEFormat.Object.Width = 150
-                table1.Cell(table1.Rows.Count - 3, 2).Select
+         table1.Cell(table1.Rows.Count - 3, 2).Select
         'shp.OLEFormat.Object.Name = Replace(shp.OLEFormat.Object.Name, "TextBox", "txt_Metadata_Search_keyword")
         'MsgBox shp.OLEFormat.Object.Object.ListCount
         Set shp = Nothing
@@ -1985,7 +1982,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         table1.Cell(table1.Rows.Count - 3, 3).Select
         
         Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.CommandButton.1")
-       
+        shp.OLEFormat.Object.Name = Replace(shp.OLEFormat.Object.Name, "CommandButton", "Qno_" & QuestionNo & "_cmd_Metadata_Search_keyword")
         With shp.OLEFormat.Object
             .Object.Caption = "Search"
             '.Object.Width = 100
@@ -1993,6 +1990,8 @@ Selection.InsertBreak WdBreakType.wdPageBreak
             
             '.Object.Style = "Chosse_file"
         End With
+        MsgBox shp.OLEFormat.Object.Name
+        vba_code shp.OLEFormat.Object.Name
         Set shp = Nothing
         
         'table1.Rows(table1.Rows.Count - 3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
@@ -2029,11 +2028,18 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         table1.Rows(table1.Rows.Count - 2).Select
          Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.ListBox.1")
          MsgBox shp.OLEFormat.Object.Name
-        'shp.OLEFormat.Object.Name = Replace(shp.OLEFormat.Object.Name, "CommandButton", "lst_Metadata_Search_keyword")
+        shp.OLEFormat.Object.Name = Replace(shp.OLEFormat.Object.Name, "ListBox", "Qno_" & QuestionNo & "_lst_Metadata_Search_keyword")
         'shp.OLEFormat.Object.Height = table1.Cell(table1.Rows.Count - 2, 1).Height
         shp.OLEFormat.Object.Width = table1.Cell(table1.Rows.Count - 2, 1).Width - 20
-        MsgBox shp.OLEFormat.Object.ListCount
+        shp.OLEFormat.Object.ColumnCount = 3
+        shp.OLEFormat.Object.MultiSelect = fmMultiSelectSingle
+        shp.OLEFormat.Object.ListStyle = fmListStyleOption
+        shp.OLEFormat.Object.ColumnHeads = True
+
+        MsgBox shp.OLEFormat.Object.Name
         Set shp = Nothing
+        
+        
         'table1.Rows(table1.Rows.Count - 2).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
        ' table1.Cell(table1.Rows.Count - 2, 1).Select
@@ -2150,7 +2156,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         wdAutoFitWindow)
         
         table1.Select
-        table1.Id = "MC"
+        table1.ID = "MC"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
         table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
@@ -2444,7 +2450,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         wdAutoFitWindow)
         
         table1.Select
-        table1.Id = "MC"
+        table1.ID = "MC"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
         table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
@@ -3452,7 +3458,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         wdAutoFitWindow)
         
         table1.Select
-        table1.Id = "MC"
+        table1.ID = "MC"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
         table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
@@ -3746,7 +3752,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         wdAutoFitWindow)
         
         table1.Select
-        table1.Id = "MC"
+        table1.ID = "MC"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
         table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
@@ -6044,7 +6050,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         wdAutoFitWindow)
         
         table1.Select
-        table1.Id = "VQ"
+        table1.ID = "VQ"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
         table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
@@ -6737,7 +6743,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         wdAutoFitWindow)
         
         table1.Select
-        table1.Id = "MC"
+        table1.ID = "MC"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
         table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
@@ -7427,7 +7433,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         wdAutoFitWindow)
         
         table1.Select
-        table1.Id = "VQ"
+        table1.ID = "VQ"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
         table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
@@ -8165,7 +8171,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         wdAutoFitWindow)
         
         table1.Select
-        table1.Id = "MC"
+        table1.ID = "MC"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
         table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
@@ -10104,7 +10110,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         wdAutoFitWindow)
         
         table1.Select
-        table1.Id = "VQ"
+        table1.ID = "VQ"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
         table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
@@ -10786,7 +10792,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         wdAutoFitWindow)
         
         table1.Select
-        table1.Id = "MC"
+        table1.ID = "MC"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
         table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
@@ -11470,7 +11476,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         wdAutoFitWindow)
         
         table1.Select
-        table1.Id = "VQ"
+        table1.ID = "VQ"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
         table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
@@ -12096,3 +12102,62 @@ Selection.InsertBreak WdBreakType.wdPageBreak
 
 End Sub
 
+Public Function getobject(varobjectname As String) As OLEFormat
+'"Qno_" & QuestionNo & "_txt_Metadata_Search_keyword"
+For Each shp In ActiveDocument.InlineShapes
+    If shp.OLEFormat.Object.Name = varobjectname Then
+     Set getobject = shp.OLEFormat
+     Exit For
+    End If
+Next
+End Function
+
+
+
+Private Sub vba_code(objname As String)
+Dim sCode As String
+vartxtname = Replace(objname, "_cmd_", "_txt_")
+varlstname = Replace(objname, "_cmd_", "_lst_")
+
+sCode = sCode & "Private Sub " & objname & "_Click()" & vbCrLf
+sCode = sCode & "If Len(" & vartxtname & ".text" & ") >= 3 Then" & vbCrLf
+
+sCode = sCode & "Dim objHttp As Object" & vbCrLf
+
+sCode = sCode & "Set objHttp = CreateObject(""Msxml2.ServerXMLHTTP.6.0"")" & vbCrLf
+sCode = sCode & "varData = ""{""""clientCode"""" : """"impelsys"""" , """"secretKey"""" : """"impelsys#20#17"""" , """"email"""" : """"abdul.rahman@impelsys.com"""", """"firstName"""" : """"Abdul"""", """"lastName"""" : """"Rahman"""", """"clientUserId"""" : """"101""""}""" & vbCrLf
+
+sCode = sCode & "Call objHttp.Open(""POST"", ""http://qa-quizzingplatform.impelsys.com/api/authenticate"", False)" & vbCrLf
+sCode = sCode & "Call objHttp.setRequestHeader(""Content-Type"", ""application/json"")" & vbCrLf
+sCode = sCode & "Call objHttp.setRequestHeader(""Accept"", ""application/json"")" & vbCrLf
+sCode = sCode & "Call objHttp.send(varData)"
+sCode = sCode & "''Response.AddHeader ""Content-Type"", ""application/json;charset=UTF-8""" & vbCrLf
+sCode = sCode & "''Response.Charset = ""UTF-8"""
+sCode = sCode & "varKey = Replace(Replace(objHttp.responseText, ""{""""token"""":"""""", """"), """"""}"", """")" & vbCrLf
+
+sCode = sCode & "Call objHttp.Open(""GET"", ""http://qa-quizzingplatform.impelsys.com/api/products/110000/metadata/SC_01"", False)" & vbCrLf
+sCode = sCode & "Call objHttp.setRequestHeader(""Authorization"", varKey)" & vbCrLf
+sCode = sCode & "Call objHttp.send("""")" & vbCrLf
+sCode = sCode & "'JsonText = objHttp.responseText" & vbCrLf
+sCode = sCode & "JsonText = ""{""""totalMetadata"""":5,""""metadataType"""":""""HIERARCHY"""",""""metadata"""":[{""""id"""":1,""""name"""":""""HLLibrary"""",""""nodePath"""":""""HLLibrary""""},{""""id"""":2,""""name"""":""""HealthProfessional"""",""""nodePath"""":""""HLLibrary\HealthProfessional""""},{""""id"""":3,""""name"""":""""medicine"""",""""nodePath"""":""""HLLibrary\HealthProfessional\medicine""""},{""""id"""":5,""""name"""":""""surgery"""",""""nodePath"""":""""HLLibrary\HealthProfessional\medicine\surgery""""},{""""id"""":2,""""name"""":""""Medicaleducation"""",""""nodePath"""":""""HLLibrary\Medicaleducation""""},{""""id"""":3,""""name"""":""""ENT"""",""""nodePath"""":""""HLLibrary\Medicaleducation\ENT""""},{""""id"""":4,""""name"""":""""surgery"""",""""nodePath"""":""""HLLibrary\Medicaleducation\ENT\surgery""""},{""""id"""":6,""""name"""":""""Nursing"""",""""nodePath"""":""""HLLibrary\Nursing""""},{""""id"""":8,""""name"""":""""Diabetic"""",""""nodePath"""":""""HLLibrary\Nursing\Diabetic""""}" & _
+",{""""id"""":9,""""name"""":""""surgery"""",""""nodePath"""":""""HLLibrary\Nursing\Diabetic\surgery""""}]}""" & vbCrLf
+sCode = sCode & "Dim JSON As Object" & vbCrLf
+sCode = sCode & "Set JSON = JSONParser.ParseJson(Replace(JsonText, ""\"", ""\\""))" & vbCrLf
+sCode = sCode & "vari = 0" & vbCrLf
+sCode = sCode & varlstname & ".Clear" & vbCrLf
+sCode = sCode & varlstname & ".ColumnWidths = ""220;100;60""" & vbCrLf
+sCode = sCode & "For Each Value In JSON(""metadata"")" & vbCrLf
+    sCode = sCode & varlstname & ".AddItem" & vbCrLf
+    sCode = sCode & varlstname & ".List(vari, 0) = Value(""nodePath"")" & vbCrLf
+    sCode = sCode & varlstname & ".List(vari, 1) = Value(""name"")" & vbCrLf
+    sCode = sCode & varlstname & ".List(vari, 2) = Value(""id"")" & vbCrLf
+    sCode = sCode & "vari = vari + 1" & vbCrLf
+sCode = sCode & "Next" & vbCrLf
+
+sCode = sCode & "Else" & vbCrLf
+sCode = sCode & "MsgBox ""Search Key word minimum three character.."", vbCritical, ""WK Quizzing Platform""" & vbCrLf
+sCode = sCode & "End If" & vbCrLf
+ 
+ sCode = sCode & "End Sub"
+ActiveDocument.VBProject.VBComponents("ThisDocument").CodeModule.AddFromString sCode
+End Sub
