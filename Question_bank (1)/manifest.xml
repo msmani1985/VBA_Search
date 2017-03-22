@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<publisher-upload-manifest>
+<asset filename="allQuestions.xml" filepath = "E:\RandD\QB_Template\SVN\Release\Beta_2\allQuestions.xml" type="XML Document" />
+<asset filename="allQuestionsXSD.xml" filepath = "E:\RandD\QB_Template\SVN\Release\Beta_2\allQuestionsXSD.xml" type="XML Document" />
+<asset filename="Question_bank.docm" filepath = "E:\RandD\QB_Template\SVN\Release\Beta_2\Question_bank.docm" type="Microsoft Office Word Macro-Enabled Document" />
+<asset filename="XML_Error_Log.txt" filepath = "E:\RandD\QB_Template\SVN\Release\Beta_2\XML_Error_Log.txt" type="Text Document" />
+<asset filename="CD562117006a.jpg" filepath = "E:\RandD\QB_Template\SVN\Release\Beta_2\media\CD562117006a.jpg" type="JPEG Image" />
+<asset filename="MAH00308_Echoic.MP4" filepath = "E:\RandD\QB_Template\SVN\Release\Beta_2\media\MAH00308_Echoic.MP4" type="VLC media file (.mp4)" />
+<asset filename="QBF10208-003-001.jpg" filepath = "E:\RandD\QB_Template\SVN\Release\Beta_2\media\QBF10208-003-001.jpg" type="JPEG Image" />
+<asset filename="QBF10208-010-001.jpg" filepath = "E:\RandD\QB_Template\SVN\Release\Beta_2\media\QBF10208-010-001.jpg" type="JPEG Image" />
+<asset filename="QBF10208-014-001.jpg" filepath = "E:\RandD\QB_Template\SVN\Release\Beta_2\media\QBF10208-014-001.jpg" type="JPEG Image" />
+</publisher-upload-manifest>
