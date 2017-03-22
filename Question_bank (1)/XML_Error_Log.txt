@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 
 
 1. Validation succeeded for E:\RandD\QB_Template\SVN\Release\Beta_2\allQuestions.xml
 
+=======
+
+
+1. Validation succeeded for E:\RandD\QB_Template\SVN\Release\Beta_2\allQuestions.xml
+
+>>>>>>> e9c40b9244d0cb6d4592fc96b4ab564513f93837
