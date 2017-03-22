@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <publisher-upload-manifest>
-<asset filename="allQuestions.xml" filepath = "E:\RandD\QB_Template\SVN\Release\Beta_2\allQuestions.xml" type="XML Document" />
-<asset filename="allQuestionsXSD.xml" filepath = "E:\RandD\QB_Template\SVN\Release\Beta_2\allQuestionsXSD.xml" type="XML Document" />
-<asset filename="Question_bank.docm" filepath = "E:\RandD\QB_Template\SVN\Release\Beta_2\Question_bank.docm" type="Microsoft Office Word Macro-Enabled Document" />
-<asset filename="XML_Error_Log.txt" filepath = "E:\RandD\QB_Template\SVN\Release\Beta_2\XML_Error_Log.txt" type="Text Document" />
-<asset filename="CD562117006a.jpg" filepath = "E:\RandD\QB_Template\SVN\Release\Beta_2\media\CD562117006a.jpg" type="JPEG Image" />
-<asset filename="MAH00308_Echoic.MP4" filepath = "E:\RandD\QB_Template\SVN\Release\Beta_2\media\MAH00308_Echoic.MP4" type="VLC media file (.mp4)" />
-<asset filename="QBF10208-003-001.jpg" filepath = "E:\RandD\QB_Template\SVN\Release\Beta_2\media\QBF10208-003-001.jpg" type="JPEG Image" />
-<asset filename="QBF10208-010-001.jpg" filepath = "E:\RandD\QB_Template\SVN\Release\Beta_2\media\QBF10208-010-001.jpg" type="JPEG Image" />
-<asset filename="QBF10208-014-001.jpg" filepath = "E:\RandD\QB_Template\SVN\Release\Beta_2\media\QBF10208-014-001.jpg" type="JPEG Image" />
+<asset filename="allQuestions.xml" filepath = "C:\Subbu\VBA_Search\Question_bank\allQuestions.xml" type="Extensible Markup Language" />
+<asset filename="allQuestionsXSD.xml" filepath = "C:\Subbu\VBA_Search\Question_bank\allQuestionsXSD.xml" type="Extensible Markup Language" />
+<asset filename="Question_bank.docm" filepath = "C:\Subbu\VBA_Search\Question_bank\Question_bank.docm" type="Microsoft Word Macro-Enabled Document" />
+<asset filename="Question_bank_final.docm" filepath = "C:\Subbu\VBA_Search\Question_bank\Question_bank_final.docm" type="Microsoft Word Macro-Enabled Document" />
+<asset filename="test.bat1" filepath = "C:\Subbu\VBA_Search\Question_bank\test.bat1" type="BAT1 File" />
+<asset filename="unzip.txt" filepath = "C:\Subbu\VBA_Search\Question_bank\unzip.txt" type="Text file" />
+<asset filename="XML_Error_Log.txt" filepath = "C:\Subbu\VBA_Search\Question_bank\XML_Error_Log.txt" type="Text file" />
+<asset filename="zip.txt" filepath = "C:\Subbu\VBA_Search\Question_bank\zip.txt" type="Text file" />
+<asset filename="CD562117006a.jpg" filepath = "C:\Subbu\VBA_Search\Question_bank\media\CD562117006a.jpg" type="JPEG Image" />
+<asset filename="font.JPG" filepath = "C:\Subbu\VBA_Search\Question_bank\media\font.JPG" type="JPEG Image" />
+<asset filename="MAH00308_Echoic.MP4" filepath = "C:\Subbu\VBA_Search\Question_bank\media\MAH00308_Echoic.MP4" type="MP4 Video" />
+<asset filename="QBF10208-003-001.jpg" filepath = "C:\Subbu\VBA_Search\Question_bank\media\QBF10208-003-001.jpg" type="JPEG Image" />
+<asset filename="QBF10208-010-001.jpg" filepath = "C:\Subbu\VBA_Search\Question_bank\media\QBF10208-010-001.jpg" type="JPEG Image" />
+<asset filename="QBF10208-014-001.jpg" filepath = "C:\Subbu\VBA_Search\Question_bank\media\QBF10208-014-001.jpg" type="JPEG Image" />
 </publisher-upload-manifest>
