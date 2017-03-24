@@ -1,4 +1,498 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wk_question_root mode="C">
+    <wk_question identificationId="0" qtype="MC" qmode="C">
+        <question_type ucx="C" >Multiple Choice</question_type>
+        <question_title ucx="C">Demo</question_title>
+        <question_text ucx="C">What is the main way that carbon dioxide is transported in the blood?</question_text>
+        <question_multiple_choices qmcmode="C" tagtype="radioButton" >
+            <question_choice ucx="C" refId="">
+                <question_answer_text>In the form of bicarbonate ion</question_answer_text>
+                <question_rationale>Enter rationale for this answer</question_rationale>
+            </question_choice>
+            <question_choice ucx="C" refId="">
+                <question_answer_text>Dissolved in plasma</question_answer_text>
+                <question_rationale>Enter rationale for this answer</question_rationale>
+            </question_choice>
+            <question_choice ucx="C" refId="">
+                <question_answer_text>Bound to hemoglobin</question_answer_text>
+                <question_rationale>Enter rationale for this answer</question_rationale>
+            </question_choice>
+            <question_choice ucx="C" refId="">
+                <question_answer_text>None of the options are correct</question_answer_text>
+                <question_rationale>Enter rationale for this answer</question_rationale>
+            </question_choice>
+        </question_multiple_choices>
+        <correct_answer>1</correct_answer>
+        <question_score ucx="C">3</question_score>
+        <question_difficulty ucx="C" >3</question_difficulty>
+        <question_correct_rationale ucx="C">(Normal Physiology/Total Body Water and Compartments)</question_correct_rationale>
+        <question_incorrect_rationale ucx="C">(Normal Physiology/Total Body Water and Compartments)</question_incorrect_rationale>
+        <question_remediation_link qrlmode="C">
+            <remediation_type ucx="C" redLinkId="1" remediation_link_type="Web Link">
+                <remediation_type_text>Bound to hemoglobin</remediation_type_text>
+                <remediation_type_link>www.google.com</remediation_type_link>
+                <remediation_type_tooltip>Bound to hemoglobin</remediation_type_tooltip>
+            </remediation_type>
+             <remediation_type ucx="C" redLinkId="2" remediation_link_type="Ebook"></remediation_type>
+             <remediation_type ucx="C" redLinkId="3" remediation_link_type="Text">
+                <remediation_type_text>Bound to hemoglobin</remediation_type_text>
+            </remediation_type>
+        </question_remediation_link>
+        <question_meta_tag qmtmode="C">
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+        </question_meta_tag>
+    </wk_question>
+    <wk_question identificationId="0" qtype="CM" qmode="C">
+        <question_type ucx="C" >Choice Multiple</question_type>
+        <question_title ucx="C">Demo</question_title>
+        <question_text ucx="C">What is the term for the proportion of blood pumped out of the left ventricle with each beat?</question_text>
+        <question_choices_multiple qmcmode="C" tagtype="checkBox" >
+            <question_choice ucx="C" refId="">
+                <question_answer_text>Ejection fraction</question_answer_text>
+                <question_rationale>Enter rationale for this answer</question_rationale>
+            </question_choice>
+            <question_choice ucx="C" refId="">
+                <question_answer_text>Stroke volume</question_answer_text>
+                <question_rationale>Enter rationale for this answer</question_rationale>
+            </question_choice>
+            <question_choice ucx="C" refId="">
+                <question_answer_text>Cardiac output</question_answer_text>
+                <question_rationale>Enter rationale for this answer</question_rationale>
+            </question_choice>
+        </question_choices_multiple>
+        <correct_answer>1,3</correct_answer>
+        <question_score ucx="C">4</question_score>
+        <question_difficulty ucx="C" >3</question_difficulty>
+        <question_correct_rationale ucx="C">None of the options are correct</question_correct_rationale>
+        <question_incorrect_rationale ucx="C">None of the options are correct</question_incorrect_rationale>
+        <question_remediation_link qrlmode="C">
+            <remediation_type ucx="C" redLinkId="1" remediation_link_type="Web Link">
+                <remediation_type_text>Bound to hemoglobin</remediation_type_text>
+                <remediation_type_link>www.google.com</remediation_type_link>
+                <remediation_type_tooltip>Bound to hemoglobin</remediation_type_tooltip>
+            </remediation_type>
+             <remediation_type ucx="C" redLinkId="2" remediation_link_type="Ebook"></remediation_type>
+             <remediation_type ucx="C" redLinkId="3" remediation_link_type="Text">
+                <remediation_type_text>Bound to hemoglobin</remediation_type_text>
+            </remediation_type>
+        </question_remediation_link>
+        <question_meta_tag qmtmode="C">
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+        </question_meta_tag>
+    </wk_question>
+    <wk_question identificationId="0" qtype="TF" qmode="C">
+        <question_type ucx="C" >True / False</question_type>
+        <question_title ucx="C">Demo</question_title>
+        <question_text ucx="C">The lactate threshold represents the point where blood lactate begins to increase in a nonlinear fashion at a specific exercise intensity.</question_text>
+        <question_true_false qmcmode="C" tagtype="radioButton" >
+            <question_choice ucx="C" refId="">
+                <question_answer_text>True</question_answer_text>
+                <question_rationale>Enter rationale for this answer</question_rationale>
+            </question_choice>
+            <question_choice ucx="C" refId="">
+                <question_answer_text>False</question_answer_text>
+                <question_rationale>Enter rationale for this answer</question_rationale>
+            </question_choice>
+        </question_true_false>
+        <correct_answer>1</correct_answer>
+        <question_score ucx="C">3</question_score>
+        <question_difficulty ucx="C" >3</question_difficulty>
+        <question_correct_rationale ucx="C">(Normal Physiology/Total Body Water and Compartments)</question_correct_rationale>
+        <question_incorrect_rationale ucx="C">(Normal Physiology/Total Body Water and Compartments)</question_incorrect_rationale>
+        <question_remediation_link qrlmode="C">
+            <remediation_type ucx="C" redLinkId="1" remediation_link_type="Web Link">
+                <remediation_type_text>Bound to hemoglobin</remediation_type_text>
+                <remediation_type_link>www.google.com</remediation_type_link>
+                <remediation_type_tooltip>Bound to hemoglobin</remediation_type_tooltip>
+            </remediation_type>
+             <remediation_type ucx="C" redLinkId="2" remediation_link_type="Ebook"></remediation_type>
+             <remediation_type ucx="C" redLinkId="3" remediation_link_type="Text">
+                <remediation_type_text>Bound to hemoglobin</remediation_type_text>
+            </remediation_type>
+        </question_remediation_link>
+        <question_meta_tag qmtmode="C">
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+        </question_meta_tag>
+    </wk_question>
+    <wk_question identificationId="0" qtype="VQ" qmode="C">
+        <question_type ucx="C" >Video Questions</question_type>
+        <question_title ucx="C">Demo</question_title>
+        <question_text ucx="C">The handle on the cable should be pulled to a position:</question_text>
+        <question_video_questions qmcmode="C" tagtype="radioButton" >
+            <question_choice ucx="C" refId="">
+                <question_answer_text>Near the umbilicus</question_answer_text>
+                <question_rationale>Enter rationale for this answer</question_rationale>
+            </question_choice>
+            <question_choice ucx="C" refId="">
+                <question_answer_text>Near the sternum</question_answer_text>
+                <question_rationale>Enter rationale for this answer</question_rationale>
+            </question_choice>
+            <question_choice ucx="C" refId="">
+                <question_answer_text>Near the face</question_answer_text>
+                <question_rationale>Enter rationale for this answer</question_rationale>
+            </question_choice>
+        </question_video_questions>
+        <correct_answer>2</correct_answer>
+        <question_additional_fields uck="C" referencevalue="" mediaType="video">
+            <question_additional_file_path>media\MAH00308_Echoic.MP4</question_additional_file_path>
+        </question_additional_fields>
+        <question_score ucx="C">4</question_score>
+        <question_difficulty ucx="C" >4</question_difficulty>
+        <question_correct_rationale ucx="C">Gatifloxacin is a fluoroquinolone antibiotic that can't be mixed with other I.V. drugs.</question_correct_rationale>
+        <question_incorrect_rationale ucx="C">Gatifloxacin is a fluoroquinolone antibiotic that can't be mixed with other I.V. drugs.</question_incorrect_rationale>
+        <question_remediation_link qrlmode="C">
+            <remediation_type ucx="C" redLinkId="1" remediation_link_type="Web Link">
+                <remediation_type_text>Bound to hemoglobin</remediation_type_text>
+                <remediation_type_link>www.google.com</remediation_type_link>
+                <remediation_type_tooltip>Bound to hemoglobin</remediation_type_tooltip>
+            </remediation_type>
+             <remediation_type ucx="C" redLinkId="2" remediation_link_type="Ebook"></remediation_type>
+             <remediation_type ucx="C" redLinkId="3" remediation_link_type="Text">
+                <remediation_type_text>Bound to hemoglobin</remediation_type_text>
+            </remediation_type>
+        </question_remediation_link>
+        <question_meta_tag qmtmode="C">
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+        </question_meta_tag>
+    </wk_question>
+    <wk_question identificationId="0" qtype="II" qmode="C">
+        <question_type ucx="C" >Image Integration</question_type>
+        <question_title ucx="C">Demo</question_title>
+        <question_text ucx="C">A client is admitted to the emergency department with complains of nausea, vomiting, and severe diarrhea. The laboratory results have been documented in the client's chart (shown).</question_text>
+        <question_image_integration qmcmode="C" tagtype="radioButton" >
+            <question_choice ucx="C" refId="">
+                <question_answer_text>Metabolic alkalosis</question_answer_text>
+                <question_rationale>Enter rationale for this answer</question_rationale>
+            </question_choice>
+            <question_choice ucx="C" refId="">
+                <question_answer_text>Metabolic acidosis</question_answer_text>
+                <question_rationale>Enter rationale for this answer</question_rationale>
+            </question_choice>
+            <question_choice ucx="C" refId="">
+                <question_answer_text>Respiratory alkalosis</question_answer_text>
+                <question_rationale>Enter rationale for this answer</question_rationale>
+            </question_choice>
+        </question_image_integration>
+        <correct_answer>2</correct_answer>
+        <question_additional_fields uck="C" referencevalue="" mediaType="image">
+            <question_additional_file_path>media\CD562117006a.jpg</question_additional_file_path>
+        </question_additional_fields>
+        <question_score ucx="C">2</question_score>
+        <question_difficulty ucx="C" >2</question_difficulty>
+        <question_correct_rationale ucx="C">Metabolic alkalosis is indicated by a pH above 7.45, a partial pressure of arterial carbon dioxide</question_correct_rationale>
+        <question_incorrect_rationale ucx="C">Metabolic alkalosis is indicated by a pH above 7.45, a partial pressure of arterial carbon dioxide</question_incorrect_rationale>
+        <question_remediation_link qrlmode="C">
+            <remediation_type ucx="C" redLinkId="1" remediation_link_type="Web Link">
+                <remediation_type_text>Bound to hemoglobin</remediation_type_text>
+                <remediation_type_link>www.google.com</remediation_type_link>
+                <remediation_type_tooltip>Bound to hemoglobin</remediation_type_tooltip>
+            </remediation_type>
+             <remediation_type ucx="C" redLinkId="2" remediation_link_type="Ebook"></remediation_type>
+             <remediation_type ucx="C" redLinkId="3" remediation_link_type="Text">
+                <remediation_type_text>Bound to hemoglobin</remediation_type_text>
+            </remediation_type>
+        </question_remediation_link>
+        <question_meta_tag qmtmode="C">
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+        </question_meta_tag>
+    </wk_question>
+    <wk_question identificationId="0" qtype="GO" qmode="C">
+        <question_type ucx="C" >Graphic Option</question_type>
+        <question_title ucx="C">Demo</question_title>
+        <question_text ucx="C">A client is admitted to the emergency department with complains of nausea, vomiting, and severe diarrhea. The laboratory results have been documented in the client's chart (shown). The nurse understands that this information is a manifestation of what findings?</question_text>
+        <question_graphic_option qmcmode="C" tagtype="radioButton" >
+            <question_choice ucx="C" refId="">
+        <question_additional_fields uck="C" referencevalue="" mediaType="image">
+            <question_additional_file_path>media\QBF10208-003-001.jpg</question_additional_file_path>
+        </question_additional_fields>
+                <question_rationale>Enter rationale for this answer</question_rationale>
+            </question_choice>
+            <question_choice ucx="C" refId="">
+        <question_additional_fields uck="C" referencevalue="" mediaType="image">
+            <question_additional_file_path>media\QBF10208-014-001.jpg</question_additional_file_path>
+        </question_additional_fields>
+                <question_rationale>Enter rationale for this answer</question_rationale>
+            </question_choice>
+            <question_choice ucx="C" refId="">
+        <question_additional_fields uck="C" referencevalue="" mediaType="image">
+            <question_additional_file_path>media\QBF10208-014-001.jpg</question_additional_file_path>
+        </question_additional_fields>
+                <question_rationale>Enter rationale for this answer</question_rationale>
+            </question_choice>
+        </question_graphic_option>
+        <correct_answer>2</correct_answer>
+        <question_score ucx="C">5</question_score>
+        <question_difficulty ucx="C" >4</question_difficulty>
+        <question_correct_rationale ucx="C">Metabolic alkalosis is indicated by a pH above 7.45, a partial pressure of arterial carbon dioxide</question_correct_rationale>
+        <question_incorrect_rationale ucx="C">Metabolic alkalosis is indicated by a pH above 7.45, a partial pressure of arterial carbon dioxide</question_incorrect_rationale>
+        <question_remediation_link qrlmode="C">
+            <remediation_type ucx="C" redLinkId="1" remediation_link_type="Web Link">
+                <remediation_type_text>Bound to hemoglobin</remediation_type_text>
+                <remediation_type_link>www.google.com</remediation_type_link>
+                <remediation_type_tooltip>Bound to hemoglobin</remediation_type_tooltip>
+            </remediation_type>
+             <remediation_type ucx="C" redLinkId="2" remediation_link_type="Ebook"></remediation_type>
+             <remediation_type ucx="C" redLinkId="3" remediation_link_type="Text">
+                <remediation_type_text>Bound to hemoglobin</remediation_type_text>
+            </remediation_type>
+        </question_remediation_link>
+        <question_meta_tag qmtmode="C">
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+        </question_meta_tag>
+    </wk_question>
+    <wk_question identificationId="0" qtype="CS" qmode="C">
+        <question_type ucx="C" >Clinical Symptoms</question_type>
+        <question_title ucx="C">Demo</question_title>
+        <question_text ucx="C">The case study method often involves simply observing what happens to, or reconstructing &#x201C;the case history&#x201D; of a single participant or group of individuals (such as a school class or a specific social group), i.e. the idiographic approach. Case studies allow a researcher to investigate a topic in far more detail than might be possible if they were trying to deal with a large number of research participants (nomothetic approach) with the aim of &#x201C;averaging&#x201D;.</question_text>
+        <question_additional_fields uck="C" referencevalue="" mediaType="image">
+            <question_additional_file_path>media\QBF10208-014-001.jpg</question_additional_file_path>
+        </question_additional_fields>
+        <question_meta_tag qmtmode="C">
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+        </question_meta_tag>
+        <question_cs_sub_questions>
+        <cs_sub_question identificationId="0" qtype="MC" qmode="C">
+            <cs_sub_question_type ucx="C" >Multiple Choice</cs_sub_question_type>
+            <cs_sub_question_title ucx="C">Demo</cs_sub_question_title>
+            <cs_sub_question_text ucx="C">NCLEX is the term for the proportion of blood pumped out of the left ventricle with each beat?</cs_sub_question_text>
+            <cs_sub_question_multiple_choices qmcmode="C" tagtype="radioButton" >
+                <cs_sub_question_choice ucx="C" refId="">
+                    <cs_sub_question_answer_text>Cardiac</cs_sub_question_answer_text>
+                    <cs_sub_question_rationale>Enter rationale for this answer</cs_sub_question_rationale>
+                </cs_sub_question_choice>
+                <cs_sub_question_choice ucx="C" refId="">
+                    <cs_sub_question_answer_text>Stroke volume</cs_sub_question_answer_text>
+                    <cs_sub_question_rationale>Enter rationale for this answer</cs_sub_question_rationale>
+                </cs_sub_question_choice>
+                <cs_sub_question_choice ucx="C" refId="">
+                    <cs_sub_question_answer_text>Cardiac PaCO<sub>2</sub></cs_sub_question_answer_text>
+                    <cs_sub_question_rationale>Enter rationale for this answer</cs_sub_question_rationale>
+                </cs_sub_question_choice>
+            </cs_sub_question_multiple_choices>
+            <cs_sub_correct_answer>2</cs_sub_correct_answer>
+            <cs_sub_question_score ucx="C">3</cs_sub_question_score>
+            <cs_sub_question_difficulty ucx="C" >3</cs_sub_question_difficulty>
+            <cs_sub_question_correct_rationale ucx="C">(Normal Physiology/Total Body Water and Compartments)</cs_sub_question_correct_rationale>
+            <cs_sub_question_incorrect_rationale ucx="C">(Normal Physiology/Total Body Water and Compartments)</cs_sub_question_incorrect_rationale>
+            <cs_sub_question_remediation_link qrlmode="C">
+                <cs_sub_remediation_type ucx="C" redLinkId="1" remediation_link_type="Web Link">
+                    <cs_sub_remediation_type_text>Bound to hemoglobin</cs_sub_remediation_type_text>
+                    <cs_sub_remediation_type_link>www.google.com</cs_sub_remediation_type_link>
+                    <cs_sub_remediation_type_tooltip>Bound to hemoglobin</cs_sub_remediation_type_tooltip>
+                </cs_sub_remediation_type>
+                 <cs_sub_remediation_type ucx="C" redLinkId="2" remediation_link_type="Ebook"></cs_sub_remediation_type>
+                 <cs_sub_remediation_type ucx="C" redLinkId="3" remediation_link_type="Text">
+                    <cs_sub_remediation_type_text>Bound to hemoglobin</cs_sub_remediation_type_text>
+                </cs_sub_remediation_type>
+            </cs_sub_question_remediation_link>
+            </cs_sub_question>
+        <cs_sub_question identificationId="0" qtype="CM" qmode="C">
+            <cs_sub_question_type ucx="C" >Choice Multiple</cs_sub_question_type>
+            <cs_sub_question_title ucx="C">Demo</cs_sub_question_title>
+            <cs_sub_question_text ucx="C">What is the main way that oxygen is transported in the blood?</cs_sub_question_text>
+            <cs_sub_question_choices_multiple qmcmode="C" tagtype="checkBox" >
+                <cs_sub_question_choice ucx="C" refId="">
+                    <cs_sub_question_answer_text>Bound to hemoglobin</cs_sub_question_answer_text>
+                    <cs_sub_question_rationale>Enter rationale for this answer</cs_sub_question_rationale>
+                </cs_sub_question_choice>
+                <cs_sub_question_choice ucx="C" refId="">
+                    <cs_sub_question_answer_text>In the form of bicarbonate ion</cs_sub_question_answer_text>
+                    <cs_sub_question_rationale>Enter rationale for this answer</cs_sub_question_rationale>
+                </cs_sub_question_choice>
+                <cs_sub_question_choice ucx="C" refId="">
+                    <cs_sub_question_answer_text>Dissolved in plasma</cs_sub_question_answer_text>
+                    <cs_sub_question_rationale>Enter rationale for this answer</cs_sub_question_rationale>
+                </cs_sub_question_choice>
+            </cs_sub_question_choices_multiple>
+            <cs_sub_correct_answer></cs_sub_correct_answer>
+            <cs_sub_question_score ucx="C">4</cs_sub_question_score>
+            <cs_sub_question_difficulty ucx="C" >4</cs_sub_question_difficulty>
+            <cs_sub_question_correct_rationale ucx="C">(Hypophosphatemia)</cs_sub_question_correct_rationale>
+            <cs_sub_question_incorrect_rationale ucx="C">(Hypophosphatemia)</cs_sub_question_incorrect_rationale>
+            <cs_sub_question_remediation_link qrlmode="C">
+                <cs_sub_remediation_type ucx="C" redLinkId="1" remediation_link_type="Web Link">
+                    <cs_sub_remediation_type_text>Bound to hemoglobin</cs_sub_remediation_type_text>
+                    <cs_sub_remediation_type_link>www.google.com</cs_sub_remediation_type_link>
+                    <cs_sub_remediation_type_tooltip>Bound to hemoglobin</cs_sub_remediation_type_tooltip>
+                </cs_sub_remediation_type>
+                 <cs_sub_remediation_type ucx="C" redLinkId="2" remediation_link_type="Ebook"></cs_sub_remediation_type>
+                 <cs_sub_remediation_type ucx="C" redLinkId="3" remediation_link_type="Text">
+                    <cs_sub_remediation_type_text>Bound to hemoglobin</cs_sub_remediation_type_text>
+                </cs_sub_remediation_type>
+            </cs_sub_question_remediation_link>
+            </cs_sub_question>
+        </question_cs_sub_questions>
+        </wk_question>
+    <wk_question identificationId="0" qtype="MEDC" qmode="C">
+        <question_type ucx="C" >Medical Case</question_type>
+        <question_title ucx="C">Demo</question_title>
+        <question_text ucx="C">The case study method often involves simply observing what happens to, or reconstructing &#x201C;the case history&#x201D; of a single participant or group of individuals (such as a school class or a specific social group), i.e. the idiographic approach. Case studies allow a researcher to investigate a topic in far more detail than might be possible if they were trying to deal with a large number of research participants (nomothetic approach) with the aim of &#x201C;averaging&#x201D;.</question_text>
+        <question_additional_fields uck="C" referencevalue="" mediaType="image">
+            <question_additional_file_path>media\QBF10208-010-001.jpg</question_additional_file_path>
+        </question_additional_fields>
+        <question_meta_tag qmtmode="C">
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+            <meta_tag ucx="C" metaTagId="">
+                <meta_tag_type>Select your metadata tag</meta_tag_type>
+                <meta_tag_value>Click here to enter text.</meta_tag_value>
+            </meta_tag>
+        </question_meta_tag>
+        <question_cs_sub_questions>
+        <cs_sub_question identificationId="0" qtype="MC" qmode="C">
+            <cs_sub_question_type ucx="C" >Multiple Choice</cs_sub_question_type>
+            <cs_sub_question_title ucx="C">Demo</cs_sub_question_title>
+            <cs_sub_question_text ucx="C">A client is admitted to the emergency department with complains of nausea, vomiting, and severe diarrhea. The laboratory results have been documented in the client's chart (shown).</cs_sub_question_text>
+            <cs_sub_question_multiple_choices qmcmode="C" tagtype="radioButton" >
+                <cs_sub_question_choice ucx="C" refId="">
+                    <cs_sub_question_answer_text>Metabolic alkalosis</cs_sub_question_answer_text>
+                    <cs_sub_question_rationale>Enter rationale for this answer</cs_sub_question_rationale>
+                </cs_sub_question_choice>
+                <cs_sub_question_choice ucx="C" refId="">
+                    <cs_sub_question_answer_text>Metabolic acidosis</cs_sub_question_answer_text>
+                    <cs_sub_question_rationale>Enter rationale for this answer</cs_sub_question_rationale>
+                </cs_sub_question_choice>
+                <cs_sub_question_choice ucx="C" refId="">
+                    <cs_sub_question_answer_text>Respiratory alkalosis</cs_sub_question_answer_text>
+                    <cs_sub_question_rationale>Enter rationale for this answer</cs_sub_question_rationale>
+                </cs_sub_question_choice>
+            </cs_sub_question_multiple_choices>
+            <cs_sub_correct_answer>2</cs_sub_correct_answer>
+            <cs_sub_question_score ucx="C">4</cs_sub_question_score>
+            <cs_sub_question_difficulty ucx="C" >4</cs_sub_question_difficulty>
+            <cs_sub_question_correct_rationale ucx="C">Metabolic alkalosis is indicated by a pH above 7.45, a partial pressure of arterial carbon dioxide</cs_sub_question_correct_rationale>
+            <cs_sub_question_incorrect_rationale ucx="C">Metabolic alkalosis is indicated by a pH above 7.45, a partial pressure of arterial carbon dioxide</cs_sub_question_incorrect_rationale>
+            <cs_sub_question_remediation_link qrlmode="C">
+                <cs_sub_remediation_type ucx="C" redLinkId="1" remediation_link_type="Web Link">
+                    <cs_sub_remediation_type_text>Bound to hemoglobin</cs_sub_remediation_type_text>
+                    <cs_sub_remediation_type_link>www.google.com</cs_sub_remediation_type_link>
+                    <cs_sub_remediation_type_tooltip>Bound to hemoglobin</cs_sub_remediation_type_tooltip>
+                </cs_sub_remediation_type>
+                 <cs_sub_remediation_type ucx="C" redLinkId="2" remediation_link_type="Ebook"></cs_sub_remediation_type>
+                 <cs_sub_remediation_type ucx="C" redLinkId="3" remediation_link_type="Text">
+                    <cs_sub_remediation_type_text>Bound to hemoglobin</cs_sub_remediation_type_text>
+                </cs_sub_remediation_type>
+            </cs_sub_question_remediation_link>
+            </cs_sub_question>
+        <cs_sub_question identificationId="0" qtype="CM" qmode="C">
+            <cs_sub_question_type ucx="C" >Choice Multiple</cs_sub_question_type>
+            <cs_sub_question_title ucx="C">Demo</cs_sub_question_title>
+            <cs_sub_question_text ucx="C">Place these steps in order for the administration of I.V. gatifloxacin.</cs_sub_question_text>
+            <cs_sub_question_choices_multiple qmcmode="C" tagtype="checkBox" >
+                <cs_sub_question_choice ucx="C" refId="">
+                    <cs_sub_question_answer_text>Stop other I.V. drugs being infused at the same site.</cs_sub_question_answer_text>
+                    <cs_sub_question_rationale>Enter rationale for this answer</cs_sub_question_rationale>
+                </cs_sub_question_choice>
+                <cs_sub_question_choice ucx="C" refId="">
+                    <cs_sub_question_answer_text>Check the client's allergies and the physician's order.</cs_sub_question_answer_text>
+                    <cs_sub_question_rationale>Enter rationale for this answer</cs_sub_question_rationale>
+                </cs_sub_question_choice>
+                <cs_sub_question_choice ucx="C" refId="">
+                    <cs_sub_question_answer_text>Wash your hands.</cs_sub_question_answer_text>
+                    <cs_sub_question_rationale>Enter rationale for this answer</cs_sub_question_rationale>
+                </cs_sub_question_choice>
+            </cs_sub_question_choices_multiple>
+            <cs_sub_correct_answer></cs_sub_correct_answer>
+            <cs_sub_question_score ucx="C">4</cs_sub_question_score>
+            <cs_sub_question_difficulty ucx="C" >4</cs_sub_question_difficulty>
+            <cs_sub_question_correct_rationale ucx="C">Gatifloxacin is a fluoroquinolone antibiotic that can't be mixed with other I.V. drugs.</cs_sub_question_correct_rationale>
+            <cs_sub_question_incorrect_rationale ucx="C">Gatifloxacin is a fluoroquinolone antibiotic that can't be mixed with other I.V. drugs.</cs_sub_question_incorrect_rationale>
+            <cs_sub_question_remediation_link qrlmode="C">
+                <cs_sub_remediation_type ucx="C" redLinkId="1" remediation_link_type="Web Link">
+                    <cs_sub_remediation_type_text>Bound to hemoglobin</cs_sub_remediation_type_text>
+                    <cs_sub_remediation_type_link>www.google.com</cs_sub_remediation_type_link>
+                    <cs_sub_remediation_type_tooltip>Bound to hemoglobin</cs_sub_remediation_type_tooltip>
+                </cs_sub_remediation_type>
+                 <cs_sub_remediation_type ucx="C" redLinkId="2" remediation_link_type="Ebook"></cs_sub_remediation_type>
+                 <cs_sub_remediation_type ucx="C" redLinkId="3" remediation_link_type="Text">
+                    <cs_sub_remediation_type_text>Bound to hemoglobin</cs_sub_remediation_type_text>
+                </cs_sub_remediation_type>
+            </cs_sub_question_remediation_link>
+            </cs_sub_question>
+        </question_cs_sub_questions>
+        </wk_question>
 </wk_question_root>
 
