@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wk_question_root mode="C">
-</wk_question_root>
-
+    <wk_question identificationId="0" qtype="MC" qmode="C">
+        <question_type ucx="C" >Multiple Choice</question_type>
+        <question_title ucx="C">safdsfds</question_title>
+        <question_text ucx="C">dsafdsfdsfdsf</question_text>
+        <question_multiple_choices qmcmode="C" tagtype="radioButton" >
+            <question_choice ucx="C" refId="">
+                <question_answer_text>sadfdsfdsf</question_answer_text>
+                <question_rationale>sdafdsfdsf</question_rationale>
+            </question_choice>
+        </question_multiple_choices>
+        <correct_answer>1</correct_answer>
+        <question_score ucx="C">2</question_score>
+        <question_difficulty ucx="C" >3</question_difficulty>
+        <question_correct_rationale ucx="C">sdafdsfd</question_correct_rationale>
+        <question_incorrect_rationale ucx="C">dsafdsf</question_incorrect_rationale>
+<question_remediation_link qrlmode="C"><remediation_type ucx="C" redLinkId="1" remediation_link_type="Web Link"><remediation_type_text>sdafdsf</remediation_type_text><remediation_type_link>dafdsf</remediation_type_link><remediation_type_tooltip></remediation_type_tooltip></remediation_type><remediation_type ucx="C" redLinkId="1" remediation_link_type="EBook"><remediation_type_text>sdafsdfs</remediation_type_text></remediation_type><remediation_type ucx="C" redLinkId="1" remediation_link_type="Text"><remediation_type_text>Dsadsafsdfsdf</remediation_type_text></remediation_type></question_remediation_link>
