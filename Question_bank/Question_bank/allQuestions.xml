@@ -1,36 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<wk_question_root mode="C">
-    <wk_question identificationId="0" qtype="CS" qmode="C">
-        <question_type ucx="C" >Clinical Symptoms</question_type>
-        <question_title ucx="C">sdafsdfsdd</question_title>
-        <question_text ucx="C">adsfsdfsdfsd</question_text>
-        <question_additional_fields uck="C" referencevalue="" mediaType="image">
-            <question_additional_file_path>media\CIMG1942.JPG</question_additional_file_path>
-        </question_additional_fields>
-<question_meta_tag qmtmode="C">            <meta_tag ucx="C" metaTagId="">                  <meta_tag_type>Free Text</meta_tag_type>                  <meta_tag_value>afsdfsdf</meta_tag_value>              </meta_tag> <meta_tag ucx="C" metaTagId="1">
- <meta_tag_type>HealthLibrary</meta_tag_type>
-<meta_tag_value>HealthLibrary</meta_tag_value>
-</meta_tag> <meta_tag ucx="C" metaTagId="2">
- <meta_tag_type>Medicine</meta_tag_type>
-<meta_tag_value>HealthLibrary\Medicine</meta_tag_value>
-</meta_tag></question_meta_tag>
-        <question_cs_sub_questions>
-    <cs_sub_question identificationId="0" qtype="MC" qmode="C">
-            <cs_sub_question_type ucx="C" >Multiple Choice</cs_sub_question_type>
-            <cs_sub_question_title ucx="C">dafsdfdsf</cs_sub_question_title>
-            <cs_sub_question_text ucx="C">sdafsdfsd</cs_sub_question_text>
-            <cs_sub_question_multiple_choices qmcmode="C" tagtype="radioButton" >
-                <cs_sub_question_choice ucx="C" refId="">
-                    <cs_sub_question_answer_text>adfsdfsd</cs_sub_question_answer_text>
-                    <cs_sub_question_rationale>dsafsdf</cs_sub_question_rationale>
-                </cs_sub_question_choice>
-            <cs_sub_question_correct_rationale ucx="C">sdafsdfsdf</cs_sub_question_correct_rationale>
-            <cs_sub_question_incorrect_rationale ucx="C">sdafsdfsd</cs_sub_question_incorrect_rationale>
-            </cs_sub_question>
-            </cs_sub_question_multiple_choices>
-            <cs_sub_correct_answer>1</cs_sub_correct_answer>
-            <cs_sub_question_score ucx="C">6</cs_sub_question_score>
-            <cs_sub_question_difficulty ucx="C" >8</cs_sub_question_difficulty>
-<cs_sub_question_remediation_link qrlmode="C"><cs_sub_remediation_type ucx="C" redLinkId="1" remediation_link_type="Web Link"><cs_sub_remediation_type_text>dasfsdf</remediation_type_text><cs_sub_remediation_type_link>dasfsdf</remediation_type_link><cs_sub_remediation_type_tooltip></remediation_type_tooltip></cs_sub_remediation_type><cs_sub_remediation_type ucx="C" redLinkId="1" remediation_link_type="EBook"><cs_sub_remediation_type_text>sdafsdf</remediation_type_text></cs_sub_remediation_type><cs_sub_remediation_type ucx="C" redLinkId="1" remediation_link_type="Text"><cs_sub_remediation_type_text>dafdsfs</remediation_type_text></cs_sub_remediation_type></cs_sub_question_remediation_link>
-</wk_question_root>
-
