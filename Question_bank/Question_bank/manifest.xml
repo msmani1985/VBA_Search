@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<publisher-upload-manifest>
+<asset filename="allQuestions.xml" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\allQuestions.xml" type="XML Document" />
+<asset filename="allQuestionsXSD.xml" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\allQuestionsXSD.xml" type="XML Document" />
+<asset filename="config.ini" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\config.ini" type="Configuration settings" />
+<asset filename="Dictionary.cls" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\Dictionary.cls" type="CLS File" />
+<asset filename="JSONParser.bas" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\JSONParser.bas" type="BAS File" />
+<asset filename="NewMacros.bas" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\NewMacros.bas" type="BAS File" />
+<asset filename="Question_bank.docm" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\Question_bank.docm" type="Microsoft Word Macro-Enabled Document" />
+<asset filename="Question_bank1.docm" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\Question_bank1.docm" type="Microsoft Word Macro-Enabled Document" />
+<asset filename="Question_bank_final.docm" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\Question_bank_final.docm" type="Microsoft Word Macro-Enabled Document" />
+<asset filename="test.bat1" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\test.bat1" type="BAT1 File" />
+<asset filename="unzip.txt" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\unzip.txt" type="Text Document" />
+<asset filename="XML_Error_Log.txt" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\XML_Error_Log.txt" type="Text Document" />
+<asset filename="zip.txt" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\zip.txt" type="Text Document" />
+<asset filename="CD562117006a.jpg" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\media\CD562117006a.jpg" type="JPG File" />
+<asset filename="CIMG1942.JPG" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\media\CIMG1942.JPG" type="JPG File" />
+<asset filename="CIMG1946.JPG" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\media\CIMG1946.JPG" type="JPG File" />
+<asset filename="MAH00308_Echoic.MP4" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\media\MAH00308_Echoic.MP4" type="MP4 File" />
+<asset filename="QBF10208-003-001.jpg" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\media\QBF10208-003-001.jpg" type="JPG File" />
+<asset filename="QBF10208-010-001.jpg" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\media\QBF10208-010-001.jpg" type="JPG File" />
+<asset filename="QBF10208-014-001.jpg" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\media\QBF10208-014-001.jpg" type="JPG File" />
+</publisher-upload-manifest>
