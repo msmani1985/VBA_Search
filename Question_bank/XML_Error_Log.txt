@@ -2,8 +2,8 @@
 
 1. Validation failed on D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\allQuestions.xml
 =====================
-Reason: End tag 'cs_sub_question' does not match the start tag 'cs_sub_question_multiple_choices'.
+Reason: End tag 'question_meta_tag' does not match the start tag 'wk_question'.
 
-Source:             </cs_sub_question>
+Source:         </question_meta_tag>
 Line: 37
 
