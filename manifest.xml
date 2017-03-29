@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<publisher-upload-manifest>
+<asset filename="allQuestions.xml" filepath = "C:\Subbu\VBA_Search\allQuestions.xml" type="Extensible Markup Language" />
+<asset filename="bsdr64.cls" filepath = "C:\Subbu\VBA_Search\bsdr64.cls" type="LaTeX Style File" />
+<asset filename="config.ini" filepath = "C:\Subbu\VBA_Search\config.ini" type="Configuration Settings" />
+<asset filename="Dictionary.cls" filepath = "C:\Subbu\VBA_Search\Dictionary.cls" type="LaTeX Style File" />
+<asset filename="example.json" filepath = "C:\Subbu\VBA_Search\example.json" type="JavaScript Object Notation" />
+<asset filename="imageconversion.sh" filepath = "C:\Subbu\VBA_Search\imageconversion.sh" type="Shell Script" />
+<asset filename="JSON.bas" filepath = "C:\Subbu\VBA_Search\JSON.bas" type="Visual Basic Module" />
+<asset filename="JsonConverter.bas" filepath = "C:\Subbu\VBA_Search\JsonConverter.bas" type="Visual Basic Module" />
+<asset filename="JSONParser.bas" filepath = "C:\Subbu\VBA_Search\JSONParser.bas" type="Visual Basic Module" />
+<asset filename="jsontocsv.bas" filepath = "C:\Subbu\VBA_Search\jsontocsv.bas" type="Visual Basic Module" />
+<asset filename="JSON_Parser.bas" filepath = "C:\Subbu\VBA_Search\JSON_Parser.bas" type="Visual Basic Module" />
+<asset filename="JSON_Parser.bas--" filepath = "C:\Subbu\VBA_Search\JSON_Parser.bas--" type="BAS-- File" />
+<asset filename="NewMacros.bas" filepath = "C:\Subbu\VBA_Search\NewMacros.bas" type="Visual Basic Module" />
+<asset filename="Question_bank (1).docm" filepath = "C:\Subbu\VBA_Search\Question_bank (1).docm" type="Microsoft Word Macro-Enabled Document" />
+<asset filename="Question_bank--.docm" filepath = "C:\Subbu\VBA_Search\Question_bank--.docm" type="Microsoft Word Macro-Enabled Document" />
+<asset filename="Question_bank.docm" filepath = "C:\Subbu\VBA_Search\Question_bank.docm" type="Microsoft Word Macro-Enabled Document" />
+<asset filename="Question_bank.dotm" filepath = "C:\Subbu\VBA_Search\Question_bank.dotm" type="Microsoft Word Macro-Enabled Template" />
+<asset filename="Question_bank.dotx" filepath = "C:\Subbu\VBA_Search\Question_bank.dotx" type="Microsoft Word Template" />
+<asset filename="Question_bankdfadsfs.docm" filepath = "C:\Subbu\VBA_Search\Question_bankdfadsfs.docm" type="Microsoft Word Macro-Enabled Document" />
+<asset filename="Question_bankdsafdsfsfsfsdf.docm" filepath = "C:\Subbu\VBA_Search\Question_bankdsafdsfsfsfsdf.docm" type="Microsoft Word Macro-Enabled Document" />
+<asset filename="Question_bank_1.docm" filepath = "C:\Subbu\VBA_Search\Question_bank_1.docm" type="Microsoft Word Macro-Enabled Document" />
+<asset filename="test.bat1" filepath = "C:\Subbu\VBA_Search\test.bat1" type="BAT1 File" />
+<asset filename="Test.csv" filepath = "C:\Subbu\VBA_Search\Test.csv" type="Microsoft Excel Comma Separated Values File" />
+<asset filename="Untitled-1.bas" filepath = "C:\Subbu\VBA_Search\Untitled-1.bas" type="Visual Basic Module" />
+<asset filename="UserForm1.frm" filepath = "C:\Subbu\VBA_Search\UserForm1.frm" type="Visual Basic Form File" />
+<asset filename="UserForm1.frx" filepath = "C:\Subbu\VBA_Search\UserForm1.frx" type="Microsoft Visual FoxPro Report" />
+<asset filename="XML_Error_Log.txt" filepath = "C:\Subbu\VBA_Search\XML_Error_Log.txt" type="Text file" />
+<asset filename="123.jpg" filepath = "C:\Subbu\VBA_Search\media\123.jpg" type="JPEG Image" />
+<asset filename="a.jpg" filepath = "C:\Subbu\VBA_Search\media\a.jpg" type="JPEG Image" />
+</publisher-upload-manifest>

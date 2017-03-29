@@ -168,7 +168,7 @@ Public Sub Super_Find()
         .Execute Replace:=wdReplaceAll
     End With
     
-    Selection.HomeKey unit:=wdStory
+    Selection.HomeKey Unit:=wdStory
     Selection.Find.ClearFormatting
     Do
         With Selection.Find
@@ -284,7 +284,7 @@ Public Sub Find_small()
         .Replacement.Font.SmallCaps = 0
         .Execute Replace:=wdReplaceAll
     End With
-    Selection.HomeKey unit:=wdStory
+    Selection.HomeKey Unit:=wdStory
     Selection.Find.ClearFormatting
     Do
     With Selection.Find
@@ -314,7 +314,7 @@ Public Sub find_sub()
         .Replacement.Font.Subscript = 0
         .Execute Replace:=wdReplaceAll
     End With
-    Selection.HomeKey unit:=wdStory
+    Selection.HomeKey Unit:=wdStory
     Selection.Find.ClearFormatting
     Do
         With Selection.Find
@@ -524,20 +524,20 @@ Sub ReplaceBullets()
                     Else
                     'r.InsertBefore Text:="</ul><li>"
                     r.InsertBefore Text:="<li>"
-                    Selection.EndOf unit:=wdParagraph, Extend:=wdExtend
+                    Selection.EndOf Unit:=wdParagraph, Extend:=wdExtend
                     Selection.EndKey
                     Selection.Text = "</li></ul>"
-                    Selection.EndKey unit:=wdLine
+                    Selection.EndKey Unit:=wdLine
                 End If
             Else
             If InStr(oPara.Range.Previous(wdParagraph, 1).Text, "<li>") Then
               '  r.InsertBefore Text:="<lib>"
                     If oPara.Range.Next(wdParagraph, 1).ListFormat.ListType = wdListBullet Then
                     r.InsertBefore Text:="<li>"
-                    Selection.EndOf unit:=wdParagraph, Extend:=wdExtend
+                    Selection.EndOf Unit:=wdParagraph, Extend:=wdExtend
                     Selection.EndKey
                     Selection.Text = "</li>"
-                    Selection.EndKey unit:=wdLine
+                    Selection.EndKey Unit:=wdLine
                     Else
 '                     r.InsertBefore Text:="<li>"
 '                    Selection.EndKey Unit:=wdLine
@@ -545,24 +545,24 @@ Sub ReplaceBullets()
 '                    Selection.Text = "</li></ul"
                     r.Select
                     r.InsertBefore Text:="<li>"
-                    Selection.EndOf unit:=wdParagraph, Extend:=wdExtend
+                    Selection.EndOf Unit:=wdParagraph, Extend:=wdExtend
                     Selection.EndKey
                     Selection.Text = "</li></ul>"
-                    Selection.EndKey unit:=wdLine
+                    Selection.EndKey Unit:=wdLine
                     
                   '  r.InsertBefore Text:="</ul><li>"
                 End If
                 Else
                 
                 r.InsertBefore Text:="<ul><li>"
-                Selection.EndOf unit:=wdParagraph, Extend:=wdExtend
+                Selection.EndOf Unit:=wdParagraph, Extend:=wdExtend
                     Selection.EndKey
                     If oPara.Range.Next(wdParagraph, 1).ListFormat.ListType = wdListBullet Then
                     Selection.Text = "</li>"
                     Else
                      Selection.Text = "</li></ul>"
                      End If
-                Selection.EndKey unit:=wdLine
+                Selection.EndKey Unit:=wdLine
                 
                 'oPara.Range.Text = "</li>"
                 'Selection.Text = "</li>"
@@ -612,20 +612,20 @@ Dim r As Range
                     Else
                     'r.InsertBefore Text:="</ul><li>"
                     r.InsertBefore Text:="<li>"
-                    Selection.EndOf unit:=wdParagraph, Extend:=wdExtend
+                    Selection.EndOf Unit:=wdParagraph, Extend:=wdExtend
                     Selection.EndKey
                     Selection.Text = "</li></ol>"
-                    Selection.EndKey unit:=wdLine
+                    Selection.EndKey Unit:=wdLine
                 End If
             Else
             If InStr(oPara.Range.Previous(wdParagraph, 1).Text, "<li>") Then
               '  r.InsertBefore Text:="<lib>"
                     If oPara.Range.Next(wdParagraph, 1).ListFormat.ListType = wdListSimpleNumbering Then
                     r.InsertBefore Text:="<li>"
-                    Selection.EndOf unit:=wdParagraph, Extend:=wdExtend
+                    Selection.EndOf Unit:=wdParagraph, Extend:=wdExtend
                     Selection.EndKey
                     Selection.Text = "</li>"
-                    Selection.EndKey unit:=wdLine
+                    Selection.EndKey Unit:=wdLine
                     Else
 '                     r.InsertBefore Text:="<li>"
 '                    Selection.EndKey Unit:=wdLine
@@ -633,17 +633,17 @@ Dim r As Range
 '                    Selection.Text = "</li></ul"
                     r.Select
                     r.InsertBefore Text:="<li>"
-                    Selection.EndOf unit:=wdParagraph, Extend:=wdExtend
+                    Selection.EndOf Unit:=wdParagraph, Extend:=wdExtend
                     Selection.EndKey
                     Selection.Text = "</li></ol>"
-                    Selection.EndKey unit:=wdLine
+                    Selection.EndKey Unit:=wdLine
                     
                   '  r.InsertBefore Text:="</ul><li>"
                 End If
                 Else
                 
                 r.InsertBefore Text:="<ol><li>"
-                Selection.EndOf unit:=wdParagraph, Extend:=wdExtend
+                Selection.EndOf Unit:=wdParagraph, Extend:=wdExtend
                     Selection.EndKey
                     If oPara.Range.Next(wdParagraph, 1).ListFormat.ListType = wdListSimpleNumbering Then
                     Selection.Text = "</li>"
@@ -651,7 +651,7 @@ Dim r As Range
                      Selection.Text = "</li></ol>"
                      startno = startno + 1
                      End If
-                Selection.EndKey unit:=wdLine
+                Selection.EndKey Unit:=wdLine
                 
                 'oPara.Range.Text = "</li>"
                 'Selection.Text = "</li>"
@@ -744,7 +744,7 @@ For Each para In ActiveDocument.Paragraphs
             tagtype = "checkBox"
         ElseIf InStr(para.Range.Text, "True or Fasle") Then
             questiontype = "TF"
-            questiontypename = "True / False"
+            questiontypename = "True False"
             tagtype = "radioButton"
         ElseIf InStr(para.Range.Text, "Video Questions") Then
             questiontype = "VQ"
@@ -794,15 +794,11 @@ For Each para In ActiveDocument.Paragraphs
                         
                                 varcontent1 = Replace(Replace(Replace(Replace(Replace(Replace(para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Text, Chr(13), ""), vbTab, ""), Chr(10), ""), Chr(11), ""), Chr(7), ""), "", "")
                                  
-                                If para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Delete_box" Then
-                                    varCheckboxvalue = ActiveDocument.FormFields("Delete_" & QuestionNo).CheckBox.Value
-                                    If varCheckboxvalue = True Then GoTo E222:
-                                End If
+                                
                                 If questiontype = "MC" And varSpecialType = False Then
                                         varSpecialType = False
                                         If para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Type" Then
-                                            varIdentificationId = Replace(Replace(para.Range.Tables(vartabl).Rows(varrow + 1).Cells(varcol + 1).Range.Text, "Identification Id: ", ""), "", "")
-                                            Print #99, "    <wk_question identificationId=""" & varIdentificationId & """ qtype=""" & questiontype & """ qmode=""C"">"
+                                            Print #99, "    <wk_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
                                             Print #99, "        <question_type ucx=""C"" >" & questiontypename & "</question_type>"
                                         ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Title" Then
                                             Print #99, "        <question_title ucx=""C"">" & varcontent1 & "</question_title>"
@@ -828,20 +824,16 @@ For Each para In ActiveDocument.Paragraphs
                                             Print #99, "        <question_incorrect_rationale ucx=""C"">" & varcontent1 & "</question_incorrect_rationale>"
                                             Print #99, "        <question_remediation_link qrlmode=""C"">"
                                         ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Text" Then
-                                            Print #99, "            <remediation_type ucx=""C"" redLinkId=""1"" remediation_link_type=""Web Link"">"
+                                            Print #99, "            <remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Web-link"">"
                                             Print #99, "                <remediation_type_text>" & varcontent1 & "</remediation_type_text>"
                                         ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Link" Then
-                                                'If InStr(varcontent1, "http") Then
-                                                'Else
-                                                'varcontent1 = "http://" & varcontent1
-                                                'End If
                                             Print #99, "                <remediation_type_link>" & varcontent1 & "</remediation_type_link>"
                                         ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Tooltip" Then
                                             Print #99, "                <remediation_type_tooltip>" & varcontent1 & "</remediation_type_tooltip>"
                                             Print #99, "            </remediation_type>"
-                                            Print #99, "             <remediation_type ucx=""C"" redLinkId=""2"" remediation_link_type=""Ebook""></remediation_type>"
+                                            Print #99, "             <remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Ebook""></remediation_type>"
                                         ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Text_Remediation_Text" Then
-                                            Print #99, "             <remediation_type ucx=""C"" redLinkId=""3"" remediation_link_type=""Text"">"
+                                            Print #99, "             <remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Text"">"
                                             Print #99, "                <remediation_type_text>" & varcontent1 & "</remediation_type_text>"
                                             Print #99, "            </remediation_type>"
                                         ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Meta_Data_Attributes_head" Then
@@ -856,10 +848,8 @@ For Each para In ActiveDocument.Paragraphs
                                         End If
                                  ElseIf questiontype = "MC" And varSpecialType = True Then
                                         If para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Type" Then
-                                            varIdentificationId = Replace(Replace(para.Range.Tables(vartabl).Rows(varrow + 1).Cells(varcol + 1).Range.Text, "Identification Id: ", ""), "", "")
-                                            Print #99, "    <cs_sub_question identificationId=""" & varIdentificationId & """ qtype=""" & questiontype & """ qmode=""C"">"
-                                            'Print #99, "        <cs_sub_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
-                                            Print #99, "            <cs_sub_question_type ucx=""C"" >" & questiontypename & "</cs_sub_question_type>"
+                                            Print #99, "        <cs_sub_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
+                                            'Print #99, "            <question_type ucx=""C"" >" & questiontypename & "</question_type>"
                                         ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Title" Then
                                             Print #99, "            <cs_sub_question_title ucx=""C"">" & varcontent1 & "</cs_sub_question_title>"
                                         ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Text" Then
@@ -884,16 +874,16 @@ For Each para In ActiveDocument.Paragraphs
                                             Print #99, "            <cs_sub_question_incorrect_rationale ucx=""C"">" & varcontent1 & "</cs_sub_question_incorrect_rationale>"
                                             Print #99, "            <cs_sub_question_remediation_link qrlmode=""C"">"
                                         ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Text" Then
-                                            Print #99, "                <cs_sub_remediation_type ucx=""C"" redLinkId=""1"" remediation_link_type=""Web Link"">"
+                                            Print #99, "                <cs_sub_remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Web-link"">"
                                             Print #99, "                    <cs_sub_remediation_type_text>" & varcontent1 & "</cs_sub_remediation_type_text>"
                                         ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Link" Then
                                             Print #99, "                    <cs_sub_remediation_type_link>" & varcontent1 & "</cs_sub_remediation_type_link>"
                                         ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Tooltip" Then
                                             Print #99, "                    <cs_sub_remediation_type_tooltip>" & varcontent1 & "</cs_sub_remediation_type_tooltip>"
                                             Print #99, "                </cs_sub_remediation_type>"
-                                            Print #99, "                 <cs_sub_remediation_type ucx=""C"" redLinkId=""2"" remediation_link_type=""Ebook""></cs_sub_remediation_type>"
+                                            Print #99, "                 <cs_sub_remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Ebook""></cs_sub_remediation_type>"
                                         ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Text_Remediation_Text" Then
-                                            Print #99, "                 <cs_sub_remediation_type ucx=""C"" redLinkId=""3"" remediation_link_type=""Text"">"
+                                            Print #99, "                 <cs_sub_remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Text"">"
                                             Print #99, "                    <cs_sub_remediation_type_text>" & varcontent1 & "</cs_sub_remediation_type_text>"
                                             Print #99, "                </cs_sub_remediation_type>"
                                             Print #99, "            </cs_sub_question_remediation_link>"
@@ -902,9 +892,7 @@ For Each para In ActiveDocument.Paragraphs
                                 ElseIf questiontype = "CM" And varSpecialType = False Then
                                     varSpecialType = False
                                     If para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Type" Then
-                                            varIdentificationId = Replace(Replace(para.Range.Tables(vartabl).Rows(varrow + 1).Cells(varcol + 1).Range.Text, "Identification Id: ", ""), "", "")
-                                            Print #99, "    <wk_question identificationId=""" & varIdentificationId & """ qtype=""" & questiontype & """ qmode=""C"">"
-                                            'Print #99, "    <wk_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
+                                            Print #99, "    <wk_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
                                             Print #99, "        <question_type ucx=""C"" >" & questiontypename & "</question_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Title" Then
                                         Print #99, "        <question_title ucx=""C"">" & varcontent1 & "</question_title>"
@@ -922,7 +910,7 @@ For Each para In ActiveDocument.Paragraphs
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Correct_Answer" Then
                                         'ActiveDocument.FormFields("Check1").CheckBox.Value
                                         varcorrectcm = "<span1>"
-                                        For K = 1 To para.Range.Tables(vartabl).Rows.Count - 23
+                                        For K = 1 To para.Range.Tables(vartabl).Rows.Count - 22
                                             varCheckboxvalue = ActiveDocument.FormFields("Check_" & QuestionNo & "_" & K).CheckBox.Value
                                             If varCheckboxvalue = True Then
                                                 varcorrectcm = Replace(varcorrectcm, "<span1>", K & ",<span1>")
@@ -940,16 +928,16 @@ For Each para In ActiveDocument.Paragraphs
                                         Print #99, "        <question_incorrect_rationale ucx=""C"">" & varcontent1 & "</question_incorrect_rationale>"
                                         Print #99, "        <question_remediation_link qrlmode=""C"">"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Text" Then
-                                        Print #99, "            <remediation_type ucx=""C"" redLinkId=""1"" remediation_link_type=""Web Link"">"
+                                        Print #99, "            <remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Web-link"">"
                                         Print #99, "                <remediation_type_text>" & varcontent1 & "</remediation_type_text>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Link" Then
                                         Print #99, "                <remediation_type_link>" & varcontent1 & "</remediation_type_link>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Tooltip" Then
                                         Print #99, "                <remediation_type_tooltip>" & varcontent1 & "</remediation_type_tooltip>"
                                         Print #99, "            </remediation_type>"
-                                        Print #99, "             <remediation_type ucx=""C"" redLinkId=""2"" remediation_link_type=""Ebook""></remediation_type>"
+                                        Print #99, "             <remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Ebook""></remediation_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Text_Remediation_Text" Then
-                                        Print #99, "             <remediation_type ucx=""C"" redLinkId=""3"" remediation_link_type=""Text"">"
+                                        Print #99, "             <remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Text"">"
                                         Print #99, "                <remediation_type_text>" & varcontent1 & "</remediation_type_text>"
                                         Print #99, "            </remediation_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Meta_Data_Attributes_head" Then
@@ -964,10 +952,8 @@ For Each para In ActiveDocument.Paragraphs
                                     End If
                                 ElseIf questiontype = "CM" And varSpecialType = True Then
                                     If para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Type" Then
-                                            varIdentificationId = Replace(Replace(para.Range.Tables(vartabl).Rows(varrow + 1).Cells(varcol + 1).Range.Text, "Identification Id: ", ""), "", "")
-                                            Print #99, "    <cs_sub_question identificationId=""" & varIdentificationId & """ qtype=""" & questiontype & """ qmode=""C"">"
-                                            'Print #99, "        <cs_sub_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
-                                            Print #99, "            <cs_sub_question_type ucx=""C"" >" & questiontypename & "</cs_sub_question_type>"
+                                            Print #99, "        <cs_sub_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
+                                            'Print #99, "            <question_type ucx=""C"" >" & questiontypename & "</question_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Title" Then
                                         Print #99, "            <cs_sub_question_title ucx=""C"">" & varcontent1 & "</cs_sub_question_title>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Text" Then
@@ -984,7 +970,7 @@ For Each para In ActiveDocument.Paragraphs
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Correct_Answer" Then
                                         'ActiveDocument.FormFields("Check1").CheckBox.Value
                                         varcorrectcm = "<span1>"
-                                        For K = 1 To para.Range.Tables(vartabl).Rows.Count - 23
+                                        For K = 1 To para.Range.Tables(vartabl).Rows.Count - 22
                                             varCheckboxvalue = ActiveDocument.FormFields("Check_" & QuestionNo & "_" & K).CheckBox.Value
                                             If varCheckboxvalue = True Then
                                                 varcorrectcm = Replace(varcorrectcm, "<span1>", K & ",<span1>")
@@ -1002,16 +988,16 @@ For Each para In ActiveDocument.Paragraphs
                                         Print #99, "            <cs_sub_question_incorrect_rationale ucx=""C"">" & varcontent1 & "</cs_sub_question_incorrect_rationale>"
                                         Print #99, "            <cs_sub_question_remediation_link qrlmode=""C"">"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Text" Then
-                                        Print #99, "                <cs_sub_remediation_type ucx=""C"" redLinkId=""1"" remediation_link_type=""Web Link"">"
+                                        Print #99, "                <cs_sub_remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Web-link"">"
                                         Print #99, "                    <cs_sub_remediation_type_text>" & varcontent1 & "</cs_sub_remediation_type_text>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Link" Then
                                         Print #99, "                    <cs_sub_remediation_type_link>" & varcontent1 & "</cs_sub_remediation_type_link>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Tooltip" Then
                                         Print #99, "                    <cs_sub_remediation_type_tooltip>" & varcontent1 & "</cs_sub_remediation_type_tooltip>"
                                         Print #99, "                </cs_sub_remediation_type>"
-                                        Print #99, "                 <cs_sub_remediation_type ucx=""C"" redLinkId=""2"" remediation_link_type=""Ebook""></cs_sub_remediation_type>"
+                                        Print #99, "                 <cs_sub_remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Ebook""></cs_sub_remediation_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Text_Remediation_Text" Then
-                                        Print #99, "                 <cs_sub_remediation_type ucx=""C"" redLinkId=""3"" remediation_link_type=""Text"">"
+                                        Print #99, "                 <cs_sub_remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Text"">"
                                         Print #99, "                    <cs_sub_remediation_type_text>" & varcontent1 & "</cs_sub_remediation_type_text>"
                                         Print #99, "                </cs_sub_remediation_type>"
                                         Print #99, "            </cs_sub_question_remediation_link>"
@@ -1020,9 +1006,7 @@ For Each para In ActiveDocument.Paragraphs
                                 ElseIf (questiontype = "TF") Then
                                     varSpecialType = False
                                     If para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Type" Then
-                                            varIdentificationId = Replace(Replace(para.Range.Tables(vartabl).Rows(varrow + 1).Cells(varcol + 1).Range.Text, "Identification Id: ", ""), "", "")
-                                            Print #99, "    <wk_question identificationId=""" & varIdentificationId & """ qtype=""" & questiontype & """ qmode=""C"">"
-                                            'Print #99, "    <wk_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
+                                            Print #99, "    <wk_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
                                             Print #99, "        <question_type ucx=""C"" >" & questiontypename & "</question_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Title" Then
                                         Print #99, "        <question_title ucx=""C"">" & varcontent1 & "</question_title>"
@@ -1053,16 +1037,16 @@ For Each para In ActiveDocument.Paragraphs
                                         Print #99, "        <question_incorrect_rationale ucx=""C"">" & varcontent1 & "</question_incorrect_rationale>"
                                         Print #99, "        <question_remediation_link qrlmode=""C"">"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Text" Then
-                                        Print #99, "            <remediation_type ucx=""C"" redLinkId=""1"" remediation_link_type=""Web Link"">"
+                                        Print #99, "            <remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Web-link"">"
                                         Print #99, "                <remediation_type_text>" & varcontent1 & "</remediation_type_text>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Link" Then
                                         Print #99, "                <remediation_type_link>" & varcontent1 & "</remediation_type_link>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Tooltip" Then
                                         Print #99, "                <remediation_type_tooltip>" & varcontent1 & "</remediation_type_tooltip>"
                                         Print #99, "            </remediation_type>"
-                                        Print #99, "             <remediation_type ucx=""C"" redLinkId=""2"" remediation_link_type=""Ebook""></remediation_type>"
+                                        Print #99, "             <remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Ebook""></remediation_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Text_Remediation_Text" Then
-                                        Print #99, "             <remediation_type ucx=""C"" redLinkId=""3"" remediation_link_type=""Text"">"
+                                        Print #99, "             <remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Text"">"
                                         Print #99, "                <remediation_type_text>" & varcontent1 & "</remediation_type_text>"
                                         Print #99, "            </remediation_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Meta_Data_Attributes_head" Then
@@ -1079,9 +1063,7 @@ For Each para In ActiveDocument.Paragraphs
                                     'On Error Resume Next
                                     varSpecialType = False
                                     If para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Type" Then
-                                            varIdentificationId = Replace(Replace(para.Range.Tables(vartabl).Rows(varrow + 1).Cells(varcol + 1).Range.Text, "Identification Id: ", ""), "", "")
-                                            Print #99, "    <wk_question identificationId=""" & varIdentificationId & """ qtype=""" & questiontype & """ qmode=""C"">"
-                                            'Print #99, "    <wk_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
+                                            Print #99, "    <wk_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
                                             Print #99, "        <question_type ucx=""C"" >" & questiontypename & "</question_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Title" Then
                                         Print #99, "        <question_title ucx=""C"">" & varcontent1 & "</question_title>"
@@ -1098,19 +1080,10 @@ For Each para In ActiveDocument.Paragraphs
                                         Print #99, "        </question_video_questions>"
                                         Print #99, "        <correct_answer>" & varcontent1 & "</correct_answer>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Additional_file_path" Then
-                                        
-                                        If UCase(FSO.GetExtensionName(varcontent1)) = "JPGE" Or UCase(FSO.GetExtensionName(varcontent1)) = "JPG" Then
-                                            varMediaType = "image"
-                                        ElseIf UCase(FSO.GetExtensionName(varcontent1)) = "MP4" Then
-                                            varMediaType = "video"
-                                        ElseIf UCase(FSO.GetExtensionName(varcontent1)) = "MP3" Then
-                                            varMediaType = "audio"
-                                        End If
-                                        
-                                        'Print #99, "            <question_choice ucx=""C"" refId="""">"
-                                        Print #99, "        <question_additional_fields uck=""C"" referencevalue="""" mediaType=""" & varMediaType & """>"
+                                        Print #99, "        <question_additional_fields uck=""C"" referencevalue="""">"
                                         Print #99, "            <question_additional_file_path>media\" & varcontent1 & "</question_additional_file_path>"
                                         Print #99, "        </question_additional_fields>"
+                                        
                                         If FSO.FolderExists(ActiveDocument.Path & "\media") = False Then
                                             Print #35, vbCrLf
                                             varmsgtext = varerrorno & ". " & varcontent1 & " - This file is not available in the media folder"
@@ -1128,16 +1101,16 @@ For Each para In ActiveDocument.Paragraphs
                                         Print #99, "        <question_incorrect_rationale ucx=""C"">" & varcontent1 & "</question_incorrect_rationale>"
                                         Print #99, "        <question_remediation_link qrlmode=""C"">"
                                    ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Text" Then
-                                        Print #99, "            <remediation_type ucx=""C"" redLinkId=""1"" remediation_link_type=""Web Link"">"
+                                        Print #99, "            <remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Web-link"">"
                                         Print #99, "                <remediation_type_text>" & varcontent1 & "</remediation_type_text>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Link" Then
                                         Print #99, "                <remediation_type_link>" & varcontent1 & "</remediation_type_link>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Tooltip" Then
                                         Print #99, "                <remediation_type_tooltip>" & varcontent1 & "</remediation_type_tooltip>"
                                         Print #99, "            </remediation_type>"
-                                        Print #99, "             <remediation_type ucx=""C"" redLinkId=""2"" remediation_link_type=""Ebook""></remediation_type>"
+                                        Print #99, "             <remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Ebook""></remediation_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Text_Remediation_Text" Then
-                                        Print #99, "             <remediation_type ucx=""C"" redLinkId=""3"" remediation_link_type=""Text"">"
+                                        Print #99, "             <remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Text"">"
                                         Print #99, "                <remediation_type_text>" & varcontent1 & "</remediation_type_text>"
                                         Print #99, "            </remediation_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Meta_Data_Attributes_head" Then
@@ -1155,9 +1128,7 @@ For Each para In ActiveDocument.Paragraphs
                                     'On Error Resume Next
                                     varSpecialType = False
                                     If para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Type" Then
-                                            varIdentificationId = Replace(Replace(para.Range.Tables(vartabl).Rows(varrow + 1).Cells(varcol + 1).Range.Text, "Identification Id: ", ""), "", "")
-                                            Print #99, "    <wk_question identificationId=""" & varIdentificationId & """ qtype=""" & questiontype & """ qmode=""C"">"
-                                            'Print #99, "    <wk_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
+                                            Print #99, "    <wk_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
                                             Print #99, "        <question_type ucx=""C"" >" & questiontypename & "</question_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Title" Then
                                         Print #99, "        <question_title ucx=""C"">" & varcontent1 & "</question_title>"
@@ -1165,17 +1136,8 @@ For Each para In ActiveDocument.Paragraphs
                                         Print #99, "        <question_text ucx=""C"">" & varcontent1 & "</question_text>"
                                         Print #99, "        <question_graphic_option qmcmode=""C"" tagtype=""" & tagtype & """ >"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Additional_file_path" Then
-                                        
-                                        If UCase(FSO.GetExtensionName(varcontent1)) = "JPGE" Or UCase(FSO.GetExtensionName(varcontent1)) = "JPG" Then
-                                            varMediaType = "image"
-                                        ElseIf UCase(FSO.GetExtensionName(varcontent1)) = "MP4" Then
-                                            varMediaType = "video"
-                                        ElseIf UCase(FSO.GetExtensionName(varcontent1)) = "MP3" Then
-                                            varMediaType = "audio"
-                                        End If
-                                        
                                         Print #99, "            <question_choice ucx=""C"" refId="""">"
-                                        Print #99, "        <question_additional_fields uck=""C"" referencevalue="""" mediaType=""" & varMediaType & """>"
+                                        Print #99, "        <question_additional_fields uck=""C"" referencevalue="""">"
                                         Print #99, "            <question_additional_file_path>media\" & varcontent1 & "</question_additional_file_path>"
                                         Print #99, "        </question_additional_fields>"
                                         
@@ -1216,22 +1178,24 @@ For Each para In ActiveDocument.Paragraphs
                                         Print #99, "        <question_incorrect_rationale ucx=""C"">" & varcontent1 & "</question_incorrect_rationale>"
                                         Print #99, "        <question_remediation_link qrlmode=""C"">"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Text" Then
-                                        Print #99, "            <remediation_type ucx=""C"" redLinkId=""1"" remediation_link_type=""Web Link"">"
+                                        Print #99, "            <remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Web-link"">"
                                         Print #99, "                <remediation_type_text>" & varcontent1 & "</remediation_type_text>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Link" Then
                                         Print #99, "                <remediation_type_link>" & varcontent1 & "</remediation_type_link>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Tooltip" Then
                                         Print #99, "                <remediation_type_tooltip>" & varcontent1 & "</remediation_type_tooltip>"
                                         Print #99, "            </remediation_type>"
-                                        Print #99, "             <remediation_type ucx=""C"" redLinkId=""2"" remediation_link_type=""Ebook""></remediation_type>"
+                                        Print #99, "             <remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Ebook""></remediation_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Text_Remediation_Text" Then
-                                        Print #99, "             <remediation_type ucx=""C"" redLinkId=""3"" remediation_link_type=""Text"">"
+                                        Print #99, "             <remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Text"">"
                                         Print #99, "                <remediation_type_text>" & varcontent1 & "</remediation_type_text>"
                                         Print #99, "            </remediation_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Meta_Data_Attributes_head" Then
                                         Print #99, "        </question_remediation_link>"
                                         Print #99, "        <question_meta_tag qmtmode=""C"">"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "METADATA_TAG" Then
+                                       
+                                        
                                         Print #99, "            <meta_tag ucx=""C"" metaTagId="""">"
                                         Print #99, "                <meta_tag_type>" & varcontent1 & "</meta_tag_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "METADATA_VALUE" Then
@@ -1243,9 +1207,7 @@ For Each para In ActiveDocument.Paragraphs
                                     'On Error Resume Next
                                     varSpecialType = False
                                     If para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Type" Then
-                                            varIdentificationId = Replace(Replace(para.Range.Tables(vartabl).Rows(varrow + 1).Cells(varcol + 1).Range.Text, "Identification Id: ", ""), "", "")
-                                            Print #99, "    <wk_question identificationId=""" & varIdentificationId & """ qtype=""" & questiontype & """ qmode=""C"">"
-                                            'Print #99, "    <wk_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
+                                            Print #99, "    <wk_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
                                             Print #99, "        <question_type ucx=""C"" >" & questiontypename & "</question_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Title" Then
                                         Print #99, "        <question_title ucx=""C"">" & varcontent1 & "</question_title>"
@@ -1263,16 +1225,9 @@ For Each para In ActiveDocument.Paragraphs
                                         Print #99, "        <correct_answer>" & varcontent1 & "</correct_answer>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Additional_file_path" Then
                                      
-                                        If UCase(FSO.GetExtensionName(varcontent1)) = "JPGE" Or UCase(FSO.GetExtensionName(varcontent1)) = "JPG" Then
-                                            varMediaType = "image"
-                                        ElseIf UCase(FSO.GetExtensionName(varcontent1)) = "MP4" Then
-                                            varMediaType = "video"
-                                        ElseIf UCase(FSO.GetExtensionName(varcontent1)) = "MP3" Then
-                                            varMediaType = "audio"
-                                        End If
                                         
-                                        'Print #99, "            <question_choice ucx=""C"" refId="""">"
-                                        Print #99, "        <question_additional_fields uck=""C"" referencevalue="""" mediaType=""" & varMediaType & """>"
+                                        'para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.InlineShapes(1).LinkFormat.SourceFullName
+                                        Print #99, "        <question_additional_fields uck=""C"" referencevalue="""">"
                                         Print #99, "            <question_additional_file_path>media\" & varcontent1 & "</question_additional_file_path>"
                                         Print #99, "        </question_additional_fields>"
                                         
@@ -1293,16 +1248,16 @@ For Each para In ActiveDocument.Paragraphs
                                         Print #99, "        <question_incorrect_rationale ucx=""C"">" & varcontent1 & "</question_incorrect_rationale>"
                                         Print #99, "        <question_remediation_link qrlmode=""C"">"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Text" Then
-                                        Print #99, "            <remediation_type ucx=""C"" redLinkId=""1"" remediation_link_type=""Web Link"">"
+                                        Print #99, "            <remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Web-link"">"
                                         Print #99, "                <remediation_type_text>" & varcontent1 & "</remediation_type_text>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Link" Then
                                         Print #99, "                <remediation_type_link>" & varcontent1 & "</remediation_type_link>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Web_Remediation_Tooltip" Then
                                         Print #99, "                <remediation_type_tooltip>" & varcontent1 & "</remediation_type_tooltip>"
                                         Print #99, "            </remediation_type>"
-                                        Print #99, "             <remediation_type ucx=""C"" redLinkId=""2"" remediation_link_type=""Ebook""></remediation_type>"
+                                        Print #99, "             <remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Ebook""></remediation_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Text_Remediation_Text" Then
-                                        Print #99, "             <remediation_type ucx=""C"" redLinkId=""3"" remediation_link_type=""Text"">"
+                                        Print #99, "             <remediation_type ucx=""C"" redLinkId="""" remediation_link_type=""Text"">"
                                         Print #99, "                <remediation_type_text>" & varcontent1 & "</remediation_type_text>"
                                         Print #99, "            </remediation_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Meta_Data_Attributes_head" Then
@@ -1320,29 +1275,14 @@ For Each para In ActiveDocument.Paragraphs
                                     'varCloseTag = True
                                     varSpecialType = True
                                     If para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Type" Then
-                                            varIdentificationId = Replace(Replace(para.Range.Tables(vartabl).Rows(varrow + 1).Cells(varcol + 1).Range.Text, "Identification Id: ", ""), "", "")
-                                            Print #99, "    <wk_question identificationId=""" & varIdentificationId & """ qtype=""" & questiontype & """ qmode=""C"">"
-                                            'Print #99, "    <wk_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
+                                            Print #99, "    <wk_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
                                             Print #99, "        <question_type ucx=""C"" >" & questiontypename & "</question_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Title" Then
                                         Print #99, "        <question_title ucx=""C"">" & varcontent1 & "</question_title>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Text" Then
                                         Print #99, "        <question_text ucx=""C"">" & varcontent1 & "</question_text>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Additional_file_path" Then
-                                       If UCase(FSO.GetExtensionName(varcontent1)) = "JPGE" Or UCase(FSO.GetExtensionName(varcontent1)) = "JPG" Then
-                                            varMediaType = "image"
-                                        ElseIf UCase(FSO.GetExtensionName(varcontent1)) = "MP4" Then
-                                            varMediaType = "video"
-                                        ElseIf UCase(FSO.GetExtensionName(varcontent1)) = "MP3" Then
-                                            varMediaType = "audio"
-                                        End If
-                                        
-                                        'Print #99, "            <question_choice ucx=""C"" refId="""">"
-                                        Print #99, "        <question_additional_fields uck=""C"" referencevalue="""" mediaType=""" & varMediaType & """>"
-                                        Print #99, "            <question_additional_file_path>media\" & varcontent1 & "</question_additional_file_path>"
-                                        Print #99, "        </question_additional_fields>"
-                                    
-                                        'Print #99, "        <question_additional_fields ucx=""C"">" & varcontent1 & "</question_additional_fields>"
+                                        Print #99, "        <question_additional_fields ucx=""C"">" & varcontent1 & "</question_additional_fields>"
                                         If FSO.FolderExists(ActiveDocument.Path & "\media") = False Then
                                             Print #35, vbCrLf
                                             varmsgtext = varerrorno & ". " & varcontent1 & " - This file is not available in the media folder"
@@ -1367,27 +1307,14 @@ For Each para In ActiveDocument.Paragraphs
                                     If para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Type" Then
                                             'Print #99, "        </question_cs_sub_questions>"
                                             'Print #99, "    </wk_question>"
-                                            varIdentificationId = Replace(Replace(para.Range.Tables(vartabl).Rows(varrow + 1).Cells(varcol + 1).Range.Text, "Identification Id: ", ""), "", "")
-                                            Print #99, "    <wk_question identificationId=""" & varIdentificationId & """ qtype=""" & questiontype & """ qmode=""C"">"
-                                            'Print #99, "    <wk_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
+                                            Print #99, "    <wk_question identificationId=""0"" qtype=""" & questiontype & """ qmode=""C"">"
                                             Print #99, "        <question_type ucx=""C"" >" & questiontypename & "</question_type>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Title" Then
                                         Print #99, "        <question_title ucx=""C"">" & varcontent1 & "</question_title>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Question_Text" Then
                                         Print #99, "        <question_text ucx=""C"">" & varcontent1 & "</question_text>"
                                     ElseIf para.Range.Tables(vartabl).Rows(varrow).Cells(varcol).Range.Style = "Additional_file_path" Then
-                                        If UCase(FSO.GetExtensionName(varcontent1)) = "JPGE" Or UCase(FSO.GetExtensionName(varcontent1)) = "JPG" Then
-                                            varMediaType = "image"
-                                        ElseIf UCase(FSO.GetExtensionName(varcontent1)) = "MP4" Then
-                                            varMediaType = "video"
-                                        ElseIf UCase(FSO.GetExtensionName(varcontent1)) = "MP3" Then
-                                            varMediaType = "audio"
-                                        End If
-                                        
-                                        'Print #99, "            <question_choice ucx=""C"" refId="""">"
-                                        Print #99, "        <question_additional_fields uck=""C"" referencevalue="""" mediaType=""" & varMediaType & """>"
-                                        Print #99, "            <question_additional_file_path>media\" & varcontent1 & "</question_additional_file_path>"
-                                        Print #99, "        </question_additional_fields>"
+                                        Print #99, "        <question_additional_fields ucx=""C"">" & varcontent1 & "</question_additional_fields>"
                                         If FSO.FolderExists(ActiveDocument.Path & "\media") = False Then
                                             Print #35, vbCrLf
                                             varmsgtext = varerrorno & ". " & varcontent1 & " - This file is not available in the media folder"
@@ -1425,7 +1352,6 @@ For Each para In ActiveDocument.Paragraphs
                     'Print #99, "        </wk_question>"
                ' End If
                 QuestionNo = QuestionNo + 1
-E222:
                 'End If
             End If
         End If
@@ -1452,22 +1378,22 @@ End Sub
 Sub ValidateFile(strFile)
     'Create an XML DOMDocument object.
     'MsgBox ("here")
-    Dim X As New DOMDocument
+    Dim x As New DOMDocument
     'Load and validate the specified file into the DOM.
-    X.async = False
-    X.validateOnParse = True
-    X.resolveExternals = True
-    X.Load strFile
+    x.async = False
+    x.validateOnParse = True
+    x.resolveExternals = True
+    x.Load strFile
     'Return validation results in message to the user.
-    If X.parseError.ErrorCode <> 0 Then
+    If x.parseError.ErrorCode <> 0 Then
         ValidateFile1 = "Validation failed on " & _
                        strFile & vbCrLf & _
                        "=====================" & vbCrLf & _
-                       "Reason: " & X.parseError.reason & _
+                       "Reason: " & x.parseError.reason & _
                        vbCrLf & "Source: " & _
-                       X.parseError.srcText & _
+                       x.parseError.srcText & _
                        vbCrLf & "Line: " & _
-                       X.parseError.Line & vbCrLf
+                       x.parseError.Line & vbCrLf
         Print #35, vbCrLf
         varmsgtext = varerrorno & ". " & ValidateFile1
         Print #35, varmsgtext
@@ -1525,54 +1451,25 @@ Sub copytableMC(MyValue, QuestionNo, varTotalMetadata, varMetaDataName)
 Attribute copytableMC.VB_ProcData.VB_Invoke_Func = "Normal.NewMacros.Macro1"
 Dim table1 As Table
 Dim tt As ContentControl
-Dim TABLE2 As Table
+Dim table2 As Table
 Dim addbutton
 varNumRows = MyValue + 6
 'QuestionNo = QuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
+Selection.HomeKey Unit:=wdStory
+Selection.EndKey Unit:=wdStory
 Selection.InsertBreak WdBreakType.wdPageBreak
 
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 9, NumColumns:= _
+   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 16, NumColumns:= _
         1, AutoFitBehavior:= _
         wdAutoFitWindow)
         
         table1.Select
-        table1.id = "MC"
+        table1.ID = "MC"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-        table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-        
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-        
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        table1.Cell(1, 4).Select
-        
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
+        table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        table1.Rows(2).Select
+        table1.Rows(1).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Question Text - Multiple Choice"
@@ -1585,12 +1482,11 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         Set tt = Nothing
         
-        table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        table1.Cell(3, 1).Select
         
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+        table1.Rows(2).Select
+        
+         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Question_no"
         tt.Title = "Question No"
         tt.SetPlaceholderText Text:="Question No: " & QuestionNo
@@ -1604,24 +1500,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: 0"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
+        table1.Rows(3).Select
+        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        Set tt = Nothing
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
+         table1.Cell(3, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
@@ -1637,7 +1519,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(4, 2).Select
+        table1.Cell(3, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Title"
@@ -1660,7 +1542,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
                 
-        table1.Rows(5).Select
+        table1.Rows(4).Select
         
         'table1.Rows(2).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
@@ -1677,7 +1559,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
         
         'Answer option heading
-        table1.Rows(6).Select
+        table1.Rows(5).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Answer_head"
         tt.SetPlaceholderText Text:="Answer Text - Multiple Choice"
@@ -1691,7 +1573,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
     
          
         
-      For i = 7 To MyValue + 6
+      For i = 6 To MyValue + 5
         
        ' table1.Rows(5).SetHeight rowHeight:=ActiveDocument.PageSetup.PageHeight - 300, HeightRule:=wdRowHeightExactly
         
@@ -1701,7 +1583,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         table1.Cell(i, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Answer Text " & i - 6
+        tt.Title = "Answer Text " & i - 5
         tt.Range.Style = "Answer_Text"
         tt.SetPlaceholderText Text:="Enter answer text"
         tt.Range.Font.Size = "10"
@@ -1718,7 +1600,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Rationale_Text"
-        tt.Title = "Rationale Text " & i - 6
+        tt.Title = "Rationale Text " & i - 5
         tt.SetPlaceholderText Text:="Enter rationale for this answer"
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlack
@@ -1737,10 +1619,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
                
       
                
-        table1.Rows(table1.Rows.Count - 8).Select
-        table1.Rows(table1.Rows.Count - 8).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        table1.Rows(table1.Rows.Count - 16).Select
+        table1.Rows(table1.Rows.Count - 16).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        table1.Cell(table1.Rows.Count - 8, 1).Select
+        table1.Cell(table1.Rows.Count - 16, 1).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Correct_answer_head"
         tt.SetPlaceholderText Text:="Correct Answer:"
@@ -1754,7 +1636,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         Set tt = Nothing
         
-        table1.Cell(table1.Rows.Count - 8, 2).Select
+        table1.Cell(table1.Rows.Count - 16, 2).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlDropdownList)
         tt.Title = "Correct Answer"
         tt.LockContentControl = True
@@ -1767,10 +1649,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         'Set tt = Nothing
         
-        table1.Rows(table1.Rows.Count - 7).Select
-        table1.Rows(table1.Rows.Count - 7).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        table1.Rows(table1.Rows.Count - 15).Select
+        table1.Rows(table1.Rows.Count - 15).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        table1.Cell(table1.Rows.Count - 7, 1).Select
+        table1.Cell(table1.Rows.Count - 15, 1).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Score_head"
         tt.SetPlaceholderText Text:="Score"
@@ -1784,7 +1666,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         Set tt = Nothing
         
-        table1.Cell(table1.Rows.Count - 7, 2).Select
+        table1.Cell(table1.Rows.Count - 15, 2).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Difficulty_head"
         tt.SetPlaceholderText Text:="Difficulty"
@@ -1798,22 +1680,20 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         Set tt = Nothing
         
-        table1.Rows(table1.Rows.Count - 6).Select
-        table1.Rows(table1.Rows.Count - 6).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        table1.Rows(table1.Rows.Count - 14).Select
+        table1.Rows(table1.Rows.Count - 14).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        table1.Cell(table1.Rows.Count - 6, 1).Select
+        table1.Cell(table1.Rows.Count - 14, 1).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlDropdownList)
-        
         tt.Range.Style = "Score"
         tt.LockContentControl = True
         tt.SetPlaceholderText , , "Choose score in the range 1 to 10"
-        
         For i = 1 To 10
         tt.DropdownListEntries.Add (i)
         Next
         Set tt = Nothing
 
-        table1.Cell(table1.Rows.Count - 6, 2).Select
+        table1.Cell(table1.Rows.Count - 14, 2).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlDropdownList)
         tt.Range.Style = "Difficulty"
         tt.LockContentControl = True
@@ -1824,10 +1704,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
         
         
-        table1.Rows(table1.Rows.Count - 5).Select
-        table1.Rows(table1.Rows.Count - 5).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        table1.Rows(table1.Rows.Count - 13).Select
+        table1.Rows(table1.Rows.Count - 13).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        table1.Cell(table1.Rows.Count - 5, 1).Select
+        table1.Cell(table1.Rows.Count - 13, 1).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Correct_Answer_Rationale_head"
         tt.SetPlaceholderText Text:="Correct Rationale"
@@ -1841,7 +1721,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         Set tt = Nothing
         
-        table1.Cell(table1.Rows.Count - 5, 2).Select
+        table1.Cell(table1.Rows.Count - 13, 2).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.Range.Style = "Incorrect_Answer_Rationale_head"
@@ -1857,10 +1737,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
         
         
-        table1.Rows(table1.Rows.Count - 4).Select
-        table1.Rows(table1.Rows.Count - 4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        table1.Rows(table1.Rows.Count - 12).Select
+        table1.Rows(table1.Rows.Count - 12).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        table1.Cell(table1.Rows.Count - 4, 1).Select
+        table1.Cell(table1.Rows.Count - 12, 1).Select
         
        
         
@@ -1876,7 +1756,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = False
         Set tt = Nothing
         
-        table1.Cell(table1.Rows.Count - 4, 2).Select
+        table1.Cell(table1.Rows.Count - 12, 2).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.SetPlaceholderText Text:="Enter incorrect rationale for the question"
         tt.Range.Style = "Incorrect_Answer_Rationale"
@@ -1889,21 +1769,12 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = False
         Set tt = Nothing
         
-      meta_rem_head table1, table1.id, QuestionNo
-  
         
-
-End Sub
-Sub meta_rem_head(table1 As Table, qtype, qno)
-  Dim VARNAME As String
-Dim tt As ContentControl
-        ''''''''''''''''''''' Rem ''''''''''''''''''''''''''''
-        table1.Rows(table1.Rows.Count - 3).Shading.BackgroundPatternColor = RGB(255, 140, 0)
-        table1.Rows(table1.Rows.Count - 3).Select
-        table1.Rows(table1.Rows.Count - 3).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
+  
+        table1.Rows(table1.Rows.Count - 11).Shading.BackgroundPatternColor = RGB(255, 140, 0)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        table1.Cell(table1.Rows.Count - 3, 1).Select
+        table1.Rows(table1.Rows.Count - 11).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Remediation_Links_head"
         tt.SetPlaceholderText Text:="Remediation"
@@ -1916,70 +1787,166 @@ Dim tt As ContentControl
         tt.LockContents = True
         Set tt = Nothing
         
-        table1.Cell(table1.Rows.Count - 3, 2).Select
-        Set RWL = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.CommandButton.1")
-        With RWL.OLEFormat.Object
-        .Name = Replace(.Name, "CommandButton", "Rem_WL_cmd_qno" & qno & "_rdtWL_qt" & qtype)
-        .Caption = "Weblink"
-        .Font.Size = "13"
-       
-        .Font.Bold = True
-        .Font.Name = "Verdana"
-        .BackStyle = 0
-        End With
-      
-        VARNAME = RWL.OLEFormat.Object.Name
-        HeadingButtoncode VARNAME, table1, True
-        Set RWL = Nothing
         
-
-
-
-        table1.Cell(table1.Rows.Count - 3, 3).Select
-        Set REB = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.CommandButton.1")
-        'REB.OLEFormat.Object.Name = Replace(shp.OLEFormat.Object.Name, "CommandButton", "Rem_EB_cmd_qno" & qno & "_rdtEB_qt" & qtype)
-        'REB.OLEFormat.Object.Caption = "EBoook"
-         With REB.OLEFormat.Object
-        .Name = Replace(.Name, "CommandButton", "Rem_EB_cmd_qno" & qno & "_rdtEB_qt" & qtype)
-        .Caption = "EBoook"
-        .Font.Size = "13"
+        table1.Rows(table1.Rows.Count - 10).Select
+        table1.Rows(table1.Rows.Count - 10).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        .Font.Bold = True
-        .Font.Name = "Verdana"
-        '.BackStyle = 0
-        End With
+        table1.Cell(table1.Rows.Count - 10, 1).Select
+        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+        tt.Range.Style = "Remediation_Link_Type_head"
+        tt.SetPlaceholderText Text:="Remediation Type"
+        ''tt.Range.Style = "Normal"
+        tt.Range.Font.Size = "10"
+        tt.Range.Font.ColorIndex = wdBlack
+        tt.Range.Font.Bold = True
+        tt.Range.Rows.Height = 30
+        tt.Range.Font.Name = "Verdana"
+        tt.LockContentControl = True
+        tt.LockContents = True
+        Set tt = Nothing
         
-        VARNAME = REB.OLEFormat.Object.Name
-        HeadingButtoncode VARNAME, table1, False
-        Set REB = Nothing
+        table1.Cell(table1.Rows.Count - 10, 2).Select
+         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+         tt.Range.Style = "Remediation_head"
+        tt.SetPlaceholderText Text:="Remediation Detail"
+        ''tt.Range.Style = "Normal"
+        tt.Range.Font.Size = "10"
+        tt.Range.Font.ColorIndex = wdBlack
+        tt.Range.Font.Bold = True
+        'tt.Range.Rows.Height = 30
+        tt.Range.Font.Name = "Verdana"
+        tt.LockContentControl = True
+        tt.LockContents = True
+        Set tt = Nothing
         
-        table1.Cell(table1.Rows.Count - 3, 4).Select
-        Set RText = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.CommandButton.1")
-           With RText.OLEFormat.Object
-        .Name = Replace(.Name, "CommandButton", "Rem_Text_cmd_qno" & qno & "_rdtText_qt" & qtype)
-        .Caption = "Text"
-        .Font.Size = "13"
-     
-        .Font.Bold = True
-        .Font.Name = "Verdana"
-        .BackStyle = 0
-        End With
-        'RText.OLEFormat.Object.Name = Replace(shp.OLEFormat.Object.Name, "CommandButton", "Rem_Text_cmd_qno" & qno & "_rdtText_qt" & qtype)
-        'RText.OLEFormat.Object.Caption = "Text"
-         VARNAME = RText.OLEFormat.Object.Name
-        HeadingButtoncode VARNAME, table1, False
-        Set RText = Nothing
         
-       
+        table1.Rows(table1.Rows.Count - 9).Select
+        table1.Rows(table1.Rows.Count - 9).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+               
+        table1.Cell(table1.Rows.Count - 9, 1).Select
+        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+        tt.Range.Style = "Remediation_Link_Type"
+        tt.SetPlaceholderText Text:="Web Link"
+        ''tt.Range.Style = "Normal"
+        tt.Range.Font.Size = "10"
+        tt.Range.Font.ColorIndex = wdBlack
+        tt.Range.Font.Bold = False
+        tt.Range.Rows.Height = 30
+        tt.Range.Font.Name = "Verdana"
+        tt.LockContentControl = True
+        tt.LockContents = True
+        Set tt = Nothing
+        
+        table1.Cell(table1.Rows.Count - 9, 2).Select
+        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+        tt.Range.Style = "Web_Remediation_Text"
+        tt.Title = "Remediation Text"
+        tt.SetPlaceholderText Text:="Enter remediation text"
+        tt.Range.Font.Size = "10"
+        tt.Range.Font.ColorIndex = wdBlack
+        tt.Range.Font.Bold = False
+        'tt.Range.Rows.Height = 30
+        tt.Range.Font.Name = "Verdana"
+        tt.LockContentControl = True
+        tt.LockContents = False
+        Set tt = Nothing
+        
+        table1.Rows(table1.Rows.Count - 8).Select
+        table1.Rows(table1.Rows.Count - 8).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+               
+               
+        table1.Cell(table1.Rows.Count - 8, 2).Select
+        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+        tt.Range.Style = "Web_Remediation_Link"
+        tt.Title = "Remediation Link"
+        tt.SetPlaceholderText Text:="Enter remediation link"
+        tt.Range.Font.Size = "10"
+        tt.Range.Font.ColorIndex = wdBlack
+        tt.Range.Font.Bold = False
+        'tt.Range.Rows.Height = 30
+        tt.Range.Font.Name = "Verdana"
+        tt.LockContentControl = True
+        tt.LockContents = False
+        Set tt = Nothing
+        
+        table1.Rows(table1.Rows.Count - 7).Select
+        table1.Rows(table1.Rows.Count - 7).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+               
+                
+        table1.Cell(table1.Rows.Count - 7, 2).Select
+        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+        tt.Range.Style = "Web_Remediation_Tooltip"
+        tt.Title = "Remediation Tooltip"
+        tt.SetPlaceholderText Text:="Enter remediation tooltip"
+        tt.Range.Font.Size = "10"
+        tt.Range.Font.ColorIndex = wdBlack
+        tt.Range.Font.Bold = False
+        'tt.Range.Rows.Height = 30
+        tt.Range.Font.Name = "Verdana"
+        tt.LockContentControl = True
+        tt.LockContents = False
+        Set tt = Nothing
+        
+        
+        
+        table1.Rows(table1.Rows.Count - 6).Select
+        'table1.Rows(table1.Rows.Count - 6).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+               
+        table1.Rows(table1.Rows.Count - 6).Select
+        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+        tt.Range.Style = "Remediation_Link_Type"
+        tt.SetPlaceholderText Text:="Ebook"
+        ''tt.Range.Style = "Normal"
+        tt.Range.Font.Size = "10"
+        tt.Range.Font.ColorIndex = wdBlack
+        tt.Range.Font.Bold = False
+        tt.Range.Rows.Height = 30
+        tt.Range.Font.Name = "Verdana"
+        tt.LockContentControl = True
+        tt.LockContents = True
+        Set tt = Nothing
+        
+        
+        table1.Rows(table1.Rows.Count - 5).Select
+        table1.Rows(table1.Rows.Count - 5).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        table1.Cell(table1.Rows.Count - 5, 1).Select
+        
+        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+        tt.Range.Style = "Remediation_Link_Type"
+        tt.SetPlaceholderText Text:="Text"
+        ''tt.Range.Style = "Normal"
+        tt.Range.Font.Size = "10"
+        tt.Range.Font.ColorIndex = wdBlack
+        tt.Range.Font.Bold = False
+        tt.Range.Rows.Height = 30
+        tt.Range.Font.Name = "Verdana"
+        tt.LockContentControl = True
+        tt.LockContents = True
+        Set tt = Nothing
+        
+        
+        table1.Cell(table1.Rows.Count - 5, 2).Select
+        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+        tt.Range.Style = "Text_Remediation_Text"
+        tt.Title = "Remediation Text"
+        tt.SetPlaceholderText Text:="Enter remediation text"
+        tt.Range.Font.Size = "10"
+        tt.Range.Font.ColorIndex = wdBlack
+        tt.Range.Font.Bold = False
+        'tt.Range.Rows.Height = 30
+        tt.Range.Font.Name = "Verdana"
+        tt.LockContentControl = True
+        tt.LockContents = False
+        Set tt = Nothing
+        
+        
         '''''''''Meta data Attributes'''''''''
         
-        table1.Rows(table1.Rows.Count - 1).Shading.BackgroundPatternColor = RGB(169, 169, 169)
-        table1.Rows(table1.Rows.Count - 1).Select
-        table1.Rows(table1.Rows.Count - 1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
+        table1.Rows(table1.Rows.Count - 4).Shading.BackgroundPatternColor = RGB(169, 169, 169)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        table1.Cell(table1.Rows.Count - 1, 1).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+        table1.Rows(table1.Rows.Count - 4).Select
+         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Meta Data Attributes"
         tt.Range.Style = "Meta_Data_Attributes_head"
@@ -1991,109 +1958,210 @@ Dim tt As ContentControl
         tt.LockContents = True
         Set tt = Nothing
         
-        table1.Cell(table1.Rows.Count - 1, 2).Select
-        Set RWL = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.CommandButton.1")
-        With RWL.OLEFormat.Object
-        .Name = Replace(.Name, "CommandButton", "MD_FT_cmd_qno" & qno & "_MDtFT_qt" & qtype)
-        .Caption = "Free Text"
-        .Font.Size = "13"
+        
+        table1.Rows(table1.Rows.Count - 3).Select
+        table1.Rows(table1.Rows.Count - 3).Cells.Split NumColumns:=3, MergeBeforeSplit:=True
+        table1.Cell(table1.Rows.Count - 3, 1).Select
+        
+        Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.ComboBox.1")
+        shp.OLEFormat.Object.Name = Replace(shp.OLEFormat.Object.Name, "ComboBox", "Qno_" & QuestionNo & "_cbo_Metadata_Search_keyword")
+       ' shp.OLEFormat.Object.Name = Replace(shp.OLEFormat.Object.Name, "Label", "lbl_Metadata_Search_keyword")
+        Set shp = Nothing
+        
+        
+        table1.Cell(table1.Rows.Count - 3, 2).Select
+        
+        Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.TextBox.1")
+        shp.OLEFormat.Object.Name = Replace(shp.OLEFormat.Object.Name, "TextBox", "Qno_" & QuestionNo & "_txt_Metadata_Search_keyword")
+        shp.OLEFormat.Object.Width = 150
+         table1.Cell(table1.Rows.Count - 3, 2).Select
+        'shp.OLEFormat.Object.Name = Replace(shp.OLEFormat.Object.Name, "TextBox", "txt_Metadata_Search_keyword")
+        'MsgBox shp.OLEFormat.Object.Object.ListCount
+        Set shp = Nothing
+        
+        table1.Cell(table1.Rows.Count - 3, 3).Select
+        
+        Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.CommandButton.1")
+        shp.OLEFormat.Object.Name = Replace(shp.OLEFormat.Object.Name, "CommandButton", "Qno_" & QuestionNo & "_cmd_Metadata_Search_keyword")
+        With shp.OLEFormat.Object
+            .Object.Caption = "Search"
+            '.Object.Width = 100
+            '.Object.BackColor = RGB(212, 215, 219)
+            
+            '.Object.Style = "Chosse_file"
+        End With
+        MsgBox shp.OLEFormat.Object.Name
+        vba_code shp.OLEFormat.Object.Name
+        Set shp = Nothing
+        
+        'table1.Rows(table1.Rows.Count - 3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        
+        'table1.Cell(table1.Rows.Count - 3, 1).Select
+        'Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+        
+        'tt.SetPlaceholderText Text:="METADATA TAG"
+        'tt.Range.Style = "METADATA_TAG_head"
+        'tt.Range.Font.Size = "10"
+        'tt.Range.Font.ColorIndex = wdBlack
+        'tt.Range.Font.Bold = True
+        'tt.Range.Rows.Height = 30
+        'tt.Range.Font.Name = "Verdana"
+        'tt.LockContentControl = True
+        'tt.LockContents = True
+        'Set tt = Nothing
+        
+        'table1.Cell(table1.Rows.Count - 3, 2).Select
+        ' Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+        'tt.SetPlaceholderText Text:="METADATA VALUE"
+        'tt.Range.Style = "METADATA_VALUE_head"
+        'tt.Range.Font.Size = "10"
+        'tt.Range.Font.ColorIndex = wdBlack
+        'tt.Range.Font.Bold = True
+        'tt.Range.Rows.Height = 30
+        'tt.Range.Font.Name = "Verdana"
+        'tt.LockContentControl = True
+        'tt.LockContents = True
+        'Set tt = Nothing
+        
+        
+        
+        table1.Rows(table1.Rows.Count - 2).Select
+         Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.ListBox.1")
+         MsgBox shp.OLEFormat.Object.Name
+        shp.OLEFormat.Object.Name = Replace(shp.OLEFormat.Object.Name, "ListBox", "Qno_" & QuestionNo & "_lst_Metadata_Search_keyword")
+        'shp.OLEFormat.Object.Height = table1.Cell(table1.Rows.Count - 2, 1).Height
+        shp.OLEFormat.Object.Width = table1.Cell(table1.Rows.Count - 2, 1).Width - 20
+        shp.OLEFormat.Object.ColumnCount = 3
+        shp.OLEFormat.Object.MultiSelect = fmMultiSelectSingle
+        shp.OLEFormat.Object.ListStyle = fmListStyleOption
+        shp.OLEFormat.Object.ColumnHeads = True
+
+        MsgBox shp.OLEFormat.Object.Name
+        Set shp = Nothing
+        
+        
+        'table1.Rows(table1.Rows.Count - 2).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        
+       ' table1.Cell(table1.Rows.Count - 2, 1).Select
        
-        .Font.Bold = True
-        .Font.Name = "Verdana"
-        .BackStyle = 0
-        End With
-         VARNAME = RWL.OLEFormat.Object.Name
-        HeadingButtoncode VARNAME, table1, True
-        Set RWL = Nothing
+        'Set tt = ActiveDocument.ContentControls.Add(wdContentControlDropdownList)
+        'tt.LockContentControl = True
+        'tt.Range.Style = "METADATA_TAG"
+        'tt.Range.Rows.Height = 30
+        'tt.SetPlaceholderText , , "Select your metadata tag"
+            
+         '   For i = 0 To varTotalMetadata - 1
+         '       tt.DropdownListEntries.Add (varMetaDataName(i))
+         '   Next
         
-        table1.Cell(table1.Rows.Count - 1, 3).Select
-        Set REB = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.CommandButton.1")
-        'REB.OLEFormat.Object.Name = Replace(shp.OLEFormat.Object.Name, "CommandButton", "Rem_EB_cmd_qno" & qno & "_rdtEB_qt" & qtype)
-        'REB.OLEFormat.Object.Caption = "EBoook"
-         With REB.OLEFormat.Object
-        .Name = Replace(.Name, "CommandButton", "MD_LU_cmd_qno" & qno & "_MDtLU_qt" & qtype)
-        .Caption = "Lookup"
-        .Font.Size = "13"
+        'tt.DropdownListEntries.Add "Status"
+        'tt.DropdownListEntries.Add "Keyword"
+        'tt.DropdownListEntries.Add "Topic"
+        'Set tt = Nothing
         
-        .Font.Bold = True
-        .Font.Name = "Verdana"
-        .BackStyle = 0
-        End With
-         VARNAME = REB.OLEFormat.Object.Name
-        HeadingButtoncode VARNAME, table1, False
         
-        Set REB = Nothing
+        'table1.Cell(table1.Rows.Count - 2, 2).Select
+        'Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+        'tt.Range.Style = "METADATA_VALUE"
+        'tt.Range.Font.Size = "10"
+        'tt.Range.Font.ColorIndex = wdBlack
+        'tt.Range.Font.Bold = False
+        'tt.Range.Rows.Height = 30
+        'tt.Range.Font.Name = "Verdana"
+        'tt.LockContentControl = True
+        'tt.LockContents = False
+        'Set tt = Nothing
         
-        table1.Cell(table1.Rows.Count - 1, 4).Select
-        Set RText = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.CommandButton.1")
-           With RText.OLEFormat.Object
-        .Name = Replace(.Name, "CommandButton", "MD_HI_cmd_qno" & qno & "_MDtHI_qt" & qtype)
-        .Caption = "Hierarchy"
-        .Font.Size = "13"
-     
-        .Font.Bold = True
-        .Font.Name = "Verdana"
-        .BackStyle = 0
-        End With
-        'RText.OLEFormat.Object.Name = Replace(shp.OLEFormat.Object.Name, "CommandButton", "Rem_Text_cmd_qno" & qno & "_rdtText_qt" & qtype)
-        'RText.OLEFormat.Object.Caption = "Text"
-         VARNAME = RText.OLEFormat.Object.Name
-        HeadingButtoncode VARNAME, table1, False
-        Set RText = Nothing
+        table1.Rows(table1.Rows.Count - 1).Select
+        table1.Rows(table1.Rows.Count - 1).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+       
+        table1.Cell(table1.Rows.Count - 1, 1).Select
+       
+        Set tt = ActiveDocument.ContentControls.Add(wdContentControlDropdownList)
+        tt.LockContentControl = True
+        tt.Range.Style = "METADATA_TAG"
+        tt.Range.Rows.Height = 30
+        tt.SetPlaceholderText , , "Select your metadata tag"
+            For i = 0 To varTotalMetadata - 1
+                tt.DropdownListEntries.Add (varMetaDataName(i))
+            Next
+        'tt.DropdownListEntries.Add "Status"
+        'tt.DropdownListEntries.Add "Keyword"
+        'tt.DropdownListEntries.Add "Topic"
+        Set tt = Nothing
         
+        
+        table1.Cell(table1.Rows.Count - 1, 2).Select
+        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+        tt.Range.Style = "METADATA_VALUE"
+        tt.Range.Font.Size = "10"
+        tt.Range.Font.ColorIndex = wdBlack
+        tt.Range.Font.Bold = False
+        'tt.Range.Rows.Height = 30
+        tt.Range.Font.Name = "Verdana"
+        tt.LockContentControl = True
+        tt.LockContents = False
+        Set tt = Nothing
+        
+        
+        '''''Create Table Row''''
+        table1.Rows(table1.Rows.Count).Select
+        table1.Rows(table1.Rows.Count).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        
+        table1.Cell(table1.Rows.Count, 1).Select
+       
+        Set tt = ActiveDocument.ContentControls.Add(wdContentControlDropdownList)
+        tt.LockContentControl = True
+        tt.Range.Style = "METADATA_TAG"
+        tt.Range.Rows.Height = 30
+        tt.SetPlaceholderText , , "Select your metadata tag"
+            For i = 0 To varTotalMetadata - 1
+                tt.DropdownListEntries.Add (varMetaDataName(i))
+            Next
+        'tt.DropdownListEntries.Add "Status"
+        'tt.DropdownListEntries.Add "Keyword"
+        'tt.DropdownListEntries.Add "Topic"
+        Set tt = Nothing
+        
+        
+        table1.Cell(table1.Rows.Count, 2).Select
+        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+        tt.Range.Style = "METADATA_VALUE"
+        tt.Range.Font.Size = "10"
+        tt.Range.Font.ColorIndex = wdBlack
+        tt.Range.Font.Bold = False
+        'tt.Range.Rows.Height = 30
+        tt.Range.Font.Name = "Verdana"
+        tt.LockContentControl = True
+        tt.LockContents = False
+        Set tt = Nothing
+        
+        
+
 End Sub
+
 Sub copytablecs(MyValue, QuestionNo)
 Dim table1 As Table
 Dim tt As ContentControl
-Dim TABLE2 As Table
+Dim table2 As Table
 Dim addbutton
 'varNumRows = MyValue + 6
 'QuestionNo = QuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
+Selection.HomeKey Unit:=wdStory
+Selection.EndKey Unit:=wdStory
 Selection.InsertBreak WdBreakType.wdPageBreak
 
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=11, NumColumns:= _
+   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=10, NumColumns:= _
         1, AutoFitBehavior:= _
         wdAutoFitWindow)
         
         table1.Select
-        table1.id = "MC"
+        table1.ID = "MC"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-        
-            table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-        
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-        
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        table1.Cell(1, 4).Select
-        
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
+        table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        table1.Rows(2).Select
+        table1.Rows(1).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Question Text - Clinical Symptoms"
@@ -2108,12 +2176,9 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         
         
-        table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        table1.Rows(2).Select
         
-        table1.Cell(3, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Question_no"
         tt.Title = "Question No"
         tt.SetPlaceholderText Text:="Question No: " & QuestionNo
@@ -2127,24 +2192,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: 0"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
+        table1.Rows(3).Select
+        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        Set tt = Nothing
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
+         table1.Cell(3, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
@@ -2160,7 +2211,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(4, 2).Select
+        table1.Cell(3, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Title"
@@ -2176,7 +2227,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
                 
-        table1.Rows(5).Select
+        table1.Rows(4).Select
         
         'table1.Rows(2).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
@@ -2193,10 +2244,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
       
         
-        table1.Rows(6).Select
-        table1.Rows(6).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        table1.Cell(6, 1).TopPadding = 10
-        table1.Cell(6, 1).Select
+        table1.Rows(5).Select
+        table1.Rows(5).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
+        
+        table1.Cell(5, 1).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Additional_Fields_head"
         tt.SetPlaceholderText Text:="Additional Fields"
@@ -2210,13 +2261,13 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = False
         Set tt = Nothing
         
-        table1.Cell(6, 2).Select
+        table1.Cell(5, 2).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Additional_Fields_head"
         tt.SetPlaceholderText Text:=""
         tt.LockContentControl = True
         
-        table1.Cell(6, 3).Select
+        table1.Cell(5, 3).Select
         'Selection.InlineShapes.AddOLEControl ClassType:="Forms.CommandButton.1"
         Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.CommandButton.1")
         
@@ -2229,7 +2280,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set shp = Nothing
         
         
-        table1.Cell(6, 4).Select
+        table1.Cell(5, 4).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "File Name" & varbtn
         tt.Range.Style = "Additional_file_path"
@@ -2386,55 +2437,25 @@ End Sub
 Sub copytableCSMC(MyValue, QuestionNo)
 Dim table1 As Table
 Dim tt As ContentControl
-Dim TABLE2 As Table
+Dim table2 As Table
 Dim addbutton
 varNumRows = MyValue + 6
 'QuestionNo = QuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
+Selection.HomeKey Unit:=wdStory
+Selection.EndKey Unit:=wdStory
 Selection.InsertBreak WdBreakType.wdPageBreak
 
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 13, NumColumns:= _
+   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 12, NumColumns:= _
         1, AutoFitBehavior:= _
         wdAutoFitWindow)
         
         table1.Select
-        table1.id = "MC"
+        table1.ID = "MC"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-            table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-        
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-        
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        table1.Cell(1, 4).Select
-        
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
+        table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        table1.Rows(2).Select
+        table1.Rows(1).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Question Text - Multiple Choice"
@@ -2449,12 +2470,9 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         
         
-        table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        table1.Rows(2).Select
         
-        table1.Cell(3, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Question_no"
         tt.Title = "Question No"
         tt.SetPlaceholderText Text:="Question No: " & QuestionNo
@@ -2468,24 +2486,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: 0"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
+        table1.Rows(3).Select
+        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        Set tt = Nothing
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
+         table1.Cell(3, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
@@ -2501,7 +2505,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(4, 2).Select
+        table1.Cell(3, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Title"
@@ -2517,7 +2521,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
                 
-        table1.Rows(5).Select
+        table1.Rows(4).Select
         
         'table1.Rows(2).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
@@ -2534,7 +2538,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
         
         'Answer option heading
-        table1.Rows(6).Select
+        table1.Rows(5).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Answer_head"
         tt.SetPlaceholderText Text:="Answer Text - Multiple Choice"
@@ -2548,7 +2552,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
     
          
         
-      For i = 7 To MyValue + 6
+      For i = 6 To MyValue + 5
         
        ' table1.Rows(5).SetHeight rowHeight:=ActiveDocument.PageSetup.PageHeight - 300, HeightRule:=wdRowHeightExactly
         
@@ -2558,7 +2562,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         table1.Cell(i, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Answer Text " & i - 6
+        tt.Title = "Answer Text " & i - 5
         tt.Range.Style = "Answer_Text"
         tt.SetPlaceholderText Text:="Enter answer text"
         tt.Range.Font.Size = "10"
@@ -2575,7 +2579,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Rationale_Text"
-        tt.Title = "Rationale Text " & i - 6
+        tt.Title = "Rationale Text " & i - 5
         tt.SetPlaceholderText Text:="Enter rationale for this answer"
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlack
@@ -2928,55 +2932,25 @@ End Sub
 Sub copytableCSCM(MyValue, QuestionNo)
 Dim table1 As Table
 Dim tt As ContentControl
-Dim TABLE2 As Table
+Dim table2 As Table
 Dim addbutton
 varNumRows = MyValue + 6
 'QuestionNo = QuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
+Selection.HomeKey Unit:=wdStory
+Selection.EndKey Unit:=wdStory
 Selection.InsertBreak WdBreakType.wdPageBreak
 
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 13, NumColumns:= _
+   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 12, NumColumns:= _
         1, AutoFitBehavior:= _
         wdAutoFitWindow)
         
         table1.Select
         
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-        
-            table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-        
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-        
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        table1.Cell(1, 4).Select
-        
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
+        table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        table1.Rows(2).Select
+        table1.Rows(1).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Question Text - Choice Multiple"
@@ -2989,14 +2963,12 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         Set tt = Nothing
         
-         table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+         table1.Rows(2).Select
         
-        table1.Cell(3, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Question_no"
+         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+         tt.Range.Style = "Question_no"
         tt.Title = "Question No"
+        
         tt.SetPlaceholderText Text:="Question No: " & QuestionNo
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlue
@@ -3008,25 +2980,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: 0"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
+        table1.Rows(3).Select
+        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        Set tt = Nothing
-        
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
+         table1.Cell(3, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
@@ -3042,7 +2999,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(4, 2).Select
+        table1.Cell(3, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Title"
@@ -3058,7 +3015,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Rows(5).Select
+        table1.Rows(4).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Text"
         tt.Range.Style = "Question_Text"
@@ -3073,7 +3030,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
         
         'Answer option heading
-        table1.Rows(6).Select
+        table1.Rows(5).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Answer_head"
         tt.SetPlaceholderText Text:="Answer Text - Choice Multiple"
@@ -3087,7 +3044,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
       
         
        ' table1.Rows(5).SetHeight rowHeight:=ActiveDocument.PageSetup.PageHeight - 300, HeightRule:=wdRowHeightExactly
-        For i = 7 To MyValue + 6
+        For i = 6 To MyValue + 5
             
         table1.Rows(i).Select
         table1.Rows(i).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
@@ -3095,7 +3052,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         table1.Cell(i, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Answer Text " & i - 6
+        tt.Title = "Answer Text " & i - 5
         tt.Range.Style = "Answer_Text"
         tt.SetPlaceholderText Text:="Enter answer text"
         tt.Range.Font.Size = "10"
@@ -3112,7 +3069,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Rationale_Text"
-        tt.Title = "Rationale Text " & i - 6
+        tt.Title = "Rationale Text " & i - 5
         tt.SetPlaceholderText Text:="Enter rationale for this answer"
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlack
@@ -3488,53 +3445,25 @@ End Sub
 Sub copytableMCase(MyValue, QuestionNo)
 Dim table1 As Table
 Dim tt As ContentControl
-Dim TABLE2 As Table
+Dim table2 As Table
 Dim addbutton
 'varNumRows = MyValue + 6
 'QuestionNo = QuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
+Selection.HomeKey Unit:=wdStory
+Selection.EndKey Unit:=wdStory
 Selection.InsertBreak WdBreakType.wdPageBreak
 
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=11, NumColumns:= _
+   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=10, NumColumns:= _
         1, AutoFitBehavior:= _
         wdAutoFitWindow)
         
         table1.Select
+        table1.ID = "MC"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-            table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-        
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-        
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        table1.Cell(1, 4).Select
-        
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
+        table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        table1.Rows(2).Select
+        table1.Rows(1).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Question Text - Medical Case"
@@ -3549,12 +3478,9 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         
         
-        table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        table1.Rows(2).Select
         
-        table1.Cell(3, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Question_no"
         tt.Title = "Question No"
         tt.SetPlaceholderText Text:="Question No: " & QuestionNo
@@ -3568,24 +3494,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: 0"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
+        table1.Rows(3).Select
+        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        Set tt = Nothing
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
+         table1.Cell(3, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
@@ -3601,7 +3513,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(4, 2).Select
+        table1.Cell(3, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Title"
@@ -3617,7 +3529,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
                 
-        table1.Rows(5).Select
+        table1.Rows(4).Select
         
         'table1.Rows(2).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
@@ -3634,11 +3546,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
       
         
-        table1.Rows(6).Select
-        table1.Rows(6).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
+        table1.Rows(5).Select
+        table1.Rows(5).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
         
-        table1.Cell(6, 1).TopPadding = 10
-        table1.Cell(6, 1).Select
+        table1.Cell(5, 1).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Additional_Fields_head"
         tt.SetPlaceholderText Text:="Additional Fields"
@@ -3652,13 +3563,13 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = False
         Set tt = Nothing
         
-        table1.Cell(6, 2).Select
+        table1.Cell(5, 2).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Additional_Fields_head"
         tt.SetPlaceholderText Text:=""
         tt.LockContentControl = True
         
-        table1.Cell(6, 3).Select
+        table1.Cell(5, 3).Select
         'Selection.InlineShapes.AddOLEControl ClassType:="Forms.CommandButton.1"
         Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.CommandButton.1")
         
@@ -3671,7 +3582,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set shp = Nothing
         
         
-        table1.Cell(6, 4).Select
+        table1.Cell(5, 4).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "File Name" & varbtn
         tt.Range.Style = "Additional_file_path"
@@ -3828,54 +3739,25 @@ End Sub
 Sub copytableMCaseMC(MyValue, QuestionNo)
 Dim table1 As Table
 Dim tt As ContentControl
-Dim TABLE2 As Table
+Dim table2 As Table
 Dim addbutton
 varNumRows = MyValue + 6
 'QuestionNo = QuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
+Selection.HomeKey Unit:=wdStory
+Selection.EndKey Unit:=wdStory
 Selection.InsertBreak WdBreakType.wdPageBreak
 
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 13, NumColumns:= _
+   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 12, NumColumns:= _
         1, AutoFitBehavior:= _
         wdAutoFitWindow)
         
         table1.Select
+        table1.ID = "MC"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-        table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-        
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-        
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        table1.Cell(1, 4).Select
-        
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
+        table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        table1.Rows(2).Select
+        table1.Rows(1).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Question Text - Multiple Choice"
@@ -3890,12 +3772,9 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         
         
-        table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        table1.Rows(2).Select
         
-        table1.Cell(3, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Question_no"
         tt.Title = "Question No"
         tt.SetPlaceholderText Text:="Question No: " & QuestionNo
@@ -3909,24 +3788,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: 0"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
+        table1.Rows(3).Select
+        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        Set tt = Nothing
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
+         table1.Cell(3, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
@@ -3942,7 +3807,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(4, 2).Select
+        table1.Cell(3, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Title"
@@ -3958,7 +3823,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
                 
-        table1.Rows(5).Select
+        table1.Rows(4).Select
         
         'table1.Rows(2).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
@@ -3975,7 +3840,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
         
         'Answer option heading
-        table1.Rows(6).Select
+        table1.Rows(5).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Answer_head"
         tt.SetPlaceholderText Text:="Answer Text - Multiple Choice"
@@ -3989,7 +3854,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
     
          
         
-      For i = 7 To MyValue + 6
+      For i = 6 To MyValue + 5
         
        ' table1.Rows(5).SetHeight rowHeight:=ActiveDocument.PageSetup.PageHeight - 300, HeightRule:=wdRowHeightExactly
         
@@ -3999,7 +3864,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         table1.Cell(i, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Answer Text " & i - 6
+        tt.Title = "Answer Text " & i - 5
         tt.Range.Style = "Answer_Text"
         tt.SetPlaceholderText Text:="Enter answer text"
         tt.Range.Font.Size = "10"
@@ -4016,7 +3881,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Rationale_Text"
-        tt.Title = "Rationale Text " & i - 6
+        tt.Title = "Rationale Text " & i - 5
         tt.SetPlaceholderText Text:="Enter rationale for this answer"
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlack
@@ -4369,55 +4234,25 @@ End Sub
 Sub copytableMCaseCM(MyValue, QuestionNo)
 Dim table1 As Table
 Dim tt As ContentControl
-Dim TABLE2 As Table
+Dim table2 As Table
 Dim addbutton
 varNumRows = MyValue + 6
 'QuestionNo = QuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
+Selection.HomeKey Unit:=wdStory
+Selection.EndKey Unit:=wdStory
 Selection.InsertBreak WdBreakType.wdPageBreak
 
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 13, NumColumns:= _
+   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 12, NumColumns:= _
         1, AutoFitBehavior:= _
         wdAutoFitWindow)
         
         table1.Select
         
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-            table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-        
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-        
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        table1.Cell(1, 4).Select
-        
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
+        table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        table1.Rows(2).Select
+        table1.Rows(1).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Question Text - Choice Multiple"
@@ -4430,14 +4265,12 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         Set tt = Nothing
         
-         table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+         table1.Rows(2).Select
         
-        table1.Cell(3, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Question_no"
+         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+         tt.Range.Style = "Question_no"
         tt.Title = "Question No"
+        
         tt.SetPlaceholderText Text:="Question No: " & QuestionNo
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlue
@@ -4449,24 +4282,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: 0"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
+        table1.Rows(3).Select
+        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        Set tt = Nothing
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
+         table1.Cell(3, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
@@ -4482,7 +4301,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(4, 2).Select
+        table1.Cell(3, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Title"
@@ -4498,7 +4317,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Rows(5).Select
+        table1.Rows(4).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Text"
         tt.Range.Style = "Question_Text"
@@ -4513,7 +4332,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
         
         'Answer option heading
-        table1.Rows(6).Select
+        table1.Rows(5).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Answer_head"
         tt.SetPlaceholderText Text:="Answer Text - Choice Multiple"
@@ -4527,7 +4346,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
       
         
        ' table1.Rows(5).SetHeight rowHeight:=ActiveDocument.PageSetup.PageHeight - 300, HeightRule:=wdRowHeightExactly
-        For i = 7 To MyValue + 6
+        For i = 6 To MyValue + 5
             
         table1.Rows(i).Select
         table1.Rows(i).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
@@ -4535,7 +4354,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         table1.Cell(i, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Answer Text " & i - 6
+        tt.Title = "Answer Text " & i - 5
         tt.Range.Style = "Answer_Text"
         tt.SetPlaceholderText Text:="Enter answer text"
         tt.Range.Font.Size = "10"
@@ -4552,7 +4371,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Rationale_Text"
-        tt.Title = "Rationale Text " & i - 6
+        tt.Title = "Rationale Text " & i - 5
         tt.SetPlaceholderText Text:="Enter rationale for this answer"
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlack
@@ -4927,55 +4746,25 @@ End Sub
 Sub copytablecm(MyValue, QuestionNo)
 Dim table1 As Table
 Dim tt As ContentControl
-Dim TABLE2 As Table
+Dim table2 As Table
 Dim addbutton
 varNumRows = MyValue + 6
 'QuestionNo = QuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
+Selection.HomeKey Unit:=wdStory
+Selection.EndKey Unit:=wdStory
 Selection.InsertBreak WdBreakType.wdPageBreak
 
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 17, NumColumns:= _
+   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 16, NumColumns:= _
         1, AutoFitBehavior:= _
         wdAutoFitWindow)
         
         table1.Select
         
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-        table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-        
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-        
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        table1.Cell(1, 4).Select
-        
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
+        table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        table1.Rows(2).Select
-       
+        table1.Rows(1).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Question Text - Choice Multiple"
@@ -4988,14 +4777,12 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         Set tt = Nothing
         
-         table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+         table1.Rows(2).Select
         
-        table1.Cell(3, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Question_no"
+         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+         tt.Range.Style = "Question_no"
         tt.Title = "Question No"
+        
         tt.SetPlaceholderText Text:="Question No: " & QuestionNo
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlue
@@ -5007,24 +4794,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: 0"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
+        table1.Rows(3).Select
+        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        Set tt = Nothing
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
+         table1.Cell(3, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
@@ -5040,7 +4813,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(4, 2).Select
+        table1.Cell(3, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Title"
@@ -5056,7 +4829,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Rows(5).Select
+        table1.Rows(4).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Text"
         tt.Range.Style = "Question_Text"
@@ -5071,7 +4844,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
         
         'Answer option heading
-        table1.Rows(6).Select
+        table1.Rows(5).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Answer_head"
         tt.SetPlaceholderText Text:="Answer Text - Choice Multiple"
@@ -5085,7 +4858,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
       
         
        ' table1.Rows(5).SetHeight rowHeight:=ActiveDocument.PageSetup.PageHeight - 300, HeightRule:=wdRowHeightExactly
-        For i = 7 To MyValue + 6
+        For i = 6 To MyValue + 5
             
         table1.Rows(i).Select
         table1.Rows(i).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
@@ -5093,7 +4866,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         table1.Cell(i, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Answer Text " & i - 6
+        tt.Title = "Answer Text " & i - 5
         tt.Range.Style = "Answer_Text"
         tt.SetPlaceholderText Text:="Enter answer text"
         tt.Range.Font.Size = "10"
@@ -5110,7 +4883,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Rationale_Text"
-        tt.Title = "Rationale Text " & i - 6
+        tt.Title = "Rationale Text " & i - 5
         tt.SetPlaceholderText Text:="Enter rationale for this answer"
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlack
@@ -5621,54 +5394,24 @@ End Sub
 Sub copytabletf(QuestionNo)
 Dim table1 As Table
 Dim tt As ContentControl
-Dim TABLE2 As Table
+Dim table2 As Table
 Dim addbutton
 'QuestionNo = QuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
+Selection.HomeKey Unit:=wdStory
+Selection.EndKey Unit:=wdStory
 Selection.InsertBreak WdBreakType.wdPageBreak
 
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=8 + 17, NumColumns:= _
+   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=8 + 16, NumColumns:= _
         1, AutoFitBehavior:= _
         wdAutoFitWindow)
         
         table1.Select
         
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
+        table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        
         table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-        
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-        
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        table1.Cell(1, 4).Select
-        
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
-        table1.Rows(2).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Question Text - True or Fasle"
@@ -5681,14 +5424,12 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         Set tt = Nothing
         
-         table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+         table1.Rows(2).Select
         
-        table1.Cell(3, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Question_no"
+         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+         tt.Range.Style = "Question_no"
         tt.Title = "Question No"
+        
         tt.SetPlaceholderText Text:="Question No: " & QuestionNo
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlue
@@ -5700,24 +5441,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: 0"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
+        table1.Rows(3).Select
+        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        Set tt = Nothing
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
+         table1.Cell(3, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
@@ -5733,7 +5460,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(4, 2).Select
+        table1.Cell(3, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Title"
@@ -5749,7 +5476,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Rows(5).Select
+        table1.Rows(4).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Text"
         tt.Range.Style = "Question_Text"
@@ -5763,7 +5490,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.Range.Rows.Height = 70
         Set tt = Nothing
         
-        table1.Rows(6).Select
+        table1.Rows(5).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Answer_head"
         tt.SetPlaceholderText Text:="Answer Text - True or Fasle"
@@ -5776,10 +5503,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         
         
-        table1.Rows(7).Select
-        table1.Rows(7).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        table1.Rows(6).Select
+        table1.Rows(6).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        table1.Cell(7, 1).Select
+        table1.Cell(6, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Answer Text " & 1
@@ -5795,7 +5522,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-         table1.Cell(7, 2).Select
+         table1.Cell(6, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Rationale_Text"
@@ -5811,10 +5538,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Rows(8).Select
-        table1.Rows(8).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        table1.Rows(7).Select
+        table1.Rows(7).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        table1.Cell(8, 1).Select
+        table1.Cell(7, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Answer Text " & 2
@@ -5830,7 +5557,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-         table1.Cell(8, 2).Select
+         table1.Cell(7, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Rationale_Text"
@@ -6310,56 +6037,25 @@ End Sub
 Sub copytableVQ(MyValue, QuestionNo)
 Dim table1 As Table
 Dim tt As ContentControl
-Dim TABLE2 As Table
+Dim table2 As Table
 Dim addbutton
 varNumRows = MyValue + 7
 'QuestionNo = QuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
+Selection.HomeKey Unit:=wdStory
+Selection.EndKey Unit:=wdStory
 Selection.InsertBreak WdBreakType.wdPageBreak
 
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 17, NumColumns:= _
+   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 16, NumColumns:= _
         1, AutoFitBehavior:= _
         wdAutoFitWindow)
         
         table1.Select
-        table1.id = "VQ"
+        table1.ID = "VQ"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-            table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-        
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-        
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        table1.Cell(1, 4).Select
-        
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
+        table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        table1.Rows(2).Select
+        table1.Rows(1).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Question Text - Video Questions"
@@ -6372,14 +6068,12 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         Set tt = Nothing
         
-        table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        table1.Rows(2).Select
         
-        table1.Cell(3, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Question_no"
+         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+         tt.Range.Style = "Question_no"
         tt.Title = "Question No"
+        
         tt.SetPlaceholderText Text:="Question No: " & QuestionNo
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlue
@@ -6391,24 +6085,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: 0"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
+        table1.Rows(3).Select
+        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        Set tt = Nothing
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
+         table1.Cell(3, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
@@ -6424,7 +6104,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(4, 2).Select
+        table1.Cell(3, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Title"
@@ -6440,7 +6120,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
                 
-        table1.Rows(5).Select
+        table1.Rows(4).Select
         
         'table1.Rows(2).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
@@ -6457,7 +6137,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
         
         'Answer option heading
-        table1.Rows(6).Select
+        table1.Rows(5).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Answer_head"
         tt.SetPlaceholderText Text:="Answer Text - Video Questions"
@@ -6474,7 +6154,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
                     
        
         
-      For i = 7 To MyValue + 6
+      For i = 6 To MyValue + 5
         
        ' table1.Rows(5).SetHeight rowHeight:=ActiveDocument.PageSetup.PageHeight - 300, HeightRule:=wdRowHeightExactly
         
@@ -6484,7 +6164,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         table1.Cell(i, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Answer Text " & i - 6
+        tt.Title = "Answer Text " & i - 5
         tt.Range.Style = "Answer_Text"
         tt.SetPlaceholderText Text:="Enter answer text"
         tt.Range.Font.Size = "10"
@@ -6501,7 +6181,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Rationale_Text"
-        tt.Title = "Rationale Text " & i - 6
+        tt.Title = "Rationale Text " & i - 5
         tt.SetPlaceholderText Text:="Enter rationale for this answer"
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlack
@@ -7050,56 +6730,25 @@ End Sub
 Sub copytableII(MyValue, QuestionNo)
 Dim table1 As Table
 Dim tt As ContentControl
-Dim TABLE2 As Table
+Dim table2 As Table
 Dim addbutton
 varNumRows = MyValue + 7
 'QuestionNo = QuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
+Selection.HomeKey Unit:=wdStory
+Selection.EndKey Unit:=wdStory
 Selection.InsertBreak WdBreakType.wdPageBreak
 
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 17, NumColumns:= _
+   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 16, NumColumns:= _
         1, AutoFitBehavior:= _
         wdAutoFitWindow)
         
         table1.Select
-        table1.id = "MC"
+        table1.ID = "MC"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-        
-            table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-        
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-        
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        table1.Cell(1, 4).Select
-        
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
+        table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        table1.Rows(2).Select
+        table1.Rows(1).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Question Text - Image Integration"
@@ -7112,14 +6761,12 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         Set tt = Nothing
         
-        table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        table1.Rows(2).Select
         
-        table1.Cell(3, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Question_no"
+         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+         tt.Range.Style = "Question_no"
         tt.Title = "Question No"
+        
         tt.SetPlaceholderText Text:="Question No: " & QuestionNo
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlue
@@ -7131,24 +6778,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: 0"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
+        table1.Rows(3).Select
+        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        Set tt = Nothing
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
+         table1.Cell(3, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
@@ -7164,7 +6797,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(4, 2).Select
+        table1.Cell(3, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Title"
@@ -7180,7 +6813,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
                 
-        table1.Rows(5).Select
+        table1.Rows(4).Select
         
         'table1.Rows(2).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
@@ -7197,7 +6830,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
         
         'Answer option heading
-        table1.Rows(6).Select
+        table1.Rows(5).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Answer_head"
         tt.SetPlaceholderText Text:="Answer Text - Image Integration"
@@ -7214,7 +6847,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
                     
        
         
-      For i = 7 To MyValue + 6
+      For i = 6 To MyValue + 5
         
        ' table1.Rows(5).SetHeight rowHeight:=ActiveDocument.PageSetup.PageHeight - 300, HeightRule:=wdRowHeightExactly
         
@@ -7224,7 +6857,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         table1.Cell(i, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Answer Text " & i - 6
+        tt.Title = "Answer Text " & i - 5
         tt.Range.Style = "Answer_Text"
         tt.SetPlaceholderText Text:="Enter answer text"
         tt.Range.Font.Size = "10"
@@ -7241,7 +6874,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Rationale_Text"
-        tt.Title = "Rationale Text " & i - 6
+        tt.Title = "Rationale Text " & i - 5
         tt.SetPlaceholderText Text:="Enter rationale for this answer"
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlack
@@ -7787,56 +7420,25 @@ End Sub
 Sub copytableGO(MyValue, QuestionNo)
 Dim table1 As Table
 Dim tt As ContentControl
-Dim TABLE2 As Table
+Dim table2 As Table
 Dim addbutton
 varNumRows = MyValue + 7
 'QuestionNo = QuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
+Selection.HomeKey Unit:=wdStory
+Selection.EndKey Unit:=wdStory
 Selection.InsertBreak WdBreakType.wdPageBreak
 
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 16, NumColumns:= _
+   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 15, NumColumns:= _
         1, AutoFitBehavior:= _
         wdAutoFitWindow)
         
         table1.Select
-        table1.id = "VQ"
+        table1.ID = "VQ"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-        
-            table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-        
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-        
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        table1.Cell(1, 4).Select
-        
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
+        table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        table1.Rows(2).Select
+        table1.Rows(1).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Question Text - Graphic Option"
@@ -7849,14 +7451,12 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         Set tt = Nothing
         
-        table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        table1.Rows(2).Select
         
-        table1.Cell(3, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Question_no"
+         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+         tt.Range.Style = "Question_no"
         tt.Title = "Question No"
+        
         tt.SetPlaceholderText Text:="Question No: " & QuestionNo
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlue
@@ -7868,24 +7468,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: 0"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
+        table1.Rows(3).Select
+        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        Set tt = Nothing
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
+         table1.Cell(3, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
@@ -7901,7 +7487,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(4, 2).Select
+        table1.Cell(3, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Title"
@@ -7917,7 +7503,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
                 
-        table1.Rows(5).Select
+        table1.Rows(4).Select
         
         'table1.Rows(2).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
@@ -7934,7 +7520,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
         
         'Answer option heading
-        table1.Rows(6).Select
+        table1.Rows(5).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Answer_head"
         tt.SetPlaceholderText Text:="Answer Text - Graphic Option"
@@ -7951,7 +7537,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
                     
        
         
-      For i = 7 To MyValue + 6
+      For i = 6 To MyValue + 5
         
        ' table1.Rows(5).SetHeight rowHeight:=ActiveDocument.PageSetup.PageHeight - 300, HeightRule:=wdRowHeightExactly
         
@@ -7990,7 +7576,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         table1.Cell(i, 3).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Rationale_Text"
-        tt.Title = "Rationale Text " & i - 6
+        tt.Title = "Rationale Text " & i - 5
         tt.SetPlaceholderText Text:="Enter rationale for this answer"
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlack
@@ -8505,7 +8091,7 @@ Close #55
 End Function
 
 Public Sub zip()
-        Dim ws As New WshShell
+        Dim ws As New wshshell
         varDocPath = ActiveDocument.Path
         'If fso.FolderExists(varDocPath & "\Question_bank") = False Then fso.CreateFolder (varDocPath & "\Question_bank")
         'ActiveDocument.Close (wdDoNotSaveChanges)
@@ -8569,57 +8155,28 @@ Set oApp = Nothing
 Set FSO = Nothing
 MsgBox "XML created and Zipped in the same path."
 End Function
-Sub copytableupdatemc(vartitle, MyValue, varIdentificationId, varqtext, varanswer, varrationale, varcorrecttxt, varscoretxt, vardifficultytxt, varcorrectrationaletxt, varincorrectrationaletxt, varWeblinkRemediationTxt, varWeblinkRemediationLink, varWeblinkRemediationTooltip, varTextRemediationTxt, vartagtype, vartagvalue)
+Sub copytableupdatemc(vartitle, MyValue, varqtext, varanswer, varrationale, varcorrecttxt, varscoretxt, vardifficultytxt, varcorrectrationaletxt, varincorrectrationaletxt, varWeblinkRemediationTxt, varWeblinkRemediationLink, varWeblinkRemediationTooltip, varTextRemediationTxt, vartagtype, vartagvalue)
 Dim table1 As Table
 Dim tt As ContentControl
-Dim TABLE2 As Table
+Dim table2 As Table
 Dim addbutton
 varNumRows = MyValue + 6
 UpdateQuestionNo = UpdateQuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
+Selection.HomeKey Unit:=wdStory
+Selection.EndKey Unit:=wdStory
 Selection.InsertBreak WdBreakType.wdPageBreak
 
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 17, NumColumns:= _
+   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 16, NumColumns:= _
         1, AutoFitBehavior:= _
         wdAutoFitWindow)
         
         table1.Select
-        table1.id = "MC"
+        table1.ID = "MC"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
+        table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
         table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-        
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-        
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        table1.Cell(1, 4).Select
-        
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
-        table1.Rows(2).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Question Text - Multiple Choice"
@@ -8632,10 +8189,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         Set tt = Nothing
         
-        table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-       
-        table1.Cell(3, 1).Select
+        
+        
+        table1.Rows(2).Select
+        
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Question_no"
         tt.Title = "Question No"
@@ -8650,25 +8207,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: " & varIdentificationId
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
+        table1.Rows(3).Select
+        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        Set tt = Nothing
-        
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
+         table1.Cell(3, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
@@ -8684,7 +8226,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(4, 2).Select
+        table1.Cell(3, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Title"
@@ -8700,7 +8242,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
                 
-        table1.Rows(5).Select
+        table1.Rows(4).Select
         
         'table1.Rows(2).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
@@ -8718,7 +8260,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
         
         'Answer option heading
-        table1.Rows(6).Select
+        table1.Rows(5).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Answer_head"
         tt.SetPlaceholderText Text:="Answer Text - Multiple Choice"
@@ -8732,7 +8274,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
     
          
         
-      For i = 7 To MyValue + 6
+      For i = 6 To MyValue + 5
         
        ' table1.Rows(5).SetHeight rowHeight:=ActiveDocument.PageSetup.PageHeight - 300, HeightRule:=wdRowHeightExactly
         
@@ -8742,9 +8284,9 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         table1.Cell(i, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Answer Text " & i - 6
+        tt.Title = "Answer Text " & i - 5
         tt.Range.Style = "Answer_Text"
-        tt.SetPlaceholderText Text:=varanswer(i - 7)
+        tt.SetPlaceholderText Text:=varanswer(i - 6)
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlack
         tt.Range.Font.Bold = False
@@ -8759,8 +8301,8 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Rationale_Text"
-        tt.Title = "Rationale Text " & i - 6
-        tt.SetPlaceholderText Text:=varrationale(i - 7)
+        tt.Title = "Rationale Text " & i - 5
+        tt.SetPlaceholderText Text:=varrationale(i - 6)
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlack
         tt.Range.Font.Bold = False
@@ -9243,59 +8785,28 @@ Selection.InsertBreak WdBreakType.wdPageBreak
 
 End Sub
 
-Sub copytableupdatecm(vartitle, MyValue, varIdentificationId, varqtext, varanswer, varrationale, varcorrecttxt, varscoretxt, vardifficultytxt, varcorrectrationaletxt, varincorrectrationaletxt, varWeblinkRemediationTxt, varWeblinkRemediationLink, varWeblinkRemediationTooltip, varTextRemediationTxt, vartagtype, vartagvalue)
+Sub copytableupdatecm(vartitle, MyValue, varqtext, varanswer, varrationale, varcorrecttxt, varscoretxt, vardifficultytxt, varcorrectrationaletxt, varincorrectrationaletxt, varWeblinkRemediationTxt, varWeblinkRemediationLink, varWeblinkRemediationTooltip, varTextRemediationTxt, vartagtype, vartagvalue)
 Dim table1 As Table
 Dim tt As ContentControl
-Dim TABLE2 As Table
+Dim table2 As Table
 Dim addbutton
 varNumRows = MyValue + 6
 UpdateQuestionNo = UpdateQuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
+Selection.HomeKey Unit:=wdStory
+Selection.EndKey Unit:=wdStory
 Selection.InsertBreak WdBreakType.wdPageBreak
 
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 17, NumColumns:= _
+   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 16, NumColumns:= _
         1, AutoFitBehavior:= _
         wdAutoFitWindow)
         
         table1.Select
         
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-        table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-        
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-        
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        table1.Cell(1, 4).Select
-        
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
+        table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        table1.Rows(2).Select
+        table1.Rows(1).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Question Text - Choice Multiple"
@@ -9308,10 +8819,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         Set tt = Nothing
         
-        table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(3, 1).Select
+         table1.Rows(2).Select
         
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
          tt.Range.Style = "Question_no"
@@ -9328,24 +8836,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: " & varIdentificationId
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
+        table1.Rows(3).Select
+        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        Set tt = Nothing
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
+         table1.Cell(3, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
@@ -9361,7 +8855,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(4, 2).Select
+        table1.Cell(3, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Title"
@@ -9377,7 +8871,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Rows(5).Select
+        table1.Rows(4).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Text"
         tt.Range.Style = "Question_Text"
@@ -9392,7 +8886,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
         
         'Answer option heading
-        table1.Rows(6).Select
+        table1.Rows(5).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Answer_head"
         tt.SetPlaceholderText Text:="Answer Text - Choice Multiple"
@@ -9406,7 +8900,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
       
         
        ' table1.Rows(5).SetHeight rowHeight:=ActiveDocument.PageSetup.PageHeight - 300, HeightRule:=wdRowHeightExactly
-        For i = 7 To MyValue + 6
+        For i = 6 To MyValue + 5
             
         table1.Rows(i).Select
         table1.Rows(i).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
@@ -9414,9 +8908,9 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         table1.Cell(i, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Answer Text " & i - 6
+        tt.Title = "Answer Text " & i - 5
         tt.Range.Style = "Answer_Text"
-        tt.SetPlaceholderText Text:=varanswer(i - 7)
+        tt.SetPlaceholderText Text:=varanswer(i - 6)
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlack
         tt.Range.Font.Bold = False
@@ -9431,8 +8925,8 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Rationale_Text"
-        tt.Title = "Rationale Text " & i - 6
-        tt.SetPlaceholderText Text:=varrationale(i - 7)
+        tt.Title = "Rationale Text " & i - 5
+        tt.SetPlaceholderText Text:=varrationale(i - 6)
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlack
         tt.Range.Font.Bold = False
@@ -9862,6 +9356,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
         
         
+        
         table1.Rows(table1.Rows.Count - 2).Select
         table1.Rows(table1.Rows.Count - 2).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
@@ -9953,55 +9448,27 @@ Selection.InsertBreak WdBreakType.wdPageBreak
 
 End Sub
 
-Sub copytableupdatetf(vartitle, MyValue, varIdentificationId, varqtext, varanswer, varrationale, varcorrecttxt, varscoretxt, vardifficultytxt, varcorrectrationaletxt, varincorrectrationaletxt, varWeblinkRemediationTxt, varWeblinkRemediationLink, varWeblinkRemediationTooltip, varTextRemediationTxt, vartagtype, vartagvalue)
+Sub copytableupdatetf(vartitle, MyValue, varqtext, varanswer, varrationale, varcorrecttxt, varscoretxt, vardifficultytxt, varcorrectrationaletxt, varincorrectrationaletxt, varWeblinkRemediationTxt, varWeblinkRemediationLink, varWeblinkRemediationTooltip, varTextRemediationTxt, vartagtype, vartagvalue)
 Dim table1 As Table
 Dim tt As ContentControl
-Dim TABLE2 As Table
+Dim table2 As Table
 Dim addbutton
 UpdateQuestionNo = UpdateQuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
+Selection.HomeKey Unit:=wdStory
+Selection.EndKey Unit:=wdStory
 Selection.InsertBreak WdBreakType.wdPageBreak
 
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=8 + 17, NumColumns:= _
+   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=8 + 16, NumColumns:= _
         1, AutoFitBehavior:= _
         wdAutoFitWindow)
         
         table1.Select
         
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-        table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-        
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        table1.Cell(1, 4).Select
-        
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
+        table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        table1.Rows(2).Select
+        table1.Rows(1).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Question Text - True or Fasle"
@@ -10014,11 +9481,8 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         Set tt = Nothing
         
-        table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+         table1.Rows(2).Select
         
-        table1.Cell(3, 1).Select
-               
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
          tt.Range.Style = "Question_no"
         tt.Title = "Question No"
@@ -10034,24 +9498,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: " & varIdentificationId
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
+        table1.Rows(3).Select
+        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        Set tt = Nothing
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
+         table1.Cell(3, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
@@ -10067,7 +9517,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(4, 2).Select
+        table1.Cell(3, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Title"
@@ -10083,7 +9533,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Rows(5).Select
+        table1.Rows(4).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Text"
         tt.Range.Style = "Question_Text"
@@ -10097,7 +9547,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.Range.Rows.Height = 70
         Set tt = Nothing
         
-        table1.Rows(6).Select
+        table1.Rows(5).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Answer_head"
         tt.SetPlaceholderText Text:="Answer Text - True or Fasle"
@@ -10110,10 +9560,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         
         
-        table1.Rows(7).Select
-        table1.Rows(7).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        table1.Rows(6).Select
+        table1.Rows(6).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        table1.Cell(7, 1).Select
+        table1.Cell(6, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Answer Text " & 1
@@ -10129,7 +9579,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-         table1.Cell(7, 2).Select
+         table1.Cell(6, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Rationale_Text"
@@ -10145,10 +9595,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Rows(8).Select
-        table1.Rows(8).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+        table1.Rows(7).Select
+        table1.Rows(7).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        table1.Cell(8, 1).Select
+        table1.Cell(7, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Answer Text " & 2
@@ -10164,7 +9614,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-         table1.Cell(8, 2).Select
+         table1.Cell(7, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Rationale_Text"
@@ -10644,56 +10094,28 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
 End Sub
 
-Sub copytableupdatevq(vartitle, MyValue, varIdentificationId, varqtext, varanswer, varrationale, varcorrecttxt, varscoretxt, vardifficultytxt, varcorrectrationaletxt, varincorrectrationaletxt, varWeblinkRemediationTxt, varWeblinkRemediationLink, varWeblinkRemediationTooltip, varTextRemediationTxt, vartagtype, vartagvalue, varadditionalfile)
+Sub copytableupdatevq(vartitle, MyValue, varqtext, varanswer, varrationale, varcorrecttxt, varscoretxt, vardifficultytxt, varcorrectrationaletxt, varincorrectrationaletxt, varWeblinkRemediationTxt, varWeblinkRemediationLink, varWeblinkRemediationTooltip, varTextRemediationTxt, vartagtype, vartagvalue, varadditionalfile)
 Dim table1 As Table
 Dim tt As ContentControl
-Dim TABLE2 As Table
+Dim table2 As Table
 Dim addbutton
 varNumRows = MyValue + 7
 UpdateQuestionNo = UpdateQuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
+Selection.HomeKey Unit:=wdStory
+Selection.EndKey Unit:=wdStory
 Selection.InsertBreak WdBreakType.wdPageBreak
 
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 17, NumColumns:= _
+   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 16, NumColumns:= _
         1, AutoFitBehavior:= _
         wdAutoFitWindow)
         
         table1.Select
-        table1.id = "VQ"
+        table1.ID = "VQ"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-        table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-       
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-       
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-       
-        table1.Cell(1, 4).Select
-       
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
+        table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        table1.Rows(2).Select
+        table1.Rows(1).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Question Text - Video Questions"
@@ -10706,10 +10128,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         Set tt = Nothing
         
-        table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-       
-        table1.Cell(3, 1).Select
+        table1.Rows(2).Select
         
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
          tt.Range.Style = "Question_no"
@@ -10726,25 +10145,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: " & varIdentificationId
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-       
-        Set tt = Nothing
+        table1.Rows(3).Select
+        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
+         table1.Cell(3, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
@@ -10760,7 +10164,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(4, 2).Select
+        table1.Cell(3, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Title"
@@ -10776,7 +10180,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
                 
-        table1.Rows(5).Select
+        table1.Rows(4).Select
         
         'table1.Rows(2).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
@@ -10793,7 +10197,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
         
         'Answer option heading
-        table1.Rows(6).Select
+        table1.Rows(5).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Answer_head"
         tt.SetPlaceholderText Text:="Answer Text - Video Questions"
@@ -10810,7 +10214,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
                     
        
         
-      For i = 7 To MyValue + 6
+      For i = 6 To MyValue + 5
         
        ' table1.Rows(5).SetHeight rowHeight:=ActiveDocument.PageSetup.PageHeight - 300, HeightRule:=wdRowHeightExactly
         
@@ -10820,9 +10224,9 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         table1.Cell(i, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Answer Text " & i - 6
+        tt.Title = "Answer Text " & i - 5
         tt.Range.Style = "Answer_Text"
-        tt.SetPlaceholderText Text:=varanswer(i - 7)
+        tt.SetPlaceholderText Text:=varanswer(i - 6)
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlack
         tt.Range.Font.Bold = False
@@ -10837,8 +10241,8 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Rationale_Text"
-        tt.Title = "Rationale Text " & i - 6
-        tt.SetPlaceholderText Text:=varrationale(i - 7)
+        tt.Title = "Rationale Text " & i - 5
+        tt.SetPlaceholderText Text:=varrationale(i - 6)
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlack
         tt.Range.Font.Bold = False
@@ -11372,58 +10776,28 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
 
 End Sub
-Sub copytableupdateII(vartitle, MyValue, varIdentificationId, varqtext, varanswer, varrationale, varcorrecttxt, varscoretxt, vardifficultytxt, varcorrectrationaletxt, varincorrectrationaletxt, varWeblinkRemediationTxt, varWeblinkRemediationLink, varWeblinkRemediationTooltip, varTextRemediationTxt, vartagtype, vartagvalue, varadditionalfile)
+Sub copytableupdateII(vartitle, MyValue, varqtext, varanswer, varrationale, varcorrecttxt, varscoretxt, vardifficultytxt, varcorrectrationaletxt, varincorrectrationaletxt, varWeblinkRemediationTxt, varWeblinkRemediationLink, varWeblinkRemediationTooltip, varTextRemediationTxt, vartagtype, vartagvalue, varadditionalfile)
 Dim table1 As Table
 Dim tt As ContentControl
-Dim TABLE2 As Table
+Dim table2 As Table
 Dim addbutton
 varNumRows = MyValue + 7
 UpdateQuestionNo = UpdateQuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
+Selection.HomeKey Unit:=wdStory
+Selection.EndKey Unit:=wdStory
 Selection.InsertBreak WdBreakType.wdPageBreak
 
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 17, NumColumns:= _
+   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 16, NumColumns:= _
         1, AutoFitBehavior:= _
         wdAutoFitWindow)
         
         table1.Select
-        table1.id = "MC"
+        table1.ID = "MC"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-        table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-       
-       
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-       
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-       
-        table1.Cell(1, 4).Select
-       
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
+        table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        table1.Rows(2).Select
+        table1.Rows(1).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Question Text - Image Integration"
@@ -11436,11 +10810,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         Set tt = Nothing
         
-         table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-       
-        table1.Cell(3, 1).Select
-        
+        table1.Rows(2).Select
         
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
          tt.Range.Style = "Question_no"
@@ -11457,24 +10827,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-         table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: " & varIdentificationId
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-       
-        Set tt = Nothing
+        table1.Rows(3).Select
+        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
+         table1.Cell(3, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
@@ -11490,7 +10846,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(4, 2).Select
+        table1.Cell(3, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Title"
@@ -11506,7 +10862,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
                 
-        table1.Rows(5).Select
+        table1.Rows(4).Select
         
         'table1.Rows(2).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
@@ -11523,7 +10879,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
         
         'Answer option heading
-        table1.Rows(6).Select
+        table1.Rows(5).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Answer_head"
         tt.SetPlaceholderText Text:="Answer Text - Image Integration"
@@ -11540,7 +10896,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
                     
        
         
-      For i = 7 To MyValue + 6
+      For i = 6 To MyValue + 5
         
        ' table1.Rows(5).SetHeight rowHeight:=ActiveDocument.PageSetup.PageHeight - 300, HeightRule:=wdRowHeightExactly
         
@@ -11550,9 +10906,9 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         table1.Cell(i, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Answer Text " & i - 6
+        tt.Title = "Answer Text " & i - 5
         tt.Range.Style = "Answer_Text"
-        tt.SetPlaceholderText Text:=varanswer(i - 7)
+        tt.SetPlaceholderText Text:=varanswer(i - 6)
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlack
         tt.Range.Font.Bold = False
@@ -11567,8 +10923,8 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Rationale_Text"
-        tt.Title = "Rationale Text " & i - 6
-        tt.SetPlaceholderText Text:=varrationale(i - 7)
+        tt.Title = "Rationale Text " & i - 5
+        tt.SetPlaceholderText Text:=varrationale(i - 6)
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlack
         tt.Range.Font.Bold = False
@@ -12104,61 +11460,28 @@ Selection.InsertBreak WdBreakType.wdPageBreak
 
 End Sub
 
-Sub copytableupdatego(vartitle, MyValue, varIdentificationId, varqtext, varanswer, varrationale, varcorrecttxt, varscoretxt, vardifficultytxt, varcorrectrationaletxt, varincorrectrationaletxt, varWeblinkRemediationTxt, varWeblinkRemediationLink, varWeblinkRemediationTooltip, varTextRemediationTxt, vartagtype, vartagvalue, varadditionalpath)
+Sub copytableupdatego(vartitle, MyValue, varqtext, varanswer, varrationale, varcorrecttxt, varscoretxt, vardifficultytxt, varcorrectrationaletxt, varincorrectrationaletxt, varWeblinkRemediationTxt, varWeblinkRemediationLink, varWeblinkRemediationTooltip, varTextRemediationTxt, vartagtype, vartagvalue, varadditionalpath)
 Dim table1 As Table
 Dim tt As ContentControl
-Dim TABLE2 As Table
+Dim table2 As Table
 Dim addbutton
 varNumRows = MyValue + 7
 UpdateQuestionNo = UpdateQuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
+Selection.HomeKey Unit:=wdStory
+Selection.EndKey Unit:=wdStory
 Selection.InsertBreak WdBreakType.wdPageBreak
 
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 16, NumColumns:= _
+   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 15, NumColumns:= _
         1, AutoFitBehavior:= _
         wdAutoFitWindow)
         
         table1.Select
-        table1.id = "VQ"
+        table1.ID = "VQ"
         table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-        
-        table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-       
-       
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-       
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-       
-        table1.Cell(1, 4).Select
-       
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
+        table1.Rows(1).Shading.BackgroundPatternColor = RGB(81, 169, 77)
         'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
         'Question heading
-        
-        
-        table1.Rows(2).Select
+        table1.Rows(1).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
         tt.SetPlaceholderText Text:="Question Text - Graphic Option"
@@ -12171,10 +11494,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.LockContents = True
         Set tt = Nothing
         
-        table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-       
-        table1.Cell(3, 1).Select
+        table1.Rows(2).Select
         
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
          tt.Range.Style = "Question_no"
@@ -12191,25 +11511,10 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
+        table1.Rows(3).Select
+        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
         
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: " & varIdentificationId
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-       
-        Set tt = Nothing
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
+         table1.Cell(3, 1).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         
@@ -12225,7 +11530,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
         
-        table1.Cell(4, 2).Select
+        table1.Cell(3, 2).Select
         
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Title = "Question Title"
@@ -12241,7 +11546,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
         Set tt = Nothing
                 
-        table1.Rows(5).Select
+        table1.Rows(4).Select
         
         'table1.Rows(2).Select
          Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
@@ -12258,7 +11563,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         Set tt = Nothing
         
         'Answer option heading
-        table1.Rows(6).Select
+        table1.Rows(5).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Answer_head"
         tt.SetPlaceholderText Text:="Answer Text - Graphic Option"
@@ -12275,7 +11580,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
                     
        
         
-      For i = 7 To MyValue + 6
+      For i = 6 To MyValue + 5
         
        ' table1.Rows(5).SetHeight rowHeight:=ActiveDocument.PageSetup.PageHeight - 300, HeightRule:=wdRowHeightExactly
         
@@ -12302,7 +11607,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         tt.Title = "File Name" & varbtn
         tt.Range.Style = "Additional_file_path"
         tt.Range.Font.Size = "10"
-        tt.SetPlaceholderText , , varadditionalpath(i - 7)
+        tt.SetPlaceholderText , , varadditionalpath(i - 6)
         tt.Range.Font.ColorIndex = wdBlack
         tt.Range.Font.Bold = False
         'tt.Range.Rows.Height = 50
@@ -12314,7 +11619,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         table1.Cell(i, 3).Select
         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
         tt.Range.Style = "Rationale_Text"
-        tt.Title = "Rationale Text " & i - 6
+        tt.Title = "Rationale Text " & i - 5
         tt.SetPlaceholderText Text:="Enter rationale for this answer"
         tt.Range.Font.Size = "10"
         tt.Range.Font.ColorIndex = wdBlack
@@ -12797,1818 +12102,6 @@ Selection.InsertBreak WdBreakType.wdPageBreak
 
 End Sub
 
-Sub copytableupdatecs(vartitle, varIdentificationId, varqtext, vartagtype, vartagvalue, varadditionalfile)
-Dim table1 As Table
-Dim tt As ContentControl
-Dim TABLE2 As Table
-Dim addbutton
-'varNumRows = MyValue + 7
-UpdateQuestionNo = UpdateQuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
-Selection.InsertBreak WdBreakType.wdPageBreak
-
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=11, NumColumns:= _
-        1, AutoFitBehavior:= _
-        wdAutoFitWindow)
-        
-        table1.Select
-        table1.id = "VQ"
-        table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-        
-        table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-       
-       
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-       
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-       
-        table1.Cell(1, 4).Select
-       
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
-        'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
-        'Question heading
-        
-        
-        table1.Rows(2).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        
-        tt.SetPlaceholderText Text:="Question Text - Clinical Symptoms"
-        tt.Range.Style = "Question_Type"
-        tt.Range.Font.Size = "15"
-        tt.Range.Font.ColorIndex = wdWhite
-        tt.Range.Font.Bold = True
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-       
-        table1.Cell(3, 1).Select
-        
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Question_no"
-        tt.Title = "Question No"
-        
-        tt.SetPlaceholderText Text:="Question No: " & UpdateQuestionNo
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        Set tt = Nothing
-        
-        
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: " & varIdentificationId
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-       
-        Set tt = Nothing
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        
-        tt.Range.Style = "Question_head"
-        tt.SetPlaceholderText Text:="Question Title"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        Set tt = Nothing
-        
-        table1.Cell(4, 2).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Question Title"
-        tt.Range.Style = "Question_Title"
-        tt.SetPlaceholderText Text:=vartitle
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = False
-        
-        Set tt = Nothing
-                
-        table1.Rows(5).Select
-        
-        'table1.Rows(2).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Question Text"
-        tt.Range.Style = "Question_Text"
-        tt.SetPlaceholderText Text:=varqtext
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.Range.Rows.Height = 70
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        'Answer option heading
-        
-        
-        table1.Rows(6).Select
-        table1.Rows(6).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-                
-        table1.Cell(6, 1).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Additional_Fields_head"
-        tt.SetPlaceholderText Text:="Additional Fields"
-        'tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Rows.Height = 50
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        table1.Cell(6, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Additional_Fields_head"
-        tt.SetPlaceholderText Text:=""
-        tt.LockContentControl = True
-        
-        table1.Cell(6, 3).Select
-        'Selection.InlineShapes.AddOLEControl ClassType:="Forms.CommandButton.1"
-        Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.CommandButton.1")
-        
-        'shp.Range.Style = "Chosse_file"
-        With shp.OLEFormat.Object
-            .Object.Caption = "Select File"
-            '.Object.Style = "Chosse_file"
-        End With
-        varbtn = Replace(shp.OLEFormat.Object.Name, "CommandButton", "")
-        Set shp = Nothing
-        'table1.Cell(i, 1).Width = 20
-        
-        
-        table1.Cell(6, 4).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "File Name" & varbtn
-        tt.Range.Style = "Additional_file_path"
-        tt.Range.Font.Size = "10"
-        tt.SetPlaceholderText , , varadditionalfile
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 50
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        
-        '''''''''Meta data Attributes'''''''''
-        
-        table1.Rows(table1.Rows.Count - 4).Shading.BackgroundPatternColor = RGB(169, 169, 169)
-        'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
-        'Question heading
-        table1.Rows(table1.Rows.Count - 4).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        
-        tt.SetPlaceholderText Text:="Meta Data Attributes"
-        tt.Range.Style = "Meta_Data_Attributes_head"
-        tt.Range.Font.Size = "15"
-        tt.Range.Font.ColorIndex = wdWhite
-        tt.Range.Font.Bold = True
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        
-        table1.Rows(table1.Rows.Count - 3).Select
-        table1.Rows(table1.Rows.Count - 3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count - 3, 1).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        
-        tt.SetPlaceholderText Text:="METADATA TAG"
-        tt.Range.Style = "METADATA_TAG_head"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = True
-        tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        table1.Cell(table1.Rows.Count - 3, 2).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.SetPlaceholderText Text:="METADATA VALUE"
-        tt.Range.Style = "METADATA_VALUE_head"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = True
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        
-        
-        table1.Rows(table1.Rows.Count - 2).Select
-        table1.Rows(table1.Rows.Count - 2).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count - 2, 1).Select
-       
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlDropdownList)
-        tt.LockContentControl = True
-        tt.Range.Style = "METADATA_TAG"
-        tt.Range.Rows.Height = 30
-        tt.SetPlaceholderText , , vartagtype(0)
-        tt.DropdownListEntries.Add "Status"
-        tt.DropdownListEntries.Add "Keyword"
-        tt.DropdownListEntries.Add "Topic"
-        Set tt = Nothing
-        
-        
-        table1.Cell(table1.Rows.Count - 2, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "METADATA_VALUE"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 30
-        tt.SetPlaceholderText , , vartagvalue(0)
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        table1.Rows(table1.Rows.Count - 1).Select
-        table1.Rows(table1.Rows.Count - 1).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count - 1, 1).Select
-       
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlDropdownList)
-        tt.LockContentControl = True
-        tt.Range.Style = "METADATA_TAG"
-        tt.Range.Rows.Height = 30
-        tt.SetPlaceholderText , , vartagtype(1)
-        tt.DropdownListEntries.Add "Status"
-        tt.DropdownListEntries.Add "Keyword"
-        tt.DropdownListEntries.Add "Topic"
-        Set tt = Nothing
-        
-        
-        table1.Cell(table1.Rows.Count - 1, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "METADATA_VALUE"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-         tt.SetPlaceholderText , , vartagvalue(1)
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        
-        '''''Create Table Row''''
-        table1.Rows(table1.Rows.Count).Select
-        table1.Rows(table1.Rows.Count).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count, 1).Select
-       
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlDropdownList)
-        tt.LockContentControl = True
-        tt.Range.Style = "METADATA_TAG"
-        tt.Range.Rows.Height = 30
-        tt.SetPlaceholderText , , vartagtype(2)
-        tt.DropdownListEntries.Add "Status"
-        tt.DropdownListEntries.Add "Keyword"
-        tt.DropdownListEntries.Add "Topic"
-        Set tt = Nothing
-        
-        
-        table1.Cell(table1.Rows.Count, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "METADATA_VALUE"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-         tt.SetPlaceholderText , , vartagvalue(2)
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        
-        
-
-End Sub
-
-Sub copytableupdateMEDC(vartitle, varIdentificationId, varqtext, vartagtype, vartagvalue, varadditionalfile)
-Dim table1 As Table
-Dim tt As ContentControl
-Dim TABLE2 As Table
-Dim addbutton
-'varNumRows = MyValue + 7
-UpdateQuestionNo = UpdateQuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
-Selection.InsertBreak WdBreakType.wdPageBreak
-
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=11, NumColumns:= _
-        1, AutoFitBehavior:= _
-        wdAutoFitWindow)
-        
-        table1.Select
-        table1.id = "VQ"
-        table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-        
-        table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-       
-       
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-       
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-       
-        table1.Cell(1, 4).Select
-       
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
-        'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
-        'Question heading
-        
-        
-        table1.Rows(2).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        
-        tt.SetPlaceholderText Text:="Question Text - Medical Case"
-        tt.Range.Style = "Question_Type"
-        tt.Range.Font.Size = "15"
-        tt.Range.Font.ColorIndex = wdWhite
-        tt.Range.Font.Bold = True
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-       
-        table1.Cell(3, 1).Select
-        
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Question_no"
-        tt.Title = "Question No"
-        
-        tt.SetPlaceholderText Text:="Question No: " & UpdateQuestionNo
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        Set tt = Nothing
-        
-        
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: " & varIdentificationId
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-       
-        Set tt = Nothing
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        
-        tt.Range.Style = "Question_head"
-        tt.SetPlaceholderText Text:="Question Title"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        Set tt = Nothing
-        
-        table1.Cell(4, 2).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Question Title"
-        tt.Range.Style = "Question_Title"
-        tt.SetPlaceholderText Text:=vartitle
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = False
-        
-        Set tt = Nothing
-                
-        table1.Rows(5).Select
-        
-        'table1.Rows(2).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Question Text"
-        tt.Range.Style = "Question_Text"
-        tt.SetPlaceholderText Text:=varqtext
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.Range.Rows.Height = 70
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        'Answer option heading
-        
-        
-        table1.Rows(6).Select
-        table1.Rows(6).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-                
-        table1.Cell(6, 1).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Additional_Fields_head"
-        tt.SetPlaceholderText Text:="Additional Fields"
-        'tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Rows.Height = 50
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        table1.Cell(6, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Additional_Fields_head"
-        tt.SetPlaceholderText Text:=""
-        tt.LockContentControl = True
-        
-        table1.Cell(6, 3).Select
-        Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.CommandButton.1")
-        With shp.OLEFormat.Object
-            .Object.Caption = "Select File"
-            
-        End With
-        varbtn = Replace(shp.OLEFormat.Object.Name, "CommandButton", "")
-        Set shp = Nothing
-        
-        
-        table1.Cell(6, 4).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "File Name" & varbtn
-        tt.Range.Style = "Additional_file_path"
-        tt.Range.Font.Size = "10"
-        tt.SetPlaceholderText , , varadditionalfile
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 50
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        
-        '''''''''Meta data Attributes'''''''''
-        
-        table1.Rows(table1.Rows.Count - 4).Shading.BackgroundPatternColor = RGB(169, 169, 169)
-        'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
-        'Question heading
-        table1.Rows(table1.Rows.Count - 4).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        
-        tt.SetPlaceholderText Text:="Meta Data Attributes"
-        tt.Range.Style = "Meta_Data_Attributes_head"
-        tt.Range.Font.Size = "15"
-        tt.Range.Font.ColorIndex = wdWhite
-        tt.Range.Font.Bold = True
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        
-        table1.Rows(table1.Rows.Count - 3).Select
-        table1.Rows(table1.Rows.Count - 3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count - 3, 1).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        
-        tt.SetPlaceholderText Text:="METADATA TAG"
-        tt.Range.Style = "METADATA_TAG_head"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = True
-        tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        table1.Cell(table1.Rows.Count - 3, 2).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.SetPlaceholderText Text:="METADATA VALUE"
-        tt.Range.Style = "METADATA_VALUE_head"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = True
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        
-        
-        table1.Rows(table1.Rows.Count - 2).Select
-        table1.Rows(table1.Rows.Count - 2).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count - 2, 1).Select
-       
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlDropdownList)
-        tt.LockContentControl = True
-        tt.Range.Style = "METADATA_TAG"
-        tt.Range.Rows.Height = 30
-        tt.SetPlaceholderText , , vartagtype(0)
-        tt.DropdownListEntries.Add "Status"
-        tt.DropdownListEntries.Add "Keyword"
-        tt.DropdownListEntries.Add "Topic"
-        Set tt = Nothing
-        
-        
-        table1.Cell(table1.Rows.Count - 2, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "METADATA_VALUE"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 30
-        tt.SetPlaceholderText , , vartagvalue(0)
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        table1.Rows(table1.Rows.Count - 1).Select
-        table1.Rows(table1.Rows.Count - 1).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count - 1, 1).Select
-       
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlDropdownList)
-        tt.LockContentControl = True
-        tt.Range.Style = "METADATA_TAG"
-        tt.Range.Rows.Height = 30
-        tt.SetPlaceholderText , , vartagtype(1)
-        tt.DropdownListEntries.Add "Status"
-        tt.DropdownListEntries.Add "Keyword"
-        tt.DropdownListEntries.Add "Topic"
-        Set tt = Nothing
-        
-        
-        table1.Cell(table1.Rows.Count - 1, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "METADATA_VALUE"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-         tt.SetPlaceholderText , , vartagvalue(1)
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        
-        '''''Create Table Row''''
-        table1.Rows(table1.Rows.Count).Select
-        table1.Rows(table1.Rows.Count).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count, 1).Select
-       
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlDropdownList)
-        tt.LockContentControl = True
-        tt.Range.Style = "METADATA_TAG"
-        tt.Range.Rows.Height = 30
-        tt.SetPlaceholderText , , vartagtype(2)
-        tt.DropdownListEntries.Add "Status"
-        tt.DropdownListEntries.Add "Keyword"
-        tt.DropdownListEntries.Add "Topic"
-        Set tt = Nothing
-        
-        
-        table1.Cell(table1.Rows.Count, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "METADATA_VALUE"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-         tt.SetPlaceholderText , , vartagvalue(2)
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        
-        
-
-End Sub
-
-Sub copytableupdatemcCSMEDC(vartitle, MyValue, varIdentificationId, varqtext, varanswer, varrationale, varcorrecttxt, varscoretxt, vardifficultytxt, varcorrectrationaletxt, varincorrectrationaletxt, varWeblinkRemediationTxt, varWeblinkRemediationLink, varWeblinkRemediationTooltip, varTextRemediationTxt)
-Dim table1 As Table
-Dim tt As ContentControl
-Dim TABLE2 As Table
-Dim addbutton
-varNumRows = MyValue + 6
-UpdateQuestionNo = UpdateQuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
-Selection.InsertBreak WdBreakType.wdPageBreak
-
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 12, NumColumns:= _
-        1, AutoFitBehavior:= _
-        wdAutoFitWindow)
-        
-        table1.Select
-        table1.id = "MC"
-        table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-        'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
-        'Question heading
-        table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-        
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-        
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        table1.Cell(1, 4).Select
-        
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
-        table1.Rows(2).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        
-        tt.SetPlaceholderText Text:="Question Text - Multiple Choice"
-        tt.Range.Style = "Question_Type"
-        tt.Range.Font.Size = "15"
-        tt.Range.Font.ColorIndex = wdWhite
-        tt.Range.Font.Bold = True
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-       
-        table1.Cell(3, 1).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Question_no"
-        tt.Title = "Question No"
-        tt.SetPlaceholderText Text:="Question No: " & UpdateQuestionNo
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        Set tt = Nothing
-        
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: " & varIdentificationId
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        Set tt = Nothing
-        
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        
-        tt.Range.Style = "Question_head"
-        tt.SetPlaceholderText Text:="Question Title"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        Set tt = Nothing
-        
-        table1.Cell(4, 2).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Question Title"
-        tt.Range.Style = "Question_Title"
-        tt.SetPlaceholderText Text:=vartitle
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = False
-        
-        Set tt = Nothing
-                
-        table1.Rows(5).Select
-        
-        'table1.Rows(2).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Question Text"
-        tt.Range.Style = "Question_Text"
-        'tt.ShowingPlaceholderText = varqtext
-        tt.SetPlaceholderText Text:=varqtext
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.Range.Rows.Height = 70
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        'Answer option heading
-        table1.Rows(6).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Answer_head"
-        tt.SetPlaceholderText Text:="Answer Text - Multiple Choice"
-        
-        tt.Range.Font.Size = "13"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = True
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-    
-         
-        
-      For i = 7 To MyValue + 6
-        
-       ' table1.Rows(5).SetHeight rowHeight:=ActiveDocument.PageSetup.PageHeight - 300, HeightRule:=wdRowHeightExactly
-        
-        table1.Rows(i).Select
-        table1.Rows(i).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(i, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Answer Text " & i - 6
-        tt.Range.Style = "Answer_Text"
-        tt.SetPlaceholderText Text:=varanswer(i - 7)
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        tt.Range.Rows.Height = 50
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        
-        Set tt = Nothing
-        
-         table1.Cell(i, 2).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Rationale_Text"
-        tt.Title = "Rationale Text " & i - 6
-        tt.SetPlaceholderText Text:=varrationale(i - 7)
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        tt.Range.Rows.Height = 50
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        
-        Set tt = Nothing
-        
-    Next
-        
-         'table1.Rows(4).Cells.Split NumRows:=5, NumColumns:=2, MergeBeforeSplit:=True
-         'table1.Cell(4, 2).Merge table1.Cell(8, 2)
-               
-      
-               
-        table1.Rows(table1.Rows.Count - 11).Select
-        table1.Rows(table1.Rows.Count - 11).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count - 11, 1).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Correct_answer_head"
-        tt.SetPlaceholderText Text:="Correct Answer:"
-        
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Rows.Height = 50
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        table1.Cell(table1.Rows.Count - 11, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlDropdownList)
-        tt.Title = "Correct Answer"
-        tt.LockContentControl = True
-        tt.Range.Style = "Correct_Answer"
-        tt.SetPlaceholderText , , varcorrecttxt
-        For i = 1 To MyValue
-        tt.DropdownListEntries.Add (i)
-        Next
-        Set tt = Nothing
-        
-        'Set tt = Nothing
-        
-        table1.Rows(table1.Rows.Count - 10).Select
-        table1.Rows(table1.Rows.Count - 10).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count - 10, 1).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Score_head"
-        tt.SetPlaceholderText Text:="Score"
-        ''tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = True
-        tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        table1.Cell(table1.Rows.Count - 10, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Difficulty_head"
-        tt.SetPlaceholderText Text:="Difficulty"
-        ''tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = True
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        table1.Rows(table1.Rows.Count - 9).Select
-        table1.Rows(table1.Rows.Count - 9).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count - 9, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlDropdownList)
-        tt.Range.Style = "Score"
-        tt.LockContentControl = True
-        tt.SetPlaceholderText , , varscoretxt
-        For i = 1 To 10
-        tt.DropdownListEntries.Add (i)
-        Next
-        Set tt = Nothing
-
-        table1.Cell(table1.Rows.Count - 9, 2).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlDropdownList)
-        tt.Range.Style = "Difficulty"
-        tt.LockContentControl = True
-        tt.SetPlaceholderText , , vardifficultytxt
-        For i = 1 To 10
-        tt.DropdownListEntries.Add (i)
-        Next
-        Set tt = Nothing
-        
-        
-        table1.Rows(table1.Rows.Count - 8).Select
-        table1.Rows(table1.Rows.Count - 8).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count - 8, 1).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Correct_Answer_Rationale_head"
-        tt.SetPlaceholderText Text:="Correct Rationale"
-        ''tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = True
-        tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        table1.Cell(table1.Rows.Count - 8, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        
-        tt.Range.Style = "Incorrect_Answer_Rationale_head"
-         tt.SetPlaceholderText Text:="Incorrect Rationale"
-        ''tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = True
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        
-        table1.Rows(table1.Rows.Count - 7).Select
-        table1.Rows(table1.Rows.Count - 7).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count - 7, 1).Select
-        
-       
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Correct_Answer_Rationale"
-        tt.SetPlaceholderText Text:=varcorrectrationaletxt
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        table1.Cell(table1.Rows.Count - 7, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.SetPlaceholderText Text:=varincorrectrationaletxt
-        tt.Range.Style = "Incorrect_Answer_Rationale"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        
-  
-        table1.Rows(table1.Rows.Count - 6).Shading.BackgroundPatternColor = RGB(255, 140, 0)
-        'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
-        'Question heading
-        table1.Rows(table1.Rows.Count - 6).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Remediation_Links_head"
-        tt.SetPlaceholderText Text:="Remediation"
-        ''tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "15"
-        tt.Range.Font.ColorIndex = wdWhite
-        tt.Range.Font.Bold = True
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        
-        table1.Rows(table1.Rows.Count - 5).Select
-        table1.Rows(table1.Rows.Count - 5).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count - 5, 1).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Remediation_Link_Type_head"
-        tt.SetPlaceholderText Text:="Remediation Type"
-        ''tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = True
-        tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        table1.Cell(table1.Rows.Count - 5, 2).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Remediation_head"
-        tt.SetPlaceholderText Text:="Remediation Detail"
-        ''tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = True
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        
-        table1.Rows(table1.Rows.Count - 4).Select
-        table1.Rows(table1.Rows.Count - 4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-               
-        table1.Cell(table1.Rows.Count - 4, 1).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Remediation_Link_Type"
-        tt.SetPlaceholderText Text:="Web Link"
-        ''tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        table1.Cell(table1.Rows.Count - 4, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Web_Remediation_Text"
-        tt.Title = "Remediation Text"
-        tt.SetPlaceholderText Text:=varWeblinkRemediationTxt
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        table1.Rows(table1.Rows.Count - 3).Select
-        table1.Rows(table1.Rows.Count - 3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-               
-               
-        table1.Cell(table1.Rows.Count - 3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Web_Remediation_Link"
-        tt.Title = "Remediation Link"
-        tt.SetPlaceholderText Text:=varWeblinkRemediationLink
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        table1.Rows(table1.Rows.Count - 2).Select
-        table1.Rows(table1.Rows.Count - 2).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-               
-                
-        table1.Cell(table1.Rows.Count - 2, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Web_Remediation_Tooltip"
-        tt.Title = "Remediation Tooltip"
-        tt.SetPlaceholderText Text:=varWeblinkRemediationTooltip
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        
-        
-      table1.Rows(table1.Rows.Count - 1).Select
-        'table1.Rows(table1.Rows.Count - 6).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-               
-        table1.Rows(table1.Rows.Count - 1).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Remediation_Link_Type"
-        tt.SetPlaceholderText Text:="Ebook"
-        ''tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        
-        table1.Rows(table1.Rows.Count).Select
-        table1.Rows(table1.Rows.Count).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        table1.Cell(table1.Rows.Count, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Remediation_Link_Type"
-        tt.SetPlaceholderText Text:="Text"
-        ''tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        
-        table1.Cell(table1.Rows.Count, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Text_Remediation_Text"
-        tt.Title = "Remediation Text"
-        tt.SetPlaceholderText Text:=varTextRemediationTxt
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        
-        
-
-End Sub
-
-Sub copytableupdatecmCSMEDC(vartitle, MyValue, varIdentificationId, varqtext, varanswer, varrationale, varcorrecttxt, varscoretxt, vardifficultytxt, varcorrectrationaletxt, varincorrectrationaletxt, varWeblinkRemediationTxt, varWeblinkRemediationLink, varWeblinkRemediationTooltip, varTextRemediationTxt)
-Dim table1 As Table
-Dim tt As ContentControl
-Dim TABLE2 As Table
-Dim addbutton
-varNumRows = MyValue + 6
-UpdateQuestionNo = UpdateQuestionNo + 1
-Selection.HomeKey unit:=wdStory
-Selection.EndKey unit:=wdStory
-Selection.InsertBreak WdBreakType.wdPageBreak
-
-   Set table1 = ActiveDocument.Tables.Add(Range:=Selection.Range, NumRows:=varNumRows + 12, NumColumns:= _
-        1, AutoFitBehavior:= _
-        wdAutoFitWindow)
-        
-        table1.Select
-        
-        table1.Shading.BackgroundPatternColor = RGB(203, 203, 203)
-        
-        table1.Rows(1).Select
-         table1.Rows(1).Cells.Split NumColumns:=4, MergeBeforeSplit:=True
-        
-        
-        table1.Cell(1, 3).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Delete_Question"
-        tt.Title = "Delete Question"
-        
-        tt.SetPlaceholderText Text:="Delete Question"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdRed
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        table1.Cell(1, 4).Select
-        
-        Selection.Collapse Direction:=wdCollapseStart
-        Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-        With ffield
-                .Name = "Delete_" & QuestionNo
-                .Range.Style = "Delete_box"
-        End With
-        
-        
-        
-        table1.Rows(2).Shading.BackgroundPatternColor = RGB(81, 169, 77)
-        'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
-        'Question heading
-        table1.Rows(2).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        
-        tt.SetPlaceholderText Text:="Question Text - Choice Multiple"
-        tt.Range.Style = "Question_Type"
-        tt.Range.Font.Size = "15"
-        tt.Range.Font.ColorIndex = wdWhite
-        tt.Range.Font.Bold = True
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        table1.Rows(3).Select
-        table1.Rows(3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(3, 1).Select
-        
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Question_no"
-        tt.Title = "Question No"
-        
-        tt.SetPlaceholderText Text:="Question No: " & UpdateQuestionNo
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        Set tt = Nothing
-        
-        table1.Cell(3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Identification_Id"
-        tt.Title = "Identification Id"
-        tt.SetPlaceholderText Text:="Identification Id: " & varIdentificationId
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        Set tt = Nothing
-        
-        table1.Rows(4).Select
-        table1.Rows(4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-         table1.Cell(4, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        
-        tt.Range.Style = "Question_head"
-        tt.SetPlaceholderText Text:="Question Title"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        Set tt = Nothing
-        
-        table1.Cell(4, 2).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Question Title"
-        tt.Range.Style = "Question_Title"
-        tt.SetPlaceholderText Text:=vartitle
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        'tt.Range.Rows.Height = 10
-        tt.LockContentControl = True
-        tt.LockContents = False
-        
-        Set tt = Nothing
-        
-        table1.Rows(5).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Question Text"
-        tt.Range.Style = "Question_Text"
-        tt.SetPlaceholderText Text:=varqtext
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        tt.Range.Rows.Height = 70
-        Set tt = Nothing
-        
-        'Answer option heading
-        table1.Rows(6).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Answer_head"
-        tt.SetPlaceholderText Text:="Answer Text - Choice Multiple"
-        
-        tt.Range.Font.Size = "13"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = True
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-      
-        
-       ' table1.Rows(5).SetHeight rowHeight:=ActiveDocument.PageSetup.PageHeight - 300, HeightRule:=wdRowHeightExactly
-        For i = 7 To MyValue + 6
-            
-        table1.Rows(i).Select
-        table1.Rows(i).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(i, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Title = "Answer Text " & i - 6
-        tt.Range.Style = "Answer_Text"
-        tt.SetPlaceholderText Text:=varanswer(i - 7)
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        tt.Range.Rows.Height = 50
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        
-        Set tt = Nothing
-        
-         table1.Cell(i, 2).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Rationale_Text"
-        tt.Title = "Rationale Text " & i - 6
-        tt.SetPlaceholderText Text:=varrationale(i - 7)
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        tt.Range.Rows.Height = 50
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        
-        Set tt = Nothing
-         
-        Next
-               
-        table1.Rows(table1.Rows.Count - 11).Select
-        table1.Rows(table1.Rows.Count - 11).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count - 11, 1).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        
-        tt.SetPlaceholderText Text:="Correct Answers:"
-        tt.Range.Style = "Correct_Answer"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlue
-        tt.Range.Font.Bold = False
-        tt.Range.Rows.Height = 50
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        
-        Dim strCorrect As String
-        Dim strArray() As String
-        Dim intCount As Integer
-   
-        strCorrect = varcorrecttxt
-        strArray = Split(strCorrect, ",")
-        
-        For i = 2 To (MyValue * 2) + 1
-        
-        If i = 2 Then
-            j = 1
-            K = 1
-            table1.Cell(table1.Rows.Count - 11, i).Split NumColumns:=(MyValue * 2) + 1
-            table1.Cell(table1.Rows.Count - 11, 2).Select
-            Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        
-            tt.SetPlaceholderText Text:=" "
-            tt.Range.Style = "Check_box_no"
-            tt.Range.Font.Size = "10"
-            tt.Range.Font.Name = "Verdana"
-            tt.LockContentControl = True
-            tt.LockContents = False
-            
-        End If
-        
-        If i Mod 2 > 0 Then
-            table1.Cell(table1.Rows.Count - 11, i).Select
-            
-            Selection.Collapse Direction:=wdCollapseEnd
-            Set ffield = ActiveDocument.FormFields _
-                        .Add(Range:=Selection.Range, Type:=wdFieldFormCheckBox)
-            With ffield
-                .Name = "Check_" & UpdateQuestionNo & "_" & K
-                .Range.Style = "Check_box"
-                '.CheckBox.Value = False
-                For intCount = LBound(strArray) To UBound(strArray)
-                    If strArray(intCount) = K Then
-                        .CheckBox.Value = True
-                    End If
-                Next
-            End With
-            K = K + 1
-        Else
-            table1.Cell(table1.Rows.Count - 11, i).Select
-            Selection.Collapse Direction:=wdCollapseEnd
-            Set tt = ActiveDocument.ContentControls.Add(wdContentControlText)
-                
-            tt.SetPlaceholderText Text:=j
-            tt.Range.Style = "Check_box_no"
-            Set tt = Nothing
-            j = j + 1
-        End If
-        
-        Next
-        
-        
-        'Set tt = Nothing
-        table1.Rows(table1.Rows.Count - 10).Select
-        table1.Rows(table1.Rows.Count - 10).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count - 10, 1).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Score_head"
-        tt.SetPlaceholderText Text:="Score"
-        'tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = True
-        tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        table1.Cell(table1.Rows.Count - 10, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Difficulty_head"
-        tt.SetPlaceholderText Text:="Difficulty"
-        'tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = True
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        table1.Rows(table1.Rows.Count - 9).Select
-        table1.Rows(table1.Rows.Count - 9).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count - 9, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlDropdownList)
-        tt.Range.Style = "Score"
-        tt.LockContentControl = True
-        tt.SetPlaceholderText , , varscoretxt
-        For i = 1 To 10
-        tt.DropdownListEntries.Add (i)
-        Next
-        Set tt = Nothing
-
-    table1.Cell(table1.Rows.Count - 9, 2).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlDropdownList)
-        tt.Range.Style = "Difficulty"
-        tt.LockContentControl = True
-        tt.SetPlaceholderText , , vardifficultytxt
-        For i = 1 To 10
-        tt.DropdownListEntries.Add (i)
-        Next
-        Set tt = Nothing
-        
-        
-        table1.Rows(table1.Rows.Count - 8).Select
-        table1.Rows(table1.Rows.Count - 8).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count - 8, 1).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Correct_Answer_Rationale_head"
-        tt.SetPlaceholderText Text:="Correct Rationale"
-        'tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = True
-        tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        table1.Cell(table1.Rows.Count - 8, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Incorrect_Answer_Rationale_head"
-         tt.SetPlaceholderText Text:="Incorrect Rationale"
-        'tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = True
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        
-        table1.Rows(table1.Rows.Count - 7).Select
-        table1.Rows(table1.Rows.Count - 7).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count - 7, 1).Select
-        
-       
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Correct_Answer_Rationale"
-        tt.SetPlaceholderText Text:=varcorrectrationaletxt
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        table1.Cell(table1.Rows.Count - 7, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Incorrect_Answer_Rationale"
-        tt.SetPlaceholderText Text:=varincorrectrationaletxt
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        
-  
-        table1.Rows(table1.Rows.Count - 6).Shading.BackgroundPatternColor = RGB(255, 140, 0)
-        'table1.Rows(3).Shading.ForegroundPatternColor = wdColorBlue
-        'Question heading
-        table1.Rows(table1.Rows.Count - 6).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Remediation_Links_head"
-        tt.SetPlaceholderText Text:="Remediation"
-        'tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "15"
-        tt.Range.Font.ColorIndex = wdWhite
-        tt.Range.Font.Bold = True
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        
-        table1.Rows(table1.Rows.Count - 5).Select
-        table1.Rows(table1.Rows.Count - 5).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        
-        table1.Cell(table1.Rows.Count - 5, 1).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Remediation_Link_Type_head"
-        tt.SetPlaceholderText Text:="Remediation Type"
-        'tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = True
-        tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        table1.Cell(table1.Rows.Count - 5, 2).Select
-         Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-         tt.Range.Style = "Remediation_head"
-        tt.SetPlaceholderText Text:="Remediation Detail"
-        'tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = True
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        
-        
-        
-        table1.Rows(table1.Rows.Count - 4).Select
-        table1.Rows(table1.Rows.Count - 4).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-               
-        table1.Cell(table1.Rows.Count - 4, 1).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Remediation_Link_Type"
-        tt.SetPlaceholderText Text:="Web Link"
-        ''tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        table1.Cell(table1.Rows.Count - 4, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Web_Remediation_Text"
-        tt.Title = "Remediation Text"
-        tt.SetPlaceholderText Text:=varWeblinkRemediationTxt
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        table1.Rows(table1.Rows.Count - 3).Select
-        table1.Rows(table1.Rows.Count - 3).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-               
-               
-        table1.Cell(table1.Rows.Count - 3, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Web_Remediation_Link"
-        tt.Title = "Remediation Link"
-        tt.SetPlaceholderText Text:=varWeblinkRemediationLink
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        table1.Rows(table1.Rows.Count - 2).Select
-        table1.Rows(table1.Rows.Count - 2).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-               
-                
-        table1.Cell(table1.Rows.Count - 2, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Web_Remediation_Tooltip"
-        tt.Title = "Remediation Tooltip"
-        tt.SetPlaceholderText Text:=varWeblinkRemediationTooltip
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-        
-        
-       table1.Rows(table1.Rows.Count - 1).Select
-        'table1.Rows(table1.Rows.Count - 6).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-               
-        table1.Rows(table1.Rows.Count - 1).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Remediation_Link_Type"
-        tt.SetPlaceholderText Text:="Ebook"
-        ''tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        
-        table1.Rows(table1.Rows.Count).Select
-        table1.Rows(table1.Rows.Count).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-        table1.Cell(table1.Rows.Count, 1).Select
-        
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Remediation_Link_Type"
-        tt.SetPlaceholderText Text:="Text"
-        ''tt.Range.Style = "Normal"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = True
-        Set tt = Nothing
-        
-        
-        table1.Cell(table1.Rows.Count, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Text_Remediation_Text"
-        tt.Title = "Remediation Text"
-        tt.SetPlaceholderText Text:=varTextRemediationTxt
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-        
-       
-
-End Sub
-
 Public Function getobject(varobjectname As String) As OLEFormat
 '"Qno_" & QuestionNo & "_txt_Metadata_Search_keyword"
 For Each shp In ActiveDocument.InlineShapes
@@ -14618,331 +12111,53 @@ For Each shp In ActiveDocument.InlineShapes
     End If
 Next
 End Function
-Sub remfun(objname As String, table1 As Table, id As Integer)
-Dim table21 As Table
-Dim tt As ContentControl
-'table21.Shading.BackgroundPatternColor = wdColorBlack
-Set table21 = table1
-Select Case (Split(objname, "_")(0))
-Case "Rem"
-            
-     For vari = 0 To UBound(Split(objname, "_"))
-        If Split(objname, "_")(vari) = "rdtWL" Then
-             table21.Rows(table21.Rows.Count).Select
-             table21.Rows(table21.Rows.Count).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-               
-             table21.Cell(table21.Rows.Count, 1).Select
-             Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-             tt.Range.Style = "Remediation_Link_Type"
-             tt.SetPlaceholderText Text:="Web Link"
-             ''tt.Range.Style = "Normal"
-             tt.Range.Font.Size = "10"
-             tt.Range.Font.ColorIndex = wdBlack
-             tt.Range.Font.Bold = False
-             tt.Range.Rows.Height = 30
-             tt.Range.Font.Name = "Verdana"
-             tt.LockContentControl = True
-             tt.LockContents = True
-             Set tt = Nothing
-        
-             table21.Cell(table21.Rows.Count, 2).Select
-             Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-             tt.Range.Style = "Web_Remediation_Text"
-             tt.Title = "Remediation Text"
-             tt.SetPlaceholderText Text:="Enter remediation text"
-             tt.Range.Font.Size = "10"
-             tt.Range.Font.ColorIndex = wdBlack
-             tt.Range.Font.Bold = False
-             'tt.Range.Rows.Height = 30
-             tt.Range.Font.Name = "Verdana"
-             tt.LockContentControl = True
-             tt.LockContents = False
-             Set tt = Nothing
-            
-             table21.Rows.Add
-             table21.Rows(table21.Rows.Count).Select
-             table21.Rows(table21.Rows.Count).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-               
-               
-        table21.Cell(table21.Rows.Count, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Web_Remediation_Link"
-        tt.Title = "Remediation Link"
-        tt.SetPlaceholderText Text:="Enter remediation link"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-         table21.Rows.Add
-        table21.Rows(table21.Rows.Count).Select
-        table21.Rows(table21.Rows.Count).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-               
-                
-        table21.Cell(table21.Rows.Count, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Web_Remediation_Tooltip"
-        tt.Title = "Remediation Tooltip"
-        tt.SetPlaceholderText Text:="Enter remediation tooltip"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-         table21.Rows.Add
-           'remediation_type_text
-           'remediation_type_link
-           'remediation_type_tooltip
-            Exit For
-        ElseIf Split(objname, "_")(vari) = "rdtEB" Then
-         table21.Rows(table21.Rows.Count).Select
-             table21.Rows(table21.Rows.Count).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-               
-             table21.Cell(table21.Rows.Count, 1).Select
-             Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-             tt.Range.Style = "Remediation_Link_Type"
-             tt.SetPlaceholderText Text:="EBook"
-             ''tt.Range.Style = "Normal"
-             tt.Range.Font.Size = "10"
-             tt.Range.Font.ColorIndex = wdBlack
-             tt.Range.Font.Bold = False
-             tt.Range.Rows.Height = 30
-             tt.Range.Font.Name = "Verdana"
-             tt.LockContentControl = True
-             tt.LockContents = True
-             Set tt = Nothing
-        
-             table21.Cell(table21.Rows.Count, 2).Select
-             Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-             tt.Range.Style = "Web_Remediation_Text"
-             tt.Title = "Remediation Text"
-             tt.SetPlaceholderText Text:="Enter EBook text"
-             tt.Range.Font.Size = "10"
-             tt.Range.Font.ColorIndex = wdBlack
-             tt.Range.Font.Bold = False
-             'tt.Range.Rows.Height = 30
-             tt.Range.Font.Name = "Verdana"
-             tt.LockContentControl = True
-             tt.LockContents = False
-             Set tt = Nothing
-            
-             table21.Rows.Add
-             table21.Rows(table21.Rows.Count).Select
-             table21.Rows(table21.Rows.Count).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-               
-               
-        table21.Cell(table21.Rows.Count, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Web_Remediation_Link"
-        tt.Title = "Remediation Link"
-        tt.SetPlaceholderText Text:="Enter EBook link"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-         table21.Rows.Add
-        table21.Rows(table21.Rows.Count).Select
-        table21.Rows(table21.Rows.Count).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-               
-                
-        table21.Cell(table21.Rows.Count, 2).Select
-        Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-        tt.Range.Style = "Web_Remediation_Tooltip"
-        tt.Title = "Remediation Tooltip"
-        tt.SetPlaceholderText Text:="Enter EBook tooltip"
-        tt.Range.Font.Size = "10"
-        tt.Range.Font.ColorIndex = wdBlack
-        tt.Range.Font.Bold = False
-        'tt.Range.Rows.Height = 30
-        tt.Range.Font.Name = "Verdana"
-        tt.LockContentControl = True
-        tt.LockContents = False
-        Set tt = Nothing
-         table21.Rows.Add
-           'remediation_type_text
-           'remediation_type_link
-           'remediation_type_tooltip
-            Exit For
-        ElseIf Split(objname, "_")(vari) = "rdtText" Then
-             table21.Rows(table21.Rows.Count).Select
-             table21.Rows(table21.Rows.Count).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-               
-             table21.Cell(table21.Rows.Count, 1).Select
-             Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-             tt.Range.Style = "Remediation_Link_Type"
-             tt.SetPlaceholderText Text:="Text"
-             ''tt.Range.Style = "Normal"
-             tt.Range.Font.Size = "10"
-             tt.Range.Font.ColorIndex = wdBlack
-             tt.Range.Font.Bold = False
-             tt.Range.Rows.Height = 30
-             tt.Range.Font.Name = "Verdana"
-             tt.LockContentControl = True
-             tt.LockContents = True
-             Set tt = Nothing
-        
-             table21.Cell(table21.Rows.Count, 2).Select
-             Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-             tt.Range.Style = "Web_Remediation_Text"
-             tt.Title = "Remediation Text"
-             tt.SetPlaceholderText Text:="Enter remediation text"
-             tt.Range.Font.Size = "10"
-             tt.Range.Font.ColorIndex = wdBlack
-             tt.Range.Font.Bold = False
-             'tt.Range.Rows.Height = 30
-             tt.Range.Font.Name = "Verdana"
-             tt.LockContentControl = True
-             tt.LockContents = False
-             Set tt = Nothing
-            
-            
-               
-                
-       
-         table21.Rows.Add
-            'remediation_type_text
-            Exit For
-        End If
-     Next
-     
-     
-    'MsgBox "ok"
-Case "MD"
-    For vari = 0 To UBound(Split(objname, "_"))
-        If Split(objname, "_")(vari) = "MDtFT" Then
-             table21.Rows(table21.Rows.Count).Select
-             table21.Rows(table21.Rows.Count).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-               
-             table21.Cell(table21.Rows.Count, 1).Select
-             Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-             tt.Range.Style = "Remediation_Link_Type"
-             tt.SetPlaceholderText Text:="Free Text"
-             ''tt.Range.Style = "Normal"
-             tt.Range.Font.Size = "10"
-             tt.Range.Font.ColorIndex = wdBlack
-             tt.Range.Font.Bold = False
-             tt.Range.Rows.Height = 30
-             tt.Range.Font.Name = "Verdana"
-             tt.LockContentControl = True
-             tt.LockContents = True
-             Set tt = Nothing
-             table21.Cell(table21.Rows.Count, 2).Select
-             Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-             tt.Range.Style = "Web_Remediation_Text"
-             tt.Title = "Free Text"
-             tt.SetPlaceholderText Text:="Enter Free Text"
-             tt.Range.Font.Size = "10"
-             tt.Range.Font.ColorIndex = wdBlack
-             tt.Range.Font.Bold = False
-             'tt.Range.Rows.Height = 30
-             tt.Range.Font.Name = "Verdana"
-             tt.LockContentControl = True
-             tt.LockContents = False
-             Set tt = Nothing
-             table21.Rows.Add
-        ElseIf Split(objname, "_")(vari) = "MDtLU" Then
-            table21.Rows(table21.Rows.Count).Select
-             table21.Rows(table21.Rows.Count).Cells.Split NumColumns:=3, MergeBeforeSplit:=True
-               
-             table21.Cell(table21.Rows.Count, 1).Select
-             Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-             tt.Range.Style = "Remediation_Link_Type"
-             tt.SetPlaceholderText Text:="Look Up"
-             ''tt.Range.Style = "Normal"
-             tt.Range.Font.Size = "10"
-             tt.Range.Font.ColorIndex = wdBlack
-             tt.Range.Font.Bold = False
-             tt.Range.Rows.Height = 30
-             tt.Range.Font.Name = "Verdana"
-             tt.LockContentControl = True
-             tt.LockContents = True
-             Set tt = Nothing
-             table21.Cell(table21.Rows.Count, 2).Select
-                Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.TextBox.1")
-              
-            varbtn = Replace(shp.OLEFormat.Object.Name, "TextBox", "MD_LU_txt_Search_qno" & qno & "_MDtLU_qt" & qtype & "_count" & varcount)
-             table21.Cell(table21.Rows.Count, 3).Select
-             Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.CommandButton.1")
-             'shp.Range.Style = "Chosse_file"
-              With shp.OLEFormat.Object
-                   .Object.Caption = "Search"
-                   '.Object.Name = "Chosse_file"
-              End With
-              varbtn = Replace(shp.OLEFormat.Object.Name, "CommandButton", "MD_LU_cmd_Search_qno" & qno & "_MDtLU_qt" & qtype & "_count" & varcount)
-        'varbtn = Replace(shp.OLEFormat.Object.Name, "CommandButton", "")
-             table21.Rows.Add
-            Exit For
-        ElseIf Split(objname, "_")(vari) = "MDtHI" Then
-            MsgBox "ok"
-            Exit For
-        End If
-     Next
-End Select
-table21.Rows.Add
-End Sub
-Sub HeadingButtoncode(objname As String, table1 As Table, varflag As Boolean)
 
-Dim tt As ContentControl
 
-Select Case (Split(objname, "_")(0))
-Case "Rem"
-            If varflag = True Then
-            table1.Cell(table1.Rows.Count - 2, 1).Select
-            Set table21 = Selection.Tables.Add(Selection.Range, 1, 1)
-            table21.id = "Remidation"
-            table21.Rows(table21.Rows.Count).Select
-            table21.Rows(table21.Rows.Count).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
-            table21.Cell(table21.Rows.Count, 1).Select
-            Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-            tt.Range.Style = "Remediation_Link_Type_head"
-            tt.SetPlaceholderText Text:="Remediation Type"
-            ''tt.Range.Style = "Normal"
-            tt.Range.Font.Size = "10"
-            tt.Range.Font.ColorIndex = wdBlack
-            tt.Range.Font.Bold = True
-            tt.Range.Rows.Height = 30
-            tt.Range.Font.Name = "Verdana"
-            tt.LockContentControl = True
-            tt.LockContents = True
-            Set tt = Nothing
-            
-            table21.Cell(table21.Rows.Count, 2).Select
-             Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-             tt.Range.Style = "Remediation_head"
-            tt.SetPlaceholderText Text:="Remediation Detail"
-            tt.Range.Style = "Normal"
-            tt.Range.Font.Size = "10"
-            tt.Range.Font.ColorIndex = wdBlack
-            tt.Range.Font.Bold = True
-            'tt.Range.Rows.Height = 30
-            tt.Range.Font.Name = "Verdana"
-            tt.LockContentControl = True
-            tt.LockContents = True
-            Set tt = Nothing
-            table21.Rows.Add
-            End If
-            sCode = sCode & "Private Sub " & objname & "_Click()" & vbCrLf
-            sCode = sCode & " call remfun(""" & objname & """,Selection.Tables(1).Cell(" & table1.Rows.Count - 2 & ", 1).Tables(1)," & table1.Rows.Count - 2 & ")" & vbCrLf
-             sCode = sCode & "End Sub"
-Case "MD"
-    table1.Cell(table1.Rows.Count, 1).Select
-    Set table21 = Selection.Tables.Add(Selection.Range, 1, 1)
-    table21.id = "Metadata"
-    
-    sCode = sCode & "Private Sub " & objname & "_Click()" & vbCrLf
-    sCode = sCode & " call remfun(""" & objname & """,selection.tables(1).Cell(" & table1.Rows.Count & ", 1).tables(1)," & table1.Rows.Count & ")" & vbCrLf
-    sCode = sCode & "End Sub"
-End Select
 
+Private Sub vba_code(objname As String)
+Dim sCode As String
+vartxtname = Replace(objname, "_cmd_", "_txt_")
+varlstname = Replace(objname, "_cmd_", "_lst_")
+
+sCode = sCode & "Private Sub " & objname & "_Click()" & vbCrLf
+sCode = sCode & "If Len(" & vartxtname & ".text" & ") >= 3 Then" & vbCrLf
+
+sCode = sCode & "Dim objHttp As Object" & vbCrLf
+
+sCode = sCode & "Set objHttp = CreateObject(""Msxml2.ServerXMLHTTP.6.0"")" & vbCrLf
+sCode = sCode & "varData = ""{""""clientCode"""" : """"impelsys"""" , """"secretKey"""" : """"impelsys#20#17"""" , """"email"""" : """"abdul.rahman@impelsys.com"""", """"firstName"""" : """"Abdul"""", """"lastName"""" : """"Rahman"""", """"clientUserId"""" : """"101""""}""" & vbCrLf
+
+sCode = sCode & "Call objHttp.Open(""POST"", ""http://qa-quizzingplatform.impelsys.com/api/authenticate"", False)" & vbCrLf
+sCode = sCode & "Call objHttp.setRequestHeader(""Content-Type"", ""application/json"")" & vbCrLf
+sCode = sCode & "Call objHttp.setRequestHeader(""Accept"", ""application/json"")" & vbCrLf
+sCode = sCode & "Call objHttp.send(varData)"
+sCode = sCode & "''Response.AddHeader ""Content-Type"", ""application/json;charset=UTF-8""" & vbCrLf
+sCode = sCode & "''Response.Charset = ""UTF-8"""
+sCode = sCode & "varKey = Replace(Replace(objHttp.responseText, ""{""""token"""":"""""", """"), """"""}"", """")" & vbCrLf
+
+sCode = sCode & "Call objHttp.Open(""GET"", ""http://qa-quizzingplatform.impelsys.com/api/products/110000/metadata/SC_01"", False)" & vbCrLf
+sCode = sCode & "Call objHttp.setRequestHeader(""Authorization"", varKey)" & vbCrLf
+sCode = sCode & "Call objHttp.send("""")" & vbCrLf
+sCode = sCode & "'JsonText = objHttp.responseText" & vbCrLf
+sCode = sCode & "JsonText = ""{""""totalMetadata"""":5,""""metadataType"""":""""HIERARCHY"""",""""metadata"""":[{""""id"""":1,""""name"""":""""HLLibrary"""",""""nodePath"""":""""HLLibrary""""},{""""id"""":2,""""name"""":""""HealthProfessional"""",""""nodePath"""":""""HLLibrary\HealthProfessional""""},{""""id"""":3,""""name"""":""""medicine"""",""""nodePath"""":""""HLLibrary\HealthProfessional\medicine""""},{""""id"""":5,""""name"""":""""surgery"""",""""nodePath"""":""""HLLibrary\HealthProfessional\medicine\surgery""""},{""""id"""":2,""""name"""":""""Medicaleducation"""",""""nodePath"""":""""HLLibrary\Medicaleducation""""},{""""id"""":3,""""name"""":""""ENT"""",""""nodePath"""":""""HLLibrary\Medicaleducation\ENT""""},{""""id"""":4,""""name"""":""""surgery"""",""""nodePath"""":""""HLLibrary\Medicaleducation\ENT\surgery""""},{""""id"""":6,""""name"""":""""Nursing"""",""""nodePath"""":""""HLLibrary\Nursing""""},{""""id"""":8,""""name"""":""""Diabetic"""",""""nodePath"""":""""HLLibrary\Nursing\Diabetic""""}" & _
+",{""""id"""":9,""""name"""":""""surgery"""",""""nodePath"""":""""HLLibrary\Nursing\Diabetic\surgery""""}]}""" & vbCrLf
+sCode = sCode & "Dim JSON As Object" & vbCrLf
+sCode = sCode & "Set JSON = JSONParser.ParseJson(Replace(JsonText, ""\"", ""\\""))" & vbCrLf
+sCode = sCode & "vari = 0" & vbCrLf
+sCode = sCode & varlstname & ".Clear" & vbCrLf
+sCode = sCode & varlstname & ".ColumnWidths = ""220;100;60""" & vbCrLf
+sCode = sCode & "For Each Value In JSON(""metadata"")" & vbCrLf
+    sCode = sCode & varlstname & ".AddItem" & vbCrLf
+    sCode = sCode & varlstname & ".List(vari, 0) = Value(""nodePath"")" & vbCrLf
+    sCode = sCode & varlstname & ".List(vari, 1) = Value(""name"")" & vbCrLf
+    sCode = sCode & varlstname & ".List(vari, 2) = Value(""id"")" & vbCrLf
+    sCode = sCode & "vari = vari + 1" & vbCrLf
+sCode = sCode & "Next" & vbCrLf
+
+sCode = sCode & "Else" & vbCrLf
+sCode = sCode & "MsgBox ""Search Key word minimum three character.."", vbCritical, ""WK Quizzing Platform""" & vbCrLf
+sCode = sCode & "End If" & vbCrLf
+ 
+ sCode = sCode & "End Sub"
 ActiveDocument.VBProject.VBComponents("ThisDocument").CodeModule.AddFromString sCode
 End Sub
