@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wk_question_root mode="C">
+    <wk_question identificationId="0" qtype="MC" qmode="C">
+        <question_type ucx="C" >Multiple Choice</question_type>
+        <question_title ucx="C">dsafdsf</question_title>
+        <question_text ucx="C">dafsdf</question_text>
+        <question_multiple_choices qmcmode="C" tagtype="radioButton" >
+            <question_choice ucx="C" refId="">
+                <question_answer_text>dsafdsf</question_answer_text>
+                <question_rationale>dsafsdfa</question_rationale>
+            </question_choice>
+        </question_multiple_choices>
+        <correct_answer>1</correct_answer>
+        <question_score ucx="C">7</question_score>
+        <question_difficulty ucx="C" >9</question_difficulty>
+        <question_correct_rationale ucx="C">dasfsdf</question_correct_rationale>
+        <question_incorrect_rationale ucx="C">dafdsf</question_incorrect_rationale>
+<question_remediation_link qrlmode="C"><remediation_type ucx="C" redLinkId="1" remediation_link_type="EBook"><remediation_type_text>dsafdsfsf</remediation_type_text></remediation_type></question_remediation_link>
+<question_meta_tag qmtmode="C"> <meta_tag ucx="C" metaTagId="2011"  metaTagId="True">
+ <meta_tag_type>Look Up</meta_tag_type>
+<meta_tag_value>Gastrointestinal emergencies</meta_tag_value>
+<meta_tag_path>HL Taxonomy \\ Gastrointestinal emergencies</meta_tag_path>
+</meta_tag></question_meta_tag>
+    </wk_question>
+</wk_question_root>
+
