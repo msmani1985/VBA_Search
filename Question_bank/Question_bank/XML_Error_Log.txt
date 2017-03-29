@@ -1,9 +1,0 @@
-
-
-1. Validation failed on C:\Subbu\VBA_Search\Question_bank\allQuestions.xml
-=====================
-Reason: Duplicate attribute.
-
-Source:  <meta_tag ucx="C" metaTagId="2011"  metaTagId="True">
-Line: 46
-
