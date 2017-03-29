@@ -1,23 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wk_question_root mode="C">
-    <wk_question identificationId="0" qtype="MC" qmode="C">
-        <question_type ucx="C" >Multiple Choice</question_type>
-        <question_title ucx="C">dsafdsf</question_title>
-        <question_text ucx="C">dafsdf</question_text>
-        <question_multiple_choices qmcmode="C" tagtype="radioButton" >
+    <wk_question identificationId="0" qtype="TF" qmode="C">
+        <question_type ucx="C" >True / False</question_type>
+        <question_title ucx="C">dsafdsfdsf</question_title>
+        <question_text ucx="C">dsafsdfdsf</question_text>
+        <question_true_false qmcmode="C" tagtype="radioButton" >
             <question_choice ucx="C" refId="">
-                <question_answer_text>dsafdsf</question_answer_text>
-                <question_rationale>dsafsdfa</question_rationale>
+                <question_answer_text>True</question_answer_text>
+                <question_rationale>sdafsfsdf</question_rationale>
             </question_choice>
-        </question_multiple_choices>
+            <question_choice ucx="C" refId="">
+                <question_answer_text>False</question_answer_text>
+                <question_rationale>sdafdsfds</question_rationale>
+            </question_choice>
+        </question_true_false>
         <correct_answer>1</correct_answer>
-        <question_score ucx="C">7</question_score>
+        <question_score ucx="C">2</question_score>
         <question_difficulty ucx="C" >9</question_difficulty>
-        <question_correct_rationale ucx="C">dasfsdf</question_correct_rationale>
+        <question_correct_rationale ucx="C">sdafsdfsd</question_correct_rationale>
         <question_incorrect_rationale ucx="C">dafdsf</question_incorrect_rationale>
-<question_remediation_link qrlmode="C"><remediation_type ucx="C" redLinkId="1" remediation_link_type="EBook"><remediation_type_text>dsafdsfsf</remediation_type_text></remediation_type></question_remediation_link>
-<question_meta_tag qmtmode="C"> <meta_tag ucx="C" metaTagId="2011"  metaTagId="True">
+<question_remediation_link qrlmode="C"><remediation_type ucx="C" redLinkId="1" remediation_link_type="Web Link"><remediation_type_text>dsafsdfsd</remediation_type_text><remediation_type_link>safdsf</remediation_type_link><remediation_type_tooltip></remediation_type_tooltip></remediation_type><remediation_type ucx="C" redLinkId="1" remediation_link_type="EBook"><remediation_type_text>sdafsdfsdf</remediation_type_text></remediation_type><remediation_type ucx="C" redLinkId="1" remediation_link_type="Text"><remediation_type_text>sdafsdfsdf</remediation_type_text></remediation_type><remediation_type ucx="C" redLinkId="1" remediation_link_type="Text"><remediation_type_text>dsafsdfsd</remediation_type_text></remediation_type></question_remediation_link>
+<question_meta_tag qmtmode="C">            <meta_tag ucx="C" metaTagId="">                  <meta_tag_type>Free Text</meta_tag_type>                  <meta_tag_value>dsafsfdsf</meta_tag_value>              </meta_tag>            <meta_tag ucx="C" metaTagId="">                  <meta_tag_type>Free Text</meta_tag_type>                  <meta_tag_value>dsafsdfdf</meta_tag_value>              </meta_tag> <meta_tag ucx="C" metaTagId="2011"  metaTagId="True">
  <meta_tag_type>Look Up</meta_tag_type>
+<meta_tag_value>Gastrointestinal emergencies</meta_tag_value>
+<meta_tag_path>HL Taxonomy \\ Gastrointestinal emergencies</meta_tag_path>
+</meta_tag> <meta_tag ucx="C" metaTagId="2011"  metaTagId="True">
+ <meta_tag_type>Look Up</meta_tag_type>
+<meta_tag_value>Gastrointestinal emergencies</meta_tag_value>
+<meta_tag_path>HL Taxonomy \\ Gastrointestinal emergencies</meta_tag_path>
+</meta_tag> <meta_tag ucx="C" metaTagId="2011"  metaTagId="True">
+ <meta_tag_type>Hierarchy</meta_tag_type>
+<meta_tag_value>Gastrointestinal emergencies</meta_tag_value>
+<meta_tag_path>HL Taxonomy \\ Gastrointestinal emergencies</meta_tag_path>
+</meta_tag> <meta_tag ucx="C" metaTagId="2011"  metaTagId="True">
+ <meta_tag_type>Hierarchy</meta_tag_type>
 <meta_tag_value>Gastrointestinal emergencies</meta_tag_value>
 <meta_tag_path>HL Taxonomy \\ Gastrointestinal emergencies</meta_tag_path>
 </meta_tag></question_meta_tag>
