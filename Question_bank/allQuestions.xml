@@ -1,42 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<wk_question_root mode="C">
-    <wk_question identificationId="0" qtype="CS" qmode="C">
-        <question_type ucx="C" >Clinical Symptoms</question_type>
-        <question_title ucx="C">dsfadsfs</question_title>
-        <question_text ucx="C">dsafdsf</question_text>
-        <question_additional_fields uck="C" referencevalue="" mediaType="image">
-            <question_additional_file_path>media\123.jpg</question_additional_file_path>
-        </question_additional_fields>
-<question_meta_tag qmtmode="C"> <meta_tag ucx="C" metaTagId="127"  metadataId="92">
- <meta_tag_type>Look Up</meta_tag_type>
-<meta_tag_value>medlab lookup2</meta_tag_value>
-<meta_tag_path>medlab lookup2</meta_tag_path>
-</meta_tag> <meta_tag ucx="C" metaTagId="128"  metadataId="92">
- <meta_tag_type>Look Up</meta_tag_type>
-<meta_tag_value>medlab lookup3</meta_tag_value>
-<meta_tag_path>medlab lookup3</meta_tag_path>
-</meta_tag> <meta_tag ucx="C" metaTagId="148"  metadataId="465">
- <meta_tag_type>Hierarchy</meta_tag_type>
-<meta_tag_value>Emergency Medicine</meta_tag_value>
-<meta_tag_path>Emergency Medicine</meta_tag_path>
-</meta_tag></question_meta_tag>
-        <question_cs_sub_questions>
-    <cs_sub_question identificationId="0" qtype="MC" qmode="C">
-            <cs_sub_question_type ucx="C" >Multiple Choice</cs_sub_question_type>
-            <cs_sub_question_title ucx="C">asfsfs</cs_sub_question_title>
-            <cs_sub_question_text ucx="C">dafdsf</cs_sub_question_text>
-            <cs_sub_question_multiple_choices qmcmode="C" tagtype="radioButton" >
-                <cs_sub_question_choice ucx="C" refId="">
-                    <cs_sub_question_answer_text>dasfdsf</cs_sub_question_answer_text>
-                    <cs_sub_question_rationale>dafdsf</cs_sub_question_rationale>
-                </cs_sub_question_choice>
-            </cs_sub_question_multiple_choices>
-            <cs_sub_correct_answer>1</cs_sub_correct_answer>
-            <cs_sub_question_score ucx="C">8</cs_sub_question_score>
-            <cs_sub_question_difficulty ucx="C" >8</cs_sub_question_difficulty>
-            <cs_sub_question_correct_rationale ucx="C">dafdsf</cs_sub_question_correct_rationale>
-            <cs_sub_question_incorrect_rationale ucx="C">dsafdsf</cs_sub_question_incorrect_rationale>
-            </cs_sub_question>
-<cs_sub_question_remediation_link qrlmode="C"><cs_sub_remediation_type ucx="C" redLinkId="1" remediation_link_type="Web Link"><cs_sub_remediation_type_text>dafdsf</cs_sub_remediation_type_text><cs_sub_remediation_type_link>dsafdsf</cs_sub_remediation_type_link><cs_sub_remediation_type_tooltip></cs_sub_remediation_type_tooltip></cs_sub_remediation_type><cs_sub_remediation_type ucx="C" redLinkId="1" remediation_link_type="EBook"><cs_sub_remediation_type_text>dafdsf</cs_sub_remediation_type_text></cs_sub_remediation_type><cs_sub_remediation_type ucx="C" redLinkId="1" remediation_link_type="Text"><cs_sub_remediation_type_text>dsafdsf</cs_sub_remediation_type_text></cs_sub_remediation_type></cs_sub_question_remediation_link>
-</wk_question_root>
-
