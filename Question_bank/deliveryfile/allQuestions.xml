@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wk_question_root mode="C">
+    <wk_question identificationId="0" qtype="MC" qmode="C">
+        <question_type ucx="C" >Multiple Choice</question_type>
+        <question_title ucx="C">dsafdfd</question_title>
+        <question_text ucx="C">dfasfdsf</question_text>
+        <question_multiple_choices qmcmode="C" tagtype="radioButton" >
+            <question_choice ucx="C" refId="">
+                <question_answer_text>dasfdfdas</question_answer_text>
+                <question_rationale>dsafdfds</question_rationale>
+            </question_choice>
+        </question_multiple_choices>
+        <correct_answer>1</correct_answer>
+        <question_score ucx="C">3</question_score>
+        <question_difficulty ucx="C" >3</question_difficulty>
+        <question_correct_rationale ucx="C">dafdfdsf</question_correct_rationale>
+        <question_incorrect_rationale ucx="C">afdsfdsf</question_incorrect_rationale>
+<question_remediation_link qrlmode="C"><remediation_type ucx="C" redLinkId="1" remediation_link_type="Text"><remediation_type_text>adsfdsfdsf</remediation_type_text></remediation_type></question_remediation_link>
+<question_meta_tag qmtmode="C"> <meta_tag ucx="C" metaTagId="127"  metadataId="92">
+ <meta_tag_type>LOOKUP</meta_tag_type>
+<meta_tag_value>medlab lookup2</meta_tag_value>
+<meta_tag_path>medlab lookup2</meta_tag_path>
+</meta_tag> <meta_tag ucx="C" metaTagId="128"  metadataId="92">
+ <meta_tag_type>LOOKUP</meta_tag_type>
+<meta_tag_value>medlab lookup3</meta_tag_value>
+<meta_tag_path>medlab lookup3</meta_tag_path>
+</meta_tag></question_meta_tag>
+    </wk_question>
+    <wk_question identificationId="0" qtype="CM" qmode="C">
+        <question_type ucx="C" >Choice Multiple</question_type>
+        <question_title ucx="C">sdafdsf</question_title>
+        <question_text ucx="C">dsafdfs</question_text>
+        <question_choices_multiple qmcmode="C" tagtype="checkBox" >
+            <question_choice ucx="C" refId="">
+                <question_answer_text>dasfdsf</question_answer_text>
+                <question_rationale>dsafdsf</question_rationale>
+            </question_choice>
+        </question_choices_multiple>
+        <correct_answer></correct_answer>
+        <question_score ucx="C">2</question_score>
+        <question_difficulty ucx="C" >3</question_difficulty>
+        <question_correct_rationale ucx="C">sdafdsf</question_correct_rationale>
+        <question_incorrect_rationale ucx="C">dsafdfdf</question_incorrect_rationale>
+<question_remediation_link qrlmode="C"><remediation_type ucx="C" redLinkId="1" remediation_link_type="Text"><remediation_type_text>dafdfsf</remediation_type_text></remediation_type></question_remediation_link>
+<question_meta_tag qmtmode="C"> <meta_tag ucx="C" metaTagId="149"  metadataId="465">
+ <meta_tag_type>LOOKUP</meta_tag_type>
+<meta_tag_value>Medical Education</meta_tag_value>
+<meta_tag_path>Medical Education</meta_tag_path>
+</meta_tag> <meta_tag ucx="C" metaTagId="148"  metadataId="465">
+ <meta_tag_type>LOOKUP</meta_tag_type>
+<meta_tag_value>Emergency Medicine</meta_tag_value>
+<meta_tag_path>Emergency Medicine</meta_tag_path>
+</meta_tag></question_meta_tag>
+    </wk_question>
+    <wk_question identificationId="0" qtype="TF" qmode="C">
+        <question_type ucx="C" >True / False</question_type>
+        <question_title ucx="C">dsafdsfs</question_title>
+        <question_text ucx="C">sdafdf</question_text>
+        <question_true_false qmcmode="C" tagtype="radioButton" >
+            <question_choice ucx="C" refId="">
+                <question_answer_text>True</question_answer_text>
+                <question_rationale>sdafdfsdds</question_rationale>
+            </question_choice>
+            <question_choice ucx="C" refId="">
+                <question_answer_text>False</question_answer_text>
+                <question_rationale>sadfdfds</question_rationale>
+            </question_choice>
+        </question_true_false>
+        <correct_answer>1</correct_answer>
+        <question_score ucx="C">4</question_score>
+        <question_difficulty ucx="C" >5</question_difficulty>
+        <question_correct_rationale ucx="C">dsafdsf</question_correct_rationale>
+        <question_incorrect_rationale ucx="C">dsafdsf</question_incorrect_rationale>
+<question_remediation_link qrlmode="C"><remediation_type ucx="C" redLinkId="1" remediation_link_type="Text"><remediation_type_text>sdafdfdf</remediation_type_text></remediation_type></question_remediation_link>
+<question_meta_tag qmtmode="C"> <meta_tag ucx="C" metaTagId="149"  metadataId="465">
+ <meta_tag_type>LOOKUP</meta_tag_type>
+<meta_tag_value>Medical Education</meta_tag_value>
+<meta_tag_path>Medical Education</meta_tag_path>
+</meta_tag> <meta_tag ucx="C" metaTagId="127"  metadataId="92">
+ <meta_tag_type>LOOKUP</meta_tag_type>
+<meta_tag_value>medlab lookup2</meta_tag_value>
+<meta_tag_path>medlab lookup2</meta_tag_path>
+</meta_tag></question_meta_tag>
+    </wk_question>
+    <wk_question identificationId="0" qtype="VQ" qmode="C">
+        <question_type ucx="C" >Video Questions</question_type>
+        <question_title ucx="C">sdafdf</question_title>
+        <question_text ucx="C">asfsfsd</question_text>
+        <question_video_questions qmcmode="C" tagtype="radioButton" >
+            <question_choice ucx="C" refId="">
+                <question_answer_text>sdafdsf</question_answer_text>
+                <question_rationale>dsafdsf</question_rationale>
+            </question_choice>
+        </question_video_questions>
+        <correct_answer>1</correct_answer>
+        <question_additional_fields uck="C" referencevalue="" mediaType="image">
+            <question_additional_file_path>media\a.jpg</question_additional_file_path>
+        </question_additional_fields>
+        <question_score ucx="C">3</question_score>
+        <question_difficulty ucx="C" >2</question_difficulty>
+        <question_correct_rationale ucx="C">asfdsfs</question_correct_rationale>
+        <question_incorrect_rationale ucx="C">dsafdsf</question_incorrect_rationale>
+<question_remediation_link qrlmode="C"><remediation_type ucx="C" redLinkId="1" remediation_link_type="Text"><remediation_type_text>asfdsfds</remediation_type_text></remediation_type></question_remediation_link>
+<question_meta_tag qmtmode="C"> <meta_tag ucx="C" metaTagId="127"  metadataId="92">
+ <meta_tag_type>LOOKUP</meta_tag_type>
+<meta_tag_value>medlab lookup2</meta_tag_value>
+<meta_tag_path>medlab lookup2</meta_tag_path>
+</meta_tag></question_meta_tag>
+    </wk_question>
+    <wk_question identificationId="0" qtype="II" qmode="C">
+        <question_type ucx="C" >Image Integration</question_type>
+        <question_title ucx="C">saffdsfsfs</question_title>
+        <question_text ucx="C">dafdsfdsf</question_text>
+        <question_image_integration qmcmode="C" tagtype="radioButton" >
+            <question_choice ucx="C" refId="">
+                <question_answer_text>sdafdsfds</question_answer_text>
+                <question_rationale>dsafdsfdsf</question_rationale>
+            </question_choice>
+        </question_image_integration>
+        <correct_answer>1</correct_answer>
+        <question_additional_fields uck="C" referencevalue="" mediaType="image">
+            <question_additional_file_path>media\Jellyfish.jpg</question_additional_file_path>
+        </question_additional_fields>
+        <question_score ucx="C">4</question_score>
+        <question_difficulty ucx="C" >7</question_difficulty>
+        <question_correct_rationale ucx="C">dasffsdf</question_correct_rationale>
+        <question_incorrect_rationale ucx="C">dsafdsfsdf</question_incorrect_rationale>
+<question_remediation_link qrlmode="C"><remediation_type ucx="C" redLinkId="1" remediation_link_type="Text"><remediation_type_text>fdsafdsfsdf</remediation_type_text></remediation_type></question_remediation_link>
+<question_meta_tag qmtmode="C"> <meta_tag ucx="C" metaTagId="149"  metadataId="465">
+ <meta_tag_type>LOOKUP</meta_tag_type>
+<meta_tag_value>Medical Education</meta_tag_value>
+<meta_tag_path>Medical Education</meta_tag_path>
+</meta_tag> <meta_tag ucx="C" metaTagId="127"  metadataId="92">
+ <meta_tag_type>LOOKUP</meta_tag_type>
+<meta_tag_value>medlab lookup2</meta_tag_value>
+<meta_tag_path>medlab lookup2</meta_tag_path>
+</meta_tag></question_meta_tag>
+    </wk_question>
+    <wk_question identificationId="0" qtype="GO" qmode="C">
+        <question_type ucx="C" >Graphic Option</question_type>
+        <question_title ucx="C">dsafddsfs</question_title>
+        <question_text ucx="C">dafdfdf</question_text>
+        <question_graphic_option qmcmode="C" tagtype="radioButton" >
+            <question_choice ucx="C" refId="">
+        <question_additional_fields uck="C" referencevalue="" mediaType="image">
+            <question_additional_file_path>media\Jellyfish.jpg</question_additional_file_path>
+        </question_additional_fields>
+                <question_rationale>sdafdsfdsff</question_rationale>
+            </question_choice>
+        </question_graphic_option>
+        <correct_answer>1</correct_answer>
+        <question_score ucx="C">9</question_score>
+        <question_difficulty ucx="C" >9</question_difficulty>
+        <question_correct_rationale ucx="C">dsaffdsf</question_correct_rationale>
+        <question_incorrect_rationale ucx="C">dsafdfdsf</question_incorrect_rationale>
+<question_remediation_link qrlmode="C"><remediation_type ucx="C" redLinkId="1" remediation_link_type="Text"><remediation_type_text>dsafdsfdsfd</remediation_type_text></remediation_type></question_remediation_link>
+<question_meta_tag qmtmode="C"> <meta_tag ucx="C" metaTagId="148"  metadataId="465">
+ <meta_tag_type>LOOKUP</meta_tag_type>
+<meta_tag_value>Emergency Medicine</meta_tag_value>
+<meta_tag_path>Emergency Medicine</meta_tag_path>
+</meta_tag> <meta_tag ucx="C" metaTagId="128"  metadataId="92">
+ <meta_tag_type>LOOKUP</meta_tag_type>
+<meta_tag_value>medlab lookup3</meta_tag_value>
+<meta_tag_path>medlab lookup3</meta_tag_path>
+</meta_tag></question_meta_tag>
+    </wk_question>
+    <wk_question identificationId="0" qtype="CS" qmode="C">
+        <question_type ucx="C" >Clinical Symptoms</question_type>
+        <question_title ucx="C">dsafdsfdsf</question_title>
+        <question_text ucx="C">dsafdsfdsfs</question_text>
+        <question_additional_fields uck="C" referencevalue="" mediaType="image">
+            <question_additional_file_path>media\Jellyfish.jpg</question_additional_file_path>
+        </question_additional_fields>
+<question_meta_tag qmtmode="C"> <meta_tag ucx="C" metaTagId="148"  metadataId="465">
+ <meta_tag_type>LOOKUP</meta_tag_type>
+<meta_tag_value>Emergency Medicine</meta_tag_value>
+<meta_tag_path>Emergency Medicine</meta_tag_path>
+</meta_tag> <meta_tag ucx="C" metaTagId="127"  metadataId="92">
+ <meta_tag_type>LOOKUP</meta_tag_type>
+<meta_tag_value>medlab lookup2</meta_tag_value>
+<meta_tag_path>medlab lookup2</meta_tag_path>
+</meta_tag></question_meta_tag>
+<question_cs_sub_questions>
+    <cs_sub_question identificationId="0" qtype="MC" qmode="C">
+            <cs_sub_question_type ucx="C" >Multiple Choice</cs_sub_question_type>
+            <cs_sub_question_title ucx="C">dafdfsfsd</cs_sub_question_title>
+            <cs_sub_question_text ucx="C">sadfdsfdsafdsf</cs_sub_question_text>
+            <cs_sub_question_multiple_choices qmcmode="C" tagtype="radioButton" >
+                <cs_sub_question_choice ucx="C" refId="">
+                    <cs_sub_question_answer_text>sdafdf</cs_sub_question_answer_text>
+                    <cs_sub_question_rationale>adsfdsf</cs_sub_question_rationale>
+                </cs_sub_question_choice>
+            </cs_sub_question_multiple_choices>
+            <cs_sub_correct_answer>1</cs_sub_correct_answer>
+            <cs_sub_question_score ucx="C">10</cs_sub_question_score>
+            <cs_sub_question_difficulty ucx="C" >10</cs_sub_question_difficulty>
+            <cs_sub_question_correct_rationale ucx="C">dsafdfds</cs_sub_question_correct_rationale>
+            <cs_sub_question_incorrect_rationale ucx="C">dsafdsfs</cs_sub_question_incorrect_rationale>
+<cs_sub_question_remediation_link qrlmode="C"><cs_sub_remediation_type ucx="C" redLinkId="1" remediation_link_type="Text"><cs_sub_remediation_type_text>sdafdsfdsf</cs_sub_remediation_type_text></cs_sub_remediation_type></cs_sub_question_remediation_link></cs_sub_question>
+        </question_cs_sub_questions>
+        </wk_question>
+    <wk_question identificationId="0" qtype="MEDC" qmode="C">
+        <question_type ucx="C" >Medical Case</question_type>
+        <question_title ucx="C">dsfafd</question_title>
+        <question_text ucx="C">adsfdfsd</question_text>
+        <question_additional_fields uck="C" referencevalue="" mediaType="image">
+            <question_additional_file_path>media\Jellyfish.jpg</question_additional_file_path>
+        </question_additional_fields>
+<question_meta_tag qmtmode="C"> <meta_tag ucx="C" metaTagId="148"  metadataId="465">
+ <meta_tag_type>LOOKUP</meta_tag_type>
+<meta_tag_value>Emergency Medicine</meta_tag_value>
+<meta_tag_path>Emergency Medicine</meta_tag_path>
+</meta_tag> <meta_tag ucx="C" metaTagId="127"  metadataId="92">
+ <meta_tag_type>LOOKUP</meta_tag_type>
+<meta_tag_value>medlab lookup2</meta_tag_value>
+<meta_tag_path>medlab lookup2</meta_tag_path>
+</meta_tag> <meta_tag ucx="C" metaTagId="128"  metadataId="92">
+ <meta_tag_type>LOOKUP</meta_tag_type>
+<meta_tag_value>medlab lookup3</meta_tag_value>
+<meta_tag_path>medlab lookup3</meta_tag_path>
+</meta_tag></question_meta_tag>
+<question_cs_sub_questions>
+    <cs_sub_question identificationId="0" qtype="MC" qmode="C">
+            <cs_sub_question_type ucx="C" >Multiple Choice</cs_sub_question_type>
+            <cs_sub_question_title ucx="C">dsafdf</cs_sub_question_title>
+            <cs_sub_question_text ucx="C">sdafdsf</cs_sub_question_text>
+            <cs_sub_question_multiple_choices qmcmode="C" tagtype="radioButton" >
+                <cs_sub_question_choice ucx="C" refId="">
+                    <cs_sub_question_answer_text>adsfdf</cs_sub_question_answer_text>
+                    <cs_sub_question_rationale>dsafds</cs_sub_question_rationale>
+                </cs_sub_question_choice>
+            </cs_sub_question_multiple_choices>
+            <cs_sub_correct_answer>1</cs_sub_correct_answer>
+            <cs_sub_question_score ucx="C">9</cs_sub_question_score>
+            <cs_sub_question_difficulty ucx="C" >9</cs_sub_question_difficulty>
+            <cs_sub_question_correct_rationale ucx="C">dsafdsf</cs_sub_question_correct_rationale>
+            <cs_sub_question_incorrect_rationale ucx="C">sdafdsf</cs_sub_question_incorrect_rationale>
+<cs_sub_question_remediation_link qrlmode="C"><cs_sub_remediation_type ucx="C" redLinkId="1" remediation_link_type="Text"><cs_sub_remediation_type_text>sdafdsfdsf</cs_sub_remediation_type_text></cs_sub_remediation_type></cs_sub_question_remediation_link></cs_sub_question>
+        </question_cs_sub_questions>
+        </wk_question>
+</wk_question_root>
+
