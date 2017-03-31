@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="wk_question_root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="wk_question"/>
+      </xs:sequence>
+      <xs:attribute name="mode" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wk_question">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="question_type"/>
+        <xs:element ref="question_title"/>
+        <xs:element ref="question_text"/>
+        <xs:choice>
+          <xs:element ref="question_choices_multiple"/>
+          <xs:element ref="question_multiple_choices"/>
+          <xs:element ref="question_true_false"/>
+        </xs:choice>
+        <xs:element ref="correct_answer"/>
+        <xs:element ref="question_score"/>
+        <xs:element ref="question_difficulty"/>
+        <xs:element ref="question_correct_rationale"/>
+        <xs:element ref="question_incorrect_rationale"/>
+        <xs:element ref="question_remediation_link"/>
+        <xs:element ref="question_meta_tag"/>
+      </xs:sequence>
+      <xs:attribute name="identificationId" use="required" type="xs:integer"/>
+      <xs:attribute name="qmode" use="required" type="xs:NCName"/>
+      <xs:attribute name="qtype" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="question_type">
+    <xs:complexType mixed="true">
+      <xs:attribute name="ucx" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="question_title">
+    <xs:complexType mixed="true">
+      <xs:attribute name="ucx" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="question_text">
+    <xs:complexType mixed="true">
+      <xs:attribute name="ucx" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="question_choices_multiple">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="question_choice"/>
+      </xs:sequence>
+      <xs:attribute name="qmcmode" use="required" type="xs:NCName"/>
+      <xs:attribute name="tagtype" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="question_multiple_choices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="question_choice"/>
+      </xs:sequence>
+      <xs:attribute name="qmcmode" use="required" type="xs:NCName"/>
+      <xs:attribute name="tagtype" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="question_true_false">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="question_choice"/>
+      </xs:sequence>
+      <xs:attribute name="qmcmode" use="required" type="xs:NCName"/>
+      <xs:attribute name="tagtype" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="correct_answer" type="xs:string"/>
+  <xs:element name="question_score">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="ucx" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="question_difficulty">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="ucx" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="question_correct_rationale">
+    <xs:complexType mixed="true">
+      <xs:attribute name="ucx" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="question_incorrect_rationale">
+    <xs:complexType mixed="true">
+      <xs:attribute name="ucx" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="question_remediation_link">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="remediation_type"/>
+      </xs:sequence>
+      <xs:attribute name="qrlmode" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="remediation_type">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="remediation_type_text"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="remediation_type_link"/>
+          <xs:element ref="remediation_type_tooltip"/>
+        </xs:sequence>
+      </xs:sequence>
+      <xs:attribute name="redLinkId" use="required" type="xs:integer"/>
+      <xs:attribute name="remediation_link_type" use="required"/>
+      <xs:attribute name="ucx" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="remediation_type_text" type="xs:string"/>
+  <xs:element name="remediation_type_link" type="xs:anyURI"/>
+  <xs:element name="remediation_type_tooltip" type="xs:string"/>
+  <xs:element name="question_meta_tag">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="meta_tag"/>
+      </xs:sequence>
+      <xs:attribute name="qmtmode" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="meta_tag">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="meta_tag_type"/>
+        <xs:element ref="meta_tag_value"/>
+      </xs:sequence>
+      <xs:attribute name="metaTagId" use="required"/>
+      <xs:attribute name="ucx" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="meta_tag_type" type="xs:string"/>
+  <xs:element name="meta_tag_value" type="xs:string"/>
+  <xs:element name="question_choice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="question_answer_text"/>
+        <xs:element ref="question_rationale"/>
+      </xs:sequence>
+      <xs:attribute name="refId" use="required"/>
+      <xs:attribute name="ucx" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="question_answer_text" type="xs:string"/>
+  <xs:element name="question_rationale" type="xs:string"/>
+</xs:schema>
