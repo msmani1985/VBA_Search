@@ -735,13 +735,19 @@ metaxml = "<question_meta_tag qmtmode=""C"">" & Chr(13)
                                         '    Print #99, "                <meta_tag_value>" & varcontent1 & "</meta_tag_value>"
                                         '    Print #99, "            </meta_tag>"
 Do While varrow <= t.Rows.Count
-If Replace(t.Cell(varrow, 1).Range.Text, "", "") = "Free Text" Then
+If LCase(t.Cell(varrow, 1).Range.Style) = "ft_type" Then
+If t.Cell(varrow, 1).Range.InlineShapes.Count > 0 Then
 
-metaxml = metaxml & "            <meta_tag ucx=""C"" metaTagId="""">" & Chr(13)
+varuid = "___" & Split(t.Cell(varrow + 1, 1).Range.InlineShapes(1).OLEFormat.Object.Name, "___")(1)
+varuid = "{" & Replace(Replace(varuid, "__", "-"), "-_", "") & "}"
+vartagid = ActiveDocument.CustomXMLParts.SelectByID(varuid).SelectSingleNode("//metanodetagname[@selected=""true""]/metadata[@tagId]").Text
+End If
+metaxml = metaxml & "            <meta_tag ucx=""C"" metaTagId=""" & vartagid & """>" & Chr(13)
 metaxml = metaxml & "                  <meta_tag_type>" & Replace(t.Cell(varrow, 1).Range.Text, "", "") & "</meta_tag_type>" & Chr(13)
 metaxml = metaxml & "                  <meta_tag_value>" & Replace(t.Cell(varrow, 2).Range.Text, "", "") & "</meta_tag_value>" & Chr(13)
+metaxml = metaxml & "                  <meta_tag_path>" & Replace(t.Cell(varrow, 2).Range.Text, "", "") & "</meta_tag_path>" & Chr(13)
 metaxml = metaxml & "              </meta_tag>" & Chr(13)
-ElseIf Replace(t.Cell(varrow, 1).Range.Text, "", "") = "Look Up" Then
+ElseIf LCase(t.Cell(varrow, 1).Range.Style) = "lookup_type" Then
 If t.Cell(varrow + 1, 1).Range.InlineShapes.Count > 0 Then
 
 varuid = "___" & Split(t.Cell(varrow + 1, 1).Range.InlineShapes(1).OLEFormat.Object.Name, "___")(1)
@@ -755,7 +761,7 @@ metaxml = metaxml & "</meta_tag>" & Chr(13)
     
 Next
 End If
-ElseIf Replace(t.Cell(varrow, 1).Range.Text, "", "") = "Hierarchy" Then
+ElseIf LCase(t.Cell(varrow, 1).Range.Style) = "hierarchy_type" Then
 If t.Cell(varrow + 1, 1).Range.InlineShapes.Count > 0 Then
 'MsgBox t.Cell(varrow + 1, 1).Range.InlineShapes(1).OLEFormat.Object.Name
 varuid = "___" & Split(t.Cell(varrow + 1, 1).Range.InlineShapes(1).OLEFormat.Object.Name, "___")(1)
@@ -2095,7 +2101,7 @@ Selection.InsertBreak WdBreakType.wdPageBreak
         
 
 End Sub
-Sub meta_rem_head(table1 As Table, qtype, qno, Optional ByVal remidatiaon As Boolean = True, Optional ByVal metadata As Boolean = True)
+Sub meta_rem_head(table1 As Table, qtype, qno, Optional ByVal remidatiaon As Boolean = True, Optional ByVal Metadata As Boolean = True)
   Dim VARNAME As String
 Dim tt As ContentControl
 
@@ -2174,7 +2180,7 @@ If remidatiaon Then
         HeadingButtoncode VARNAME, table1, False, qno, qtype
         Set RText = Nothing
 End If
- If metadata Then
+ If Metadata Then
         '''''''''Metadata Attributes'''''''''
         
         table1.Rows(table1.Rows.Count - 1).Shading.BackgroundPatternColor = RGB(169, 169, 169)
@@ -12696,24 +12702,237 @@ Case "Rem"
 Case "MD"
     For vari = 0 To UBound(Split(objname, "_"))
         If Split(objname, "_")(vari) = "MDtFT" Then
+        dropdown table21, "FreeText", "FT", qtype
+           ' metaluhi table21, "FreeText", "FT", qtype, table1
+        ElseIf Split(objname, "_")(vari) = "MDtLU" Then
+            'scode = metaluhi(table21, "Look Up", "LU", qtype, table1)
+              dropdown table21, "Look Up", "LU", qtype
+            Exit For
+        ElseIf Split(objname, "_")(vari) = "MDtHI" Then
+             ' scode = metaluhi(table21, "Hierarchy", "HI", qtype, table1)
+        dropdown table21, "Hierarchy", "HI", qtype
+            Exit For
+        End If
+     Next
+End Select
+If ActiveDocument.VBProject.VBComponents("ThisDocument").CodeModule.ProcOfLine(ActiveDocument.VBProject.VBComponents("ThisDocument").CodeModule.CountOfDeclarationLines + 1, vbext_pk_Proc) = "Private Sub " & varbtn & "_Click()" Then
+'MsgBox "ok"
+Else
+ ActiveDocument.VBProject.VBComponents("ThisDocument").CodeModule.AddFromString scode
+End If
+'table21.Rows.Add
+End Sub
+Private Function dropwebservices(qno, qtype) As String
+Dim tt As New Collection
+'Set dropwebservices = New Collection
+Dim Metadata As New Collection
+Set Metadata = config(ActiveDocument.Path & "\config.ini")
+Set tt = gettoken(Metadata("siteurl"), Metadata("json"))
+If tt("error") <> "" Then
+MsgBox tt("error"), vbCritical, "WK Quizzing Platform"
+dropwebservices = ""
+Else
+vartoken = tt.Item("token")
+varuserid = tt.Item("userid")
+'Call objHttp.Open("GET", sitedata & "/api/products/110000/metadata/" & metadata & metadatatype, False)
+'/api/taxonomy-search?taxonomyName={search_string}&metadataType=HIERARCHY&metadataId={metadataId}
+vartypeid = 1
+varjson = getjson("http://qa-quizzingplatform.impelsys.com/api/metadata?userId=" & varuserid & "&tagTypeId=" & vartypeid, vartoken)
+'dropwebservices.Add varjson, "JSON"
+'dropwebservices.Add vartoken, "vartoken"
+dropwebservices = customxmldropdown(varjson, qno, qtype, vartoken)
+
+End If
+End Function
+
+Private Function gettoken(siteurl, varjson) As Collection
+Dim JSONTEXT As String
+Dim JSON As Object
+
+Dim objHttp As Object
+Set gettoken = New Collection
+Set objHttp = CreateObject("Msxml2.ServerXMLHTTP.6.0")
+vardata = varjson
+siteurl = "http://qa-quizzingplatform.impelsys.com"
+varsite = siteurl & "/api/login"
+Call objHttp.Open("POST", varsite, False)
+Call objHttp.setRequestHeader("Content-Type", "application/json")
+Call objHttp.setRequestHeader("Accept", "application/json")
+On Error Resume Next
+Call objHttp.send(vardata)
+If Replace(Err.Description, vbNewLine, "") = "The connection with the server was terminated abnormally" Or Replace(Err.Description, vbNewLine, "") = "This method cannot be called after the send method has been called." Then
+gettoken.Add "Please check the internet connection", "Error"
+'MsgBox "Please check the internet connection", vbCritical, "WK Quizzing Platform"
+On Error GoTo 0
+Else
+On Error GoTo 0
+''Response.AddHeader "Content-Type", "application/json;charset=UTF-8"
+''Response.Charset = "UTF-8"
+varkey = objHttp.responseText
+If InStr(varkey, "Sorry, the page you are looking for could not be found.") > 0 Then
+
+'MsgBox "Webservices not working. Please check the internet connection", vbCritical, "WK Quizzing Platform"
+gettoken.Add "Webservices not working. Please check the internet connection", "Error"
+Else
+Set JSON = JSONParser.ParseJson(Replace(varkey, "\", "\\"))
+vartoken = JSON("token")
+varuserid = JSON("userId")
+
+gettoken.Add vartoken, "token"
+gettoken.Add varuserid, "userid"
+gettoken.Add "", "Error"
+End If
+End If
+End Function
+Private Function getjson(url, vartoken) As String
+Dim JSONTEXT As String
+Dim JSON As Object
+Dim objHttp As Object
+Set objHttp = CreateObject("Msxml2.ServerXMLHTTP.6.0")
+Call objHttp.Open("GET", url, False)
+Call objHttp.setRequestHeader("Authorization", vartoken)
+Call objHttp.send("")
+getjson = objHttp.responseText
+End Function
+
+Private Function customxmldropdown(JSONTEXT, qno, qtype, vartoken) As String
+Dim JSON As Object
+Set JSON = JSONParser.ParseJson(Replace(JSONTEXT, "\", "\\"))
+vari = 0
+Dim varxml As String
+varxml = "<metadataroot token=""" & vartoken & """ qno=""" & qno & """ qtype=""" & qtype & """>" & vbCrLf
+For Each Value In JSON("data")
+
+
+varxml = varxml & "<metanodetagname selected=""false"">" & vbCrLf
+varxml = varxml & "<metadata tagName=""" & Value("tagName") & """>" & Value("tagName") & "</metadata>" & vbCrLf
+varxml = varxml & "<metadata tagId=""" & Value("id") & """>" & Value("id") & "</metadata>" & vbCrLf
+varxml = varxml & "<metadata tagType=""" & Value("tagType") & """>" & Value("tagType") & "</metadata>" & vbCrLf
+varxml = varxml & "</metanodetagname>" & vbCrLf
+
+
+   ' Medata_form.ListBox1.AddItem
+   ' Medata_form.ListBox1.List(vari, 0) = Value("taxonomyPath")
+  '  Medata_form.ListBox1.List(vari, 1) = Value("taxonomyName")
+  '  Medata_form.ListBox1.List(vari, 2) = Value("taxonomyId")
+   ' vari = vari + 1
+Next
+varxml = varxml & "</metadataroot>"
+customxmldropdown = ActiveDocument.CustomXMLParts.Add(varxml).id
+
+End Function
+Private Function dropdown(table21 As Table, placeholdertext, vatype, qtype) As String
+Dim tt As ContentControl
+'************************************************************************************************************
+Set Metadata = config(ActiveDocument.Path & "\config.ini")
+varuid = dropwebservices(qno, qtype)
+If varuid <> "" Then
+varuid = Replace(Replace(varuid, "{", "___"), "}", "____")
+varuid = Replace(varuid, "-", "__")
+VARREPLACEId = Replace(Replace(Replace(varuid, "___", "{"), "{_", "}"), "__", "-")
+'************************************************************************************************************
+
              table21.Rows(table21.Rows.Count).Select
+             table21.Rows(table21.Rows.Count).Cells.Split NumColumns:=3, MergeBeforeSplit:=True
+               
+             'table21.Cell(table21.Rows.Count, 1).Select
+             'Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+             'tt.Range.Style = "Remediation_Link_Type"
+             'tt.SetPlaceholderText Text:="Tag Name"
+             '''tt.Range.Style = "Normal"
+             'tt.Range.Font.Size = "10"
+             'tt.Range.Font.ColorIndex = wdBlack
+             'tt.Range.Font.Bold = False
+             'tt.Range.Rows.Height = 30
+             'tt.Range.Font.Name = "Verdana"
+             'tt.LockContentControl = True
+             'tt.LockContents = True
+             'Set tt = Nothing
+             'table21.Cell(table21.Rows.Count, 2).Select
+           Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.ComboBox.1")
+           'shp.OLEFormat.Object.Width = 130
+            
+             shp.OLEFormat.Object.Width = 200
+            shp.OLEFormat.Object.Name = "MD_" & vatype & "_CBO_Meta_qno" & qno & "_MDt" & vatype & "_qt" & qtype & "_" & Selection.Cells(1).RowIndex & varuid
+            shp.OLEFormat.Object.Clear
+            shp.OLEFormat.Object.Style = 2
+            For Each aa In ActiveDocument.CustomXMLParts.SelectByID(VARREPLACEId).SelectNodes("//metadata[@tagName]")
+           ' MsgBox aa.Text
+                shp.OLEFormat.Object.AddItem aa.Text
+            Next
+            shp.OLEFormat.Object.ListIndex = 1
+            'VARREPLACEId
+            
+            ActiveDocument.CustomXMLParts.SelectByID(VARREPLACEId).SelectSingleNode("//metadata[@tagName='" & shp.OLEFormat.Object.List(shp.OLEFormat.Object.ListIndex) & "']").ParentNode.Attributes(1).NodeValue = "true"
+            ' table21.Cell(table21.Rows.Count, 3).Select
+            
+            scode = scode & "Private Sub " & shp.OLEFormat.Object.Name & "_Change()" & vbCrLf
+            'If varlistchange = False Then
+                scode = scode & "If varlistchange = False Then" & vbCrLf
+                scode = scode & "For Each xml1 In ActiveDocument.CustomXMLParts.SelectByID(""" & VARREPLACEId & """).SelectNodes(""//metadata"")" & vbCrLf
+               scode = scode & "xml1.ParentNode.Attributes(1).NodeValue = ""False""" & vbCrLf
+                 scode = scode & "Next" & vbCrLf
+                      scode = scode & "ActiveDocument.CustomXMLParts.SelectByID(""" & VARREPLACEId & """).SelectSingleNode(""//metadata[@tagName='"" & " & shp.OLEFormat.Object.Name & ".List(" & shp.OLEFormat.Object.Name & ".ListIndex) & ""']"").ParentNode.Attributes(1).NodeValue=""true""" & vbCrLf
+                      scode = scode & "End If" & vbCrLf
+                'MsgBox scode
+            'scode = scode & "If varlistchange = False Then" & vbCrLf
+            'scode = scode & "For varcount = 0 To " & shp.OLEFormat.Object.Name & ".ListCount - 1" & vbCrLf
+            'scode = scode & "ActiveDocument.CustomXMLParts.SelectByID(""" & varreplaceid & """).SelectSingleNode(""//metadata[@nodepath='"" & " & shp.OLEFormat.Object.Name & ".List(varcount) & ""']"").ParentNode.Attributes(1).NodeValue = " & shp.OLEFormat.Object.Name & ".Selected(varcount)" & vbCrLf
+            'scode = scode & "Next" & vbCrLf
+            'scode = scode & "end if" & vbCrLf
+            scode = scode & "End Sub" & vbCrLf
+  
+            Call metaluhi(shp.OLEFormat.Object.Name, table21, placeholdertext, vatype, qtype)
+            ' Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.CommandButton.1")
+            ' 'shp.Range.Style = "Chosse_file"
+            ' With shp.OLEFormat.Object
+            '       .Object.Caption = "GO"
+            '       '.Object.Name = "Chosse_file"
+            '  End With
+            '
+            '  shp.OLEFormat.Object.Name = "MD_" & vatype & "_cmd_Meta_qno" & qno & "_MDt" & vatype & "_qt" & qtype & "_" & Selection.Cells(1).RowIndex & varuid
+            '  varbtn = shp.OLEFormat.Object.Name
+            '
+            '   scode = scode & "Private Sub " & varbtn & "_Click()" & vbCrLf
+            ''scode = scode & "If Len(" & Replace(varbtn, "_cmd", "_CBO") & ".text) >= 3 Then" & vbCrLf
+            ''scode = scode & " call " & vatype & "(""" & varbtn & """,selection.tables(1)," & table1.Rows.Count & "," & Replace(varbtn, "_cmd", "_txt") & ".text)" & vbCrLf
+           ' 'metaluhi table21, "FreeText", "FT", qtype, table1
+           ' 'scode = scode & " call remfun(""" & objname & """,Selection.Tables(1).Cell(" & table1.Rows.Count - 2 & ", 1).Tables(1)," & table1.Rows.Count - 2 & "," & qno & ",""" & qtype & """)" & vbCrLf
+           ' scode = scode & " call metaluhi(""" & varreplaceid & """,Selection.Tables(1),""" & placeholdertext & """, """ & vatype & """, """ & qtype & """)" & vbCrLf
+           ' 'scode = scode & varbtn & ".enabled=false" & vbCrLf
+           ' 'scode = scode & "Else" & vbCrLf
+           ' 'scode = scode & "MsgBox ""Search Key word minimum three character.."", vbCritical, ""WK Quizzing Platform""" & vbCrLf
+           ' 'scode = scode & "End If" & vbCrLf
+            
+            'scode = scode & "End Sub" & vbCrLf
+              ActiveDocument.VBProject.VBComponents("ThisDocument").CodeModule.AddFromString scode
+           ' metaluhi = scode
+            Set tt = Nothing
+             table21.Rows.Add
+End If
+End Function
+Public Function metaluhi(varuid, table21 As Table, placeholdertext, vatype, qtype) As String
+Dim tt As ContentControl
+If vatype = "FT" Then
+            table21.Rows(table21.Rows.Count).Select
         '     If InStr(Selection.Range.Text, "Enter") > 0 Or InStr(Selection.Range.Text, "Meta") > 0 Then table21.Rows.Add
-             table21.Rows(table21.Rows.Count).Select
-             table21.Rows(table21.Rows.Count).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
+             'table21.Rows(table21.Rows.Count).Select
+             'table21.Rows(table21.Rows.Count).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
                
              table21.Cell(table21.Rows.Count, 1).Select
-             Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-             tt.Range.Style = "Remediation_Link_Type"
-             tt.SetPlaceholderText Text:="Free Text"
+             'Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+             table21.Cell(table21.Rows.Count, 1).Range.Style = "FT" & "_Type"
+            ' tt.Range.Text = "Free Text"
              ''tt.Range.Style = "Normal"
-             tt.Range.Font.Size = "10"
-             tt.Range.Font.ColorIndex = wdBlack
-             tt.Range.Font.Bold = False
-             tt.Range.Rows.Height = 30
-             tt.Range.Font.Name = "Verdana"
-             tt.LockContentControl = True
-             tt.LockContents = True
+            ' tt.Range.Font.Size = "10"
+            ' tt.Range.Font.ColorIndex = wdBlack
+            ' tt.Range.Font.Bold = False
+            ' tt.Range.Rows.Height = 30
+            ' tt.Range.Font.Name = "Verdana"
+            ' tt.LockContentControl = True
+             'tt.LockContents = True
              Set tt = Nothing
+             table21.Cell(table21.Rows.Count, 1).Width = 300
              table21.Cell(table21.Rows.Count, 2).Select
              Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
              tt.Range.Style = "Web_Remediation_Text"
@@ -12727,132 +12946,93 @@ Case "MD"
              tt.LockContentControl = True
              tt.LockContents = False
              Set tt = Nothing
-             table21.Rows.Add
-        ElseIf Split(objname, "_")(vari) = "MDtLU" Then
-            table21.Rows(table21.Rows.Count).Select
+             scode = ""
+Else
+             table21.Rows(table21.Rows.Count).Select
+             table21.Cell(table21.Rows.Count, 1).Width = 220
             ' If InStr(Selection.Range.Text, "Enter") > 0 Or InStr(Selection.Range.Text, "Meta") > 0 Then table21.Rows.Add
              table21.Rows(table21.Rows.Count).Select
-             table21.Rows(table21.Rows.Count).Cells.Split NumColumns:=3, MergeBeforeSplit:=True
+             'table21.Rows(table21.Rows.Count).Cells.Split NumColumns:=2, MergeBeforeSplit:=True
                
              table21.Cell(table21.Rows.Count, 1).Select
-             Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-             tt.Range.Style = "Remediation_Link_Type"
-             tt.SetPlaceholderText Text:="Look Up"
-             ''tt.Range.Style = "Normal"
-             tt.Range.Font.Size = "10"
-             tt.Range.Font.ColorIndex = wdBlack
-             tt.Range.Font.Bold = False
-             tt.Range.Rows.Height = 30
-             tt.Range.Font.Name = "Verdana"
-             tt.LockContentControl = True
-             tt.LockContents = True
-             Set tt = Nothing
+             'Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
+             'MsgBox placeholdertext
+             table21.Cell(table21.Rows.Count, 1).Range.Style = Replace(placeholdertext, " ", "") & "_Type"
+             'tt.Range.Text = placeholdertext
+             'tt.Range.Style = "Normal"
+             'tt.Range.Font.Size = "10"
+             'tt.Range.Font.ColorIndex = wdBlack
+             'tt.Range.Font.Bold = False
+             'tt.Range.Rows.Height = 30
+             'tt.Range.Font.Name = "Verdana"
+             'tt.LockContentControl = True
+             'tt.LockContents = True
+             'Set tt = Nothing
              table21.Cell(table21.Rows.Count, 2).Select
                 Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.TextBox.1")
             '  shp.OLEFormat.Object.Object.Width = 200
-            shp.OLEFormat.Object.Name = "MD_LU_txt_Search_qno" & qno & "_MDtLU_qt" & qtype & "_" & Selection.Cells(1).RowIndex
+            shp.OLEFormat.Object.Name = Replace(varuid, "CBO", "txt")
+            MsgBox shp.OLEFormat.Object.Name
+            shp.OLEFormat.Object.Width = 180
+            table21.Cell(table21.Rows.Count, 2).Width = 200
+             
              table21.Cell(table21.Rows.Count, 3).Select
+             
              Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.CommandButton.1")
              'shp.Range.Style = "Chosse_file"
               With shp.OLEFormat.Object
                    .Object.Caption = "Search"
                    '.Object.Name = "Chosse_file"
               End With
-              shp.OLEFormat.Object.Name = "MD_LU_cmd_Search_qno" & qno & "_MDtLU_qt" & qtype & "_" & Selection.Cells(1).RowIndex
+              
+             shp.OLEFormat.Object.Name = Replace(varuid, "CBO", "cmd")
+            MsgBox shp.OLEFormat.Object.Name
               varbtn = shp.OLEFormat.Object.Name
+              
                scode = scode & "Private Sub " & varbtn & "_Click()" & vbCrLf
             scode = scode & "If Len(" & Replace(varbtn, "_cmd", "_txt") & ".text) >= 3 Then" & vbCrLf
-            scode = scode & " call LU(""" & varbtn & """,selection.tables(1)," & table1.Rows.Count & "," & Replace(varbtn, "_cmd", "_txt") & ".text)" & vbCrLf
+            scode = scode & " call " & vatype & "(""" & varuid & """,""" & varbtn & """,selection.tables(1)," & table21.Rows.Count & "," & Replace(varbtn, "_cmd", "_txt") & ".text)" & vbCrLf
             'scode = scode & varbtn & ".enabled=false" & vbCrLf
             scode = scode & "Else" & vbCrLf
             scode = scode & "MsgBox ""Search Key word minimum three character.."", vbCritical, ""WK Quizzing Platform""" & vbCrLf
             scode = scode & "End If" & vbCrLf
             
             scode = scode & "End Sub"
+            metaluhi = scode
           '  ActiveDocument.VBProject.VBComponents("ThisDocument").CodeModule.AddFromString scode
-            table21.Rows.Add
-            table21.Rows.Add
-            Exit For
-        ElseIf Split(objname, "_")(vari) = "MDtHI" Then
-              table21.Rows(table21.Rows.Count).Select
-            '  If InStr(Selection.Range.Text, "Enter") > 0 Or InStr(Selection.Range.Text, "Meta") > 0 Then table21.Rows.Add
-             table21.Rows(table21.Rows.Count).Select
-             table21.Rows(table21.Rows.Count).Cells.Split NumColumns:=3, MergeBeforeSplit:=True
-               
-             table21.Cell(table21.Rows.Count, 1).Select
-             Set tt = ActiveDocument.ContentControls.Add(wdContentControlRichText)
-             tt.Range.Style = "Remediation_Link_Type"
-             tt.SetPlaceholderText Text:="Hierarchy"
-             ''tt.Range.Style = "Normal"
-             tt.Range.Font.Size = "10"
-             tt.Range.Font.ColorIndex = wdBlack
-             tt.Range.Font.Bold = False
-             tt.Range.Rows.Height = 30
-             tt.Range.Font.Name = "Verdana"
-             tt.LockContentControl = True
-             tt.LockContents = True
-             Set tt = Nothing
-             table21.Cell(table21.Rows.Count, 2).Select
-                Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.TextBox.1")
-              'shp.OLEFormat.Object.Object.Width = 200
-              
-            shp.OLEFormat.Object.Name = "MD_HI_txt_Search_qno" & qno & "_MDtHI_qt" & qtype & "_" & Selection.Cells(1).RowIndex
-'            MsgBox shp.OLEFormat.Object.Name
+          table21.Rows.Add
             
-             table21.Cell(table21.Rows.Count, 3).Select
-             Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.CommandButton.1")
-             'shp.Range.Style = "Chosse_file"
-              With shp.OLEFormat.Object
-                   .Object.Caption = "Search"
-                   '.Object.Name = "Chosse_file"
-              End With
-        shp.OLEFormat.Object.Name = "MD_HI_cmd_Search_qno" & qno & "_MDtHI_qt" & qtype & "_" & Selection.Cells(1).RowIndex
-        varbtn = shp.OLEFormat.Object.Name
-            scode = scode & "Private Sub " & varbtn & "_Click()" & vbCrLf
-            scode = scode & "If Len(" & Replace(varbtn, "_cmd", "_txt") & ".text) >= 3 Then" & vbCrLf
-            scode = scode & " call HI(""" & varbtn & """,selection.tables(1)," & table1.Rows.Count & "," & Replace(varbtn, "_cmd", "_txt") & ".text)" & vbCrLf
-            scode = scode & "Else" & vbCrLf
-            scode = scode & "MsgBox ""Enter minimum 3 characters to search meta data."", vbCritical, ""WK Quizzing Platform""" & vbCrLf
-            scode = scode & "End If" & vbCrLf
             
-            scode = scode & "End Sub"
-            'MsgBox scode
-           
-             table21.Rows.Add
-            table21.Rows.Add
-            Exit For
-        End If
-     Next
-End Select
-If ActiveDocument.VBProject.VBComponents("ThisDocument").CodeModule.ProcOfLine(ActiveDocument.VBProject.VBComponents("ThisDocument").CodeModule.CountOfDeclarationLines + 1, vbext_pk_Proc) = "Private Sub " & varbtn & "_Click()" Then
-'MsgBox "ok"
-Else
- ActiveDocument.VBProject.VBComponents("ThisDocument").CodeModule.AddFromString scode
 End If
-'table21.Rows.Add
-End Sub
-Sub LU(objname As String, table1 As Table, id As Integer, searchtext As String)
-addinglist objname, table1, id, searchtext, "LOOKUP", "MC"
+ActiveDocument.VBProject.VBComponents("ThisDocument").CodeModule.AddFromString scode
+End Function
+Sub LU(varuid, objname As String, table1 As Table, id As Integer, searchtext As String)
+addinglist varuid, objname, table1, id, searchtext, "LOOKUP", "MC"
 
 End Sub
-Sub HI(objname As String, table1 As Table, id As Integer, searchtext As String)
+Sub HI(varuid, objname As String, table1 As Table, id As Integer, searchtext As String)
 'MsgBox objname
-addinglist objname, table1, id, searchtext, "Hierarchy", "MC"
+addinglist varuid, objname, table1, id, searchtext, "Hierarchy", "MC"
 End Sub
-Sub addinglist(objname As String, table1 As Table, id As Integer, searchtext As String, metadatatype, qtype)
+Sub addinglist(varuid, objname As String, table1 As Table, id As Integer, searchtext As String, metadatatype, qtype)
 'Sub HI()
-Dim metadata As Collection
+Dim Metadata As Collection
 Dim JSONTEXT As String
-If table1.Rows(id + 1).Range.InlineShapes.Count = 0 Then
+'If table1.Rows(id + 1).Range.InlineShapes.Count = 0 Then
 table1.Rows(id + 1).Cells.Merge
 table1.Cell(id + 1, 1).Select
-Set metadata = config(ActiveDocument.Path & "\config.ini")
-JSONTEXT = webservices(metadata.Item(2), metadata.Item(1), metadata.Item(3), metadata.Item(4), searchtext, metadatatype)
-varuid = customxmlcreation(JSONTEXT, 1, qtype)
-varuid = Replace(Replace(varuid, "{", "___"), "}", "____")
-varuid = Replace(varuid, "-", "__")
-varreplaceid = Replace(Replace(Replace(varuid, "___", "{"), "{_", "}"), "__", "-")
-
+Set Metadata = config(ActiveDocument.Path & "\config.ini")
+varuid = "___" & (Split(varuid, "___")(1)) & "____"
+VARREPLACEId = Replace(Replace(Replace(varuid, "___", "{"), "{_", "}"), "__", "-")
+'ActiveDocument.CustomXMLParts.SelectByID(VARREPLACEID).XML
+vartoken = ActiveDocument.CustomXMLParts.SelectByID(VARREPLACEId).SelectSingleNode("//metadataroot").Attributes(1).NodeValue
+If InStr(ActiveDocument.CustomXMLParts.SelectByID(VARREPLACEId).XML, "<metanodetagname selected=""true"">") > 0 Then
+vartagid = ActiveDocument.CustomXMLParts.SelectByID(VARREPLACEId).SelectSingleNode("//metanodetagname[@selected=""true""]/metadata[@tagId]").Attributes(1).NodeValue
+End If
+JSONTEXT = Webservices1(Metadata("siteurl"), Metadata("json"), vartoken, searchtext, vartagid)
+varuid111 = customxmlcreation(VARREPLACEId, JSONTEXT, 1, qtype)
+'MsgBox varuid111
+'customxmlcreation(JSONTEXT As String, qno, qtype) As String
 'ActiveDocument.CustomXMLParts.SelectByID(VARREPLACEID).XML
         Set shp = Selection.InlineShapes.AddOLEControl(ClassType:="Forms.ListBox.1")
          'MsgBox shp.OLEFormat.Object.Name
@@ -12863,38 +13043,38 @@ varreplaceid = Replace(Replace(Replace(varuid, "___", "{"), "{_", "}"), "__", "-
         shp.OLEFormat.Object.MultiSelect = 1
         shp.OLEFormat.Object.ListStyle = fmListStyleOption
         'shp.OLEFormat.Object.ColumnHeads = True
-Else
-Set shp = table1.Rows(id + 1).Range.InlineShapes(1)
-varuid1 = "___" & (Split(shp.OLEFormat.Object.Name, "___")(1)) & "____"
-varreplaceid = Replace(Replace(Replace(varuid1, "___", "{"), "{_", "}"), "__", "-")
+'Else
+'Set shp = table1.Rows(id + 1).Range.InlineShapes(1)
+'varuid1 = "___" & (Split(shp.OLEFormat.Object.Name, "___")(1)) & "____"
+'VARREPLACEId = Replace(Replace(Replace(varuid1, "___", "{"), "{_", "}"), "__", "-")'
+'
 
+'On Error Resume Next
+'ActiveDocument.CustomXMLParts.SelectByID(VARREPLACEId).Delete
+'If Err.Number = 91 Then
+'Err.Clear
+'On Error GoTo 0
+'End If
+'shp.OLEFormat.Object.Clear'
 
-On Error Resume Next
-ActiveDocument.CustomXMLParts.SelectByID(varreplaceid).Delete
-If Err.Number = 91 Then
-Err.Clear
-On Error GoTo 0
-End If
-shp.OLEFormat.Object.Clear
-
-Set metadata = config(ActiveDocument.Path & "\config.ini")
-JSONTEXT = webservices(metadata.Item(2), metadata.Item(1), metadata.Item(3), metadata.Item(4), searchtext, metadatatype)
-varuid = customxmlcreation(JSONTEXT, 1, qtype)
-varuid = Replace(Replace(varuid, "{", "___"), "}", "____")
-varuid = Replace(varuid, "-", "__")
-varreplaceid = Replace(Replace(Replace(varuid, "___", "{"), "{_", "}"), "__", "-")
-End If
+'Set Metadata = config(ActiveDocument.Path & "\config.ini")
+'JSONTEXT = webservices(Metadata.Item(2), Metadata.Item(1), Metadata.Item(3), Metadata.Item(4), searchtext, metadatatype)
+'varuid = customxmlcreation(JSONTEXT, 1, qtype)
+'varuid = Replace(Replace(varuid, "{", "___"), "}", "____")
+'varuid = Replace(varuid, "-", "__")
+'VARREPLACEId = Replace(Replace(Replace(varuid, "___", "{"), "{_", "}"), "__", "-")
+'End If
     shp.OLEFormat.Object.Name = Replace(objname, "_cmd", "_lst") & varuid
-For Each aa In ActiveDocument.CustomXMLParts.SelectByID(varreplaceid).SelectNodes("//metadata[@nodepath]")
+For Each aa In ActiveDocument.CustomXMLParts.SelectByID(VARREPLACEId).SelectNodes("//metadata[@nodepath]")
         shp.OLEFormat.Object.AddItem aa.Text
 Next
 scode = scode & "Private Sub " & shp.OLEFormat.Object.Name & "_Change()" & vbCrLf
  'If varlistchange = False Then
     scode = scode & "If varlistchange = False Then" & vbCrLf
     scode = scode & "For varcount = 0 To " & shp.OLEFormat.Object.Name & ".ListCount - 1" & vbCrLf
-    scode = scode & "ActiveDocument.CustomXMLParts.SelectByID(""" & varreplaceid & """).SelectSingleNode(""//metadata[@nodepath='"" & " & shp.OLEFormat.Object.Name & ".List(varcount) & ""']"").ParentNode.Attributes(1).NodeValue = " & shp.OLEFormat.Object.Name & ".Selected(varcount)" & vbCrLf
+    scode = scode & "ActiveDocument.CustomXMLParts.SelectByID(""" & VARREPLACEId & """).SelectSingleNode(""//metadata[@nodepath='"" & " & shp.OLEFormat.Object.Name & ".List(varcount) & ""']"").ParentNode.Attributes(1).NodeValue = " & shp.OLEFormat.Object.Name & ".Selected(varcount)" & vbCrLf
     scode = scode & "Next" & vbCrLf
-    scode = scode & "end if" & vbCrLf
+   scode = scode & "end if" & vbCrLf
     scode = scode & "End Sub"
             'scode = scode & "Private Sub " & shp.OLEFormat.Object.Name & "_Change()" & vbCrLf
             
@@ -12908,45 +13088,75 @@ ActiveDocument.VBProject.VBComponents("ThisDocument").CodeModule.AddFromString s
 
 
 End Sub
+Private Function Webservices1(sitedata, vardata, vartoken, varsearch, vartagid) As String
+Dim JSONTEXT As String
+Dim objHttp As Object
+Set objHttp = CreateObject("Msxml2.ServerXMLHTTP.6.0")
+siteurl = sitedata
+varsite = siteurl & "/api/login"
+Call objHttp.Open("POST", varsite, False)
+Call objHttp.setRequestHeader("Content-Type", "application/json")
+Call objHttp.setRequestHeader("Accept", "application/json")
+On Error Resume Next
+Call objHttp.send(vardata)
+If Replace(Err.Description, vbNewLine, "") = "The connection with the server was terminated abnormally" Or Replace(Err.Description, vbNewLine, "") = "This method cannot be called after the send method has been called." Then
+'gettoken.Add "Please check the internet connection", "Error"
+'MsgBox "Please check the internet connection", vbCritical, "WK Quizzing Platform"
+On Error GoTo 0
+Else
+On Error GoTo 0
+''Response.AddHeader "Content-Type", "application/json;charset=UTF-8"
+''Response.Charset = "UTF-8"
+varkey = objHttp.responseText
+End If
+'vardata = "{""clientCode"" : """ & clientcode & """ , ""secretKey"" : """ & secretKey & """ , ""email"" : ""abdul.rahman@impelsys.com"", ""firstName"" : ""Abdul"", ""lastName"" : ""Rahman"", ""clientUserId"" : ""101""}"
+Call objHttp.Open("GET", sitedata & "/api/metadata-search?taxonomyName=" & varsearch & "&metadataId=" & vartagid, False)
+Call objHttp.setRequestHeader("Authorization", vartoken)
+Call objHttp.send("")
+JSONTEXT = objHttp.responseText
+JSONTEXT = "{""totalMetadata"":4,""metadata"":[{""metadataId"":""465"",""metadataType"":""LOOKUP"",""status"":""Active"",""taxonomyId"":""149"",""taxonomyName"":""Medical Education"",""taxonomyPath"":""Medical Education""},{""metadataId"":""465"",""metadataType"":""LOOKUP"",""status"":""Active"",""taxonomyId"":""148"",""taxonomyName"":""Emergency Medicine"",""taxonomyPath"":""Emergency Medicine""},{""metadataId"":""92"",""metadataType"":""LOOKUP"",""status"":""Active"",""taxonomyId"":""127"",""taxonomyName"":""medlab lookup2"",""taxonomyPath"":""medlab lookup2""},{""metadataId"":""92"",""metadataType"":""LOOKUP"",""status"":""Active"",""taxonomyId"":""128"",""taxonomyName"":""medlab lookup3"",""taxonomyPath"":""medlab lookup3""}]}"
+Webservices1 = JSONTEXT
+End Function
 Private Function config(configfile) As Collection
-
+Dim varjson As Object
 Set txt = FSO.OpenTextFile(configfile)
 vartext = txt.ReadAll
 txt.Close
 Dim base64 As New base64
 varconfig = base64.decodeText(vartext)
-clientcode = Trim(Split(Split(varconfig, Chr(13))(0), "=")(1))
-secretKey = Trim(Split(Split(varconfig, Chr(13))(1), "=")(1))
-metadata = Trim(Split(Split(varconfig, Chr(13))(2), "=")(1))
-sitedata = Trim(Split(Split(varconfig, Chr(13))(3), "=")(1))
+Set varjson = JSONParser.ParseJson(Replace(varconfig, "\", "\\"))
+vartoken = varjson("siteurl")
+usernaname = varjson("userName")
+Password = varjson("password")
+
+vartokenjson = "{""userName"":""" & usernaname & """,""password"":""" & Password & """}"
+
 Set config = New Collection
-config.Add secretKey, "secrekey"
-config.Add clientcode, "clientcode"
-config.Add metadata, "metadata"
-config.Add sitedata, "sitedata"
+config.Add vartoken, "siteurl"
+config.Add vartokenjson, "json"
 'MsgBox webservices(clientcode, secretKey, metadata, sitedata)
 
 End Function
 
-Function webservices(clientcode, secretKey, metadata, sitedata, search, metadatatype) As String
+Function webservices(varuid, clientcode, secretKey, Metadata, sitedata, search, metadatatype) As String
 Dim JSONTEXT As String
 Dim objHttp As Object
 Set objHttp = CreateObject("Msxml2.ServerXMLHTTP.6.0")
-varData = "{""clientCode"" : """ & clientcode & """ , ""secretKey"" : """ & secretKey & """ , ""email"" : ""abdul.rahman@impelsys.com"", ""firstName"" : ""Abdul"", ""lastName"" : ""Rahman"", ""clientUserId"" : ""101""}"
+vardata = "{""clientCode"" : """ & clientcode & """ , ""secretKey"" : """ & secretKey & """ , ""email"" : ""abdul.rahman@impelsys.com"", ""firstName"" : ""Abdul"", ""lastName"" : ""Rahman"", ""clientUserId"" : ""101""}"
 Call objHttp.Open("POST", sitedata & "/api/authenticate", False)
 Call objHttp.setRequestHeader("Content-Type", "application/json")
 Call objHttp.setRequestHeader("Accept", "application/json")
-Call objHttp.send(varData)
+Call objHttp.send(vardata)
 ''Response.AddHeader "Content-Type", "application/json;charset=UTF-8"
 ''Response.Charset = "UTF-8"
-varKey = Replace(Replace(objHttp.responseText, "{""token"":""", ""), """}", "")
+varkey = Replace(Replace(objHttp.responseText, "{""token"":""", ""), """}", "")
 'Call objHttp.Open("GET", sitedata & "/api/products/110000/metadata/" & metadata & metadatatype, False)
 '/api/taxonomy-search?taxonomyName={search_string}&metadataType=HIERARCHY&metadataId={metadataId}
-Call objHttp.Open("GET", sitedata & "/api/metadata-search?taxonomyName=" & search & "&metadataType=" & metadatatype & "&metadataId=" & metadata, False)
+Call objHttp.Open("GET", sitedata & "/api/metadata-search?taxonomyName=" & search & "&metadataType=" & metadatatype & "&metadataId=" & Metadata, False)
 'Call objHttp.Open("GET", "http://qa-quizzingplatform.impelsys.com/api/taxonomy-search?taxonomyName=hie&metadataType=HIERARCHY&metadataId=SC_03", False)
 'Call objHttp.Open("GET", "http://qa-quizzingplatform.impelsys.com/api/taxonomy-search", False)
 'http://qa-quizzingplatform.impelsys.com/api/taxonomy-search
-Call objHttp.setRequestHeader("Authorization", varKey)
+Call objHttp.setRequestHeader("Authorization", varkey)
 Call objHttp.send("")
 JSONTEXT = objHttp.responseText
 'JsonText = "{""totalMetadata"":5,""metadataType"":""HIERARCHY"",""metadata"":[{""id"":1,""name"":""HLLibrary"",""nodePath"":""HLLibrary""},{""id"":2,""name"":""HealthProfessional"",""nodePath"":""HLLibrary\HealthProfessional""},{""id"":3,""name"":""medicine"",""nodePath"":""HLLibrary\HealthProfessional\medicine""},{""id"":5,""name"":""surgery"",""nodePath"":""HLLibrary\HealthProfessional\medicine\surgery""},{""id"":2,""name"":""Medicaleducation"",""nodePath"":""HLLibrary\Medicaleducation""},{""id"":3,""name"":""ENT"",""nodePath"":""HLLibrary\Medicaleducation\ENT""},{""id"":4,""name"":""surgery"",""nodePath"":""HLLibrary\Medicaleducation\ENT\surgery""},{""id"":6,""name"":""Nursing"",""nodePath"":""HLLibrary\Nursing""},{""id"":8,""name"":""Diabetic"",""nodePath"":""HLLibrary\Nursing\Diabetic""},{""id"":9,""name"":""surgery"",""nodePath"":""HLLibrary\Nursing\Diabetic\surgery""}]}"
@@ -12954,12 +13164,12 @@ JSONTEXT = objHttp.responseText
 JSONTEXT = "{""totalMetadata"":4,""metadata"":[{""metadataId"":""465"",""metadataType"":""LOOKUP"",""status"":""Active"",""taxonomyId"":""149"",""taxonomyName"":""Medical Education"",""taxonomyPath"":""Medical Education""},{""metadataId"":""465"",""metadataType"":""LOOKUP"",""status"":""Active"",""taxonomyId"":""148"",""taxonomyName"":""Emergency Medicine"",""taxonomyPath"":""Emergency Medicine""},{""metadataId"":""92"",""metadataType"":""LOOKUP"",""status"":""Active"",""taxonomyId"":""127"",""taxonomyName"":""medlab lookup2"",""taxonomyPath"":""medlab lookup2""},{""metadataId"":""92"",""metadataType"":""LOOKUP"",""status"":""Active"",""taxonomyId"":""128"",""taxonomyName"":""medlab lookup3"",""taxonomyPath"":""medlab lookup3""}]}"
 webservices = JSONTEXT
 End Function
-Function customxmlcreation(JSONTEXT As String, qno, qtype) As String
+Function customxmlcreation(varuid, JSONTEXT As String, qno, qtype) As String
 Dim JSON As Object
 Set JSON = JSONParser.ParseJson(Replace(JSONTEXT, "\", "\\"))
 vari = 0
 Dim varxml As String
-varxml = "<metadataroot qno=""" & qno & """ qtype=""" & qtype & """>"
+varxml = "<metadatatype qno=""" & qno & """ qtype=""" & qtype & """>"
 For Each Value In JSON("metadata")
 
 varxml = varxml & "<metanode1 metadataid=""" & Value("metadataId") & """>"
@@ -12977,10 +13187,10 @@ varxml = varxml & "</metanode1>"
   '  Medata_form.ListBox1.List(vari, 2) = Value("taxonomyId")
    ' vari = vari + 1
 Next
-varxml = varxml & "</metadataroot>"
+varxml = varxml & "</metadatatype>"
 
-customxmlcreation = ActiveDocument.CustomXMLParts.Add(varxml).id
-
+ActiveDocument.CustomXMLParts.SelectByID(varuid).SelectSingleNode("//metadataroot").AppendChildSubtree (varxml)
+customxmlcreation = ActiveDocument.CustomXMLParts.SelectByID(varuid).XML
 End Function
 Sub HeadingButtoncode(objname As String, table1 As Table, varflag As Boolean, qno, qtype)
 
