@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<publisher-upload-manifest>
+<asset filename="allQuestions.xml" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\deliveryfile\allQuestions.xml" type="XML Document" />
+<asset filename="config.ini" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\deliveryfile\config.ini" type="Configuration settings" />
+<asset filename="NewMacros.bas" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\deliveryfile\NewMacros.bas" type="BAS File" />
+<asset filename="Question_bank.docm" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\deliveryfile\Question_bank.docm" type="Microsoft Word Macro-Enabled Document" />
+<asset filename="Question_bank.docm--" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\deliveryfile\Question_bank.docm--" type="DOCM-- File" />
+<asset filename="Question_bank.zip" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\deliveryfile\Question_bank.zip" type="Compressed (zipped) Folder" />
+<asset filename="Question_bank1.docm" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\deliveryfile\Question_bank1.docm" type="Microsoft Word Macro-Enabled Document" />
+<asset filename="unzip.txt" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\deliveryfile\unzip.txt" type="Text Document" />
+<asset filename="XML_Error_Log.txt" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\deliveryfile\XML_Error_Log.txt" type="Text Document" />
+<asset filename="~WRL0561.tmp" filepath = "D:\Development\Impelsys\officewebservices\LWW\VBA_Search\VBA_Search\Question_bank\deliveryfile\~WRL0561.tmp" type="TMP File" />
+</publisher-upload-manifest>
