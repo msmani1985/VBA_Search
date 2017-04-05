@@ -2,12 +2,12 @@
 <wk_question_root mode="C">
     <wk_question identificationId="0" qtype="TF" qmode="C">
         <question_type ucx="C" >True / False</question_type>
-        <question_title ucx="C">sdfsdfsd</question_title>
-        <question_text ucx="C">dsfasfsd</question_text>
+        <question_title ucx="C">sdafdsfd</question_title>
+        <question_text ucx="C">sdafdsfsdd</question_text>
         <question_true_false qmcmode="C" tagtype="radioButton" >
             <question_choice ucx="C" refId="">
                 <question_answer_text>True</question_answer_text>
-                <question_rationale>sdafsdfsd</question_rationale>
+                <question_rationale>dsafdsfsd</question_rationale>
             </question_choice>
             <question_choice ucx="C" refId="">
                 <question_answer_text>False</question_answer_text>
@@ -16,11 +16,15 @@
         </question_true_false>
         <correct_answer>1</correct_answer>
         <question_score ucx="C">8</question_score>
-        <question_difficulty ucx="C" >9</question_difficulty>
-        <question_correct_rationale ucx="C">dafdsfsd</question_correct_rationale>
-        <question_incorrect_rationale ucx="C">dsaffsd</question_incorrect_rationale>
-<question_remediation_link qrlmode="C"><remediation_type ucx="C" redLinkId="1" remediation_link_type="Text"><remediation_type_text>dsafsdfs</remediation_type_text></remediation_type></question_remediation_link>
-<question_meta_tag qmtmode="C">            <meta_tag ucx="C" metaTagId="1006">                  <meta_tag_type></meta_tag_type>                  <meta_tag_value>dsafsdfsd</meta_tag_value>                  <meta_tag_path>dsafsdfsd</meta_tag_path>              </meta_tag> <meta_tag ucx="C" metaTagId="127"  metadataId="92">
+        <question_difficulty ucx="C" >7</question_difficulty>
+        <question_correct_rationale ucx="C">sadfdsfsd</question_correct_rationale>
+        <question_incorrect_rationale ucx="C">sdafdsfsd</question_incorrect_rationale>
+<question_remediation_link qrlmode="C"></question_remediation_link>
+<question_meta_tag qmtmode="C"> <meta_tag ucx="C" metaTagId="128"  metadataId="92">
+ <meta_tag_type>LOOKUP</meta_tag_type>
+<meta_tag_value>medlab lookup3</meta_tag_value>
+<meta_tag_path>medlab lookup3</meta_tag_path>
+</meta_tag> <meta_tag ucx="C" metaTagId="127"  metadataId="92">
  <meta_tag_type>LOOKUP</meta_tag_type>
 <meta_tag_value>medlab lookup2</meta_tag_value>
 <meta_tag_path>medlab lookup2</meta_tag_path>

@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wk_question_root mode="C">
+<<<<<<< HEAD
+    <wk_question identificationId="0" qtype="MC" qmode="C">
+        <question_type ucx="C" >Multiple Choice</question_type>
+        <question_title ucx="C">Weefdfadsf dsafd </question_title>
+        <question_text ucx="C">dafdfdsf</question_text>
+        <question_multiple_choices qmcmode="C" tagtype="radioButton" >
+            <question_choice ucx="C" refId="">
+                <question_answer_text>Sdfadsf dafdsf </question_answer_text>
+                <question_rationale>Dsfdfdsf dfa dsf</question_rationale>
+            </question_choice>
+        </question_multiple_choices>
+        <correct_answer>1</correct_answer>
+        <question_score ucx="C">4</question_score>
+        <question_difficulty ucx="C" >5</question_difficulty>
+        <question_correct_rationale ucx="C">dafdsf</question_correct_rationale>
+        <question_incorrect_rationale ucx="C">dafdsfs</question_incorrect_rationale>
+<question_remediation_link qrlmode="C"></question_remediation_link>
+<question_meta_tag qmtmode="C"> <meta_tag ucx="C" metaTagId="148"  metadataId="465">
+=======
     <wk_question identificationId="0" qtype="TF" qmode="C">
         <question_type ucx="C" >True / False</question_type>
         <question_title ucx="C">fdsgf</question_title>
@@ -41,6 +60,7 @@
 <meta_tag_value>Medical Education</meta_tag_value>
 <meta_tag_path>Medical Education</meta_tag_path>
 </meta_tag> <meta_tag ucx="C" metaTagId="148"  metadataId="465">
+>>>>>>> 4465203a33a07a1a53c4d9c873cd79613abc5436
  <meta_tag_type>LOOKUP</meta_tag_type>
 <meta_tag_value>Emergency Medicine</meta_tag_value>
 <meta_tag_path>Emergency Medicine</meta_tag_path>
